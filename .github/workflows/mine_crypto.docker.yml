@@ -11,15 +11,23 @@ jobs:
   mine_1:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -27,15 +35,23 @@ jobs:
   mine_2:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -43,15 +59,23 @@ jobs:
   mine_3:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -59,15 +83,23 @@ jobs:
   mine_4:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -75,15 +107,23 @@ jobs:
   mine_5:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -91,15 +131,23 @@ jobs:
   mine_6:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -107,15 +155,23 @@ jobs:
   mine_7:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -123,15 +179,23 @@ jobs:
   mine_8:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -139,15 +203,23 @@ jobs:
   mine_9:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
@@ -155,15 +227,23 @@ jobs:
   mine_10:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Install Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
       - name: Build Docker image
         run: |
           docker build -t xmrig-miner .
+
       - name: Run XMRig in Docker
         run: |
           docker run --rm xmrig-miner
