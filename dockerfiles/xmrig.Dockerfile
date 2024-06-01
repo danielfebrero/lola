@@ -1,5 +1,8 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
 RUN apt-get update && apt-get install -y \
     cmake \
     build-essential \
@@ -8,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libhwloc-dev \
     wget
 
-# Download and build XMRig
+# Download and extract precompiled XMRig binary
 RUN wget https://github.com/xmrig/xmrig/releases/download/v6.15.2/xmrig-6.15.2-linux-x64.tar.gz && \
     tar -xvf xmrig-6.15.2-linux-x64.tar.gz && \
     mv xmrig-6.15.2 /xmrig

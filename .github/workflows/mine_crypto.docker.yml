@@ -1,4 +1,4 @@
-name: Mine Cryptocurrency
+name: Mine Cryptocurrency Docker
 
 on:
   push:
