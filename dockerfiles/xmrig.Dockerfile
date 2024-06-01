@@ -4,11 +4,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
 RUN apt-get update && apt-get install -y \
-    cmake \
-    build-essential \
-    libuv1-dev \
-    libssl-dev \
-    libhwloc-dev \
     wget
 
 # Download and extract precompiled XMRig binary
