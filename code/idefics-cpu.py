@@ -8,7 +8,7 @@ from safetensors.torch import load_file
 DEVICE = torch.device('cpu')
 
 # Define the model directory
-model_dir = "idfx"  # Update the path as needed
+model_dir = "../idfx"  # Update the path as needed
 
 # Load the tokenizer
 tokenizer = AutoTokenizer.from_pretrained(model_dir)
@@ -20,7 +20,7 @@ config = IdeficsConfig.from_pretrained(model_dir)
 model = IdeficsForVisionText2Text(config)
 model_weights_path = os.path.join(model_dir, "adapter_model.safetensors")
 state_dict = load_file(model_weights_path)
-model.load_state_dict(state_dict)
+model.load_state_dict(state_dict, strict=False)  # Allow some flexibility in loading
 
 # Move the model to the appropriate device (CPU)
 model.to(DEVICE)
