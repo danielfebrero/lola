@@ -1,0 +1,318 @@
+
+C 0 FTL
+C 1 MSP0
+C 2 MSP1
+C 3 MSP2
+C 4 MSP3
+C 5 HW
+C 6 HW_MSP0
+C 7 HW_MSP1
+C 8 HW_MSP2
+C 9 HW_MSP3
+c 0 T_DEVICE DEVICE 
+c 1 T_DEVICE_ASP_CPU DEVICE/ASP_CPU 
+c 2 T_DEVICE_MSP_CPU_0 DEVICE/MSP_CPU_0 
+c 3 T_DEVICE_MSP_CPU_1 DEVICE/MSP_CPU_1 
+c 4 T_DEVICE_MSP_HW DEVICE/MSP_HW 
+c 5 T_DEVICE_COMMON_HW DEVICE/COMMON_HW 
+c 6 T_DEVICE_FLASH DEVICE/FLASH 
+c 7 T_DEVICE_ICACC DEVICE/ICACC 
+c 8 T_DEVICE_SERIALV DEVICE/SERIALV 
+c 9 T_DEVICE_SERIALC DEVICE/SERIALC 
+c 10 T_DEVICE_INTERNAL DEVICE/INTERNAL 
+c 11 T_DEVICE_PROG_PATH DEVICE/PROG_PATH 
+c 12 T_DEVICE_READ_PATH DEVICE/READ_PATH 
+c 13 T_DEVICE_RM DEVICE/RM 
+c 14 T_DEVICE_MSP_STUB DEVICE/MSP_STUB 
+c 15 T_DEVICE_FE_WRITE DEVICE/FE_WRITE 
+c 16 T_DEVICE_FE_READ DEVICE/FE_READ 
+c 17 T_DEVICE_CE_FIFO DEVICE/CE_FIFO 
+c 18 T_DEVICE_DMA DEVICE/DMA 
+c 19 T_DEVICE_RAID DEVICE/T_DEVICE_RAID 
+c 20 T_DEVICE_PMGR DEVICE/PMGR 
+c 21 T_DEVICE_GPIO DEVICE/GPIO 
+c 22 T_DEVICE_PIO DEVICE/PIO 
+c 23 T_DEVICE_FUSES DEVICE/FUSES 
+c 24 T_DEVICE_PL310 DEVICE/PL310 
+c 25 T_DEVICE_TE DEVICE/TE 
+c 26 T_DEVICE_EVENT_HANDLER DEVICE/EVENT_HANDLER 
+c 27 T_DEVICE_DLL_DISPATCHER DEVICE/DLL_DISPATCHER 
+c 28 T_DEVICE_FE DEVICE/FRONT_END 
+c 29 T_DEVICE_CTIMER DEVICE/CTIMER 
+c 30 T_DEVICE_SIMPLE_LOGGER DEVICE/SIMPLE_LOGGER 
+c 31 T_DEVICE_AIC_TIMER DEVICE/AIC_TIMER 
+c 32 T_DEVICE_SPI_HW DEVICE/DEVICE_SPI_HW 
+c 33 T_DEVICE_SCU DEVICE/SCU 
+c 34 T_DEVICE_GIC DEVICE/GIC 
+c 35 T_DEVICE_SYSDMA DEVICE/SYSDMA 
+c 36 T_DEVICE_CTL_TIMER DEVICE/CTL_TIMER 
+c 37 T_DEVICE_IPI DEVICE/IPI 
+c 38 T_DEVICE_UART DEVICE/UART 
+c 39 T_MCHEF MCHEF 
+c 40 T_MCHEF_LUA MCHEF/LUA 
+c 41 T_MCHEF_RUN_TIME_LOG MCHEF/RUN_TIME_LOG 
+c 42 T_ASP ASP 
+c 43 T_ASP_GENERAL ASP/General 
+c 44 T_ASP_TEST ASP/Test 
+c 45 T_ASP_TEST_1 ASP/Test/1 
+c 46 T_ASP_TEST_2 ASP/Test/2 
+c 47 T_ASP_CLI ASP/CLI 
+c 48 T_ASP_SYSLOG ASP/SYSLOG 
+c 49 T_ASP_SYSLOG_KERN ASP/SYSLOG/KERNEL 
+c 50 T_ASP_SYSLOG_USER ASP/SYSLOG/USER 
+c 51 T_ASP_SYSLOG_SYSLOG ASP/SYSLOG/SYSLOG 
+c 52 T_ASP_SYSLOG_DAEMON ASP/SYSLOG/DAEMON 
+c 53 T_ASP_SYSLOG_MCS ASP/SYSLOG/MCS 
+c 54 T_ASP_SYSLOG_MAILBOX ASP/SYSLOG/MAILBOX 
+c 55 T_ASP_SYSLOG_AIC ASP/SYSLOG/AIC 
+c 56 T_ASP_SYSLOG_EXCEP ASP/SYSLOG/EXCEP 
+c 57 T_ASP_SYSLOG_MGMT ASP/SYSLOG/MGMT 
+c 58 T_ASP_SYSLOG_NAND ASP/SYSLOG/NAND 
+c 59 T_ASP_KTRACE ASP/KTRACE 
+c 60 T_ASP_SYS_PRODUCTION ASP/SYSTEM/PRODUCTION 
+c 61 T_ASP_SYS_FW_UPDATE ASP/SYSTEM/FW_UPDATE 
+c 62 T_ASP_SYS_FW_COPY ASP/SYSTEM/FW_COPY 
+c 63 T_ASP_SYS_FW_BURN_IN ASP/SYSTEM/FW_BURN_IN 
+c 64 T_MSP MSP 
+c 65 T_ALGO ALGO 
+c 66 T_MSP_UT MSP_UNIT_TEST 
+c 67 T_PCI_BRIDGE PCI_BRIDGE 
+c 68 T_COMMON COMMON 
+f 501 "src/target/msp_rom_extension/msp_rom_extension_start.c"
+f 502 "src/arch/arm/mpu.c"
+f 503 "src/platform/s3e_msp/mpu_platform.c"
+f 504 "src/arch/arm/mpu_accessors.c"
+f 505 "src/drivers/apple/s3e_clocks/s3e_clocks.c"
+f 506 "src/drivers/apple/s3e_gp_timers/s3e_gp_timers.c"
+f 507 "src/platform/s3e_msp/platform.c"
+A 3606 507 204
+f 508 "src/app/msp_rom_extension/main.c"
+f 509 "src/msp_rom_extension/msp_main.c"
+f 510 "src/msp_rom_extension/msp_rom_extension.c"
+A 3601 510 230
+A 3602 510 432
+A 3603 510 451
+f 511 "src/msp_rom/boot_utils.c"
+A 3589 511 140
+f 512 "src/msp_hal/src/hal.c"
+A 3451 512 68
+A 3452 512 119
+A 3453 512 157
+f 513 "src/msp_hal/src/hal_flash_address.c"
+f 514 "src/msp_hal/src/hal_copy_dma.c"
+M e 514 34 34 64 "COPY DMA ERROR INTERRUPT!"
+A 3477 514 35
+A 3478 514 87
+A 3479 514 88
+A 3480 514 89
+A 3481 514 116
+A 3482 514 119
+A 3483 514 146
+A 3484 514 153
+f 515 "src/msp_hal/src/hal_dma_completion_fifo.c"
+A 3485 515 93
+M n 515 97 97 64 "dma_completion_common_isr - fifo_select=%u, messege=0x%x"
+A 3486 515 149
+A 3487 515 150
+A 3488 515 169
+A 3489 515 173
+A 3490 515 174
+A 3491 515 175
+f 516 "src/msp_hal/src/hal_hldpc.c"
+A 3497 516 73
+M i 516 220 220 64 "hal_hldpc_init, isSynchronous=%d"
+f 517 "src/msp_hal/src/hal_svldpc.c"
+M i 517 175 176 64 "hal_svldpc_push_queue_cmds: remove element from the sw queue, elements:%u"
+M i 517 186 187 64 "hal_svldpc_push_queue_cmds: sw queue elements:%u"
+M i 517 196 196 64 "hal_svldpc_almost_empty_ISR: was triggered"
+M i 517 209 209 64 "hal_svldpc_almost_empty_ISR: disable almost empty ISR"
+M i 517 222 222 64 "hal_svldpc_add_cmd_to_sw_queue: enable almost empty ISR"
+M i 517 239 240 64 "hal_svldpc_add_cmd_to_sw_queue: add element to sw queue, elements:%u"
+A 3568 517 262
+A 3569 517 296
+A 3570 517 297
+A 3571 517 298
+A 3572 517 315
+A 3573 517 316
+A 3574 517 346
+A 3575 517 347
+A 3576 517 348
+M i 517 356 356 64 "serial_v_pause_isr"
+A 3577 517 362
+M i 517 372 372 64 "SerialV initialization done"
+A 3578 517 382
+A 3579 517 395
+M i 517 406 406 64 "hal_svldpc_init_matrix: src 0x%x, dest 0x%x, length %d"
+M i 517 413 413 64 "hal_svldpc_init_matrix: second dma src 0x%x, dest 0x%x, length %d"
+A 3580 517 449
+A 3581 517 473
+A 3582 517 778
+A 3583 517 841
+A 3584 517 858
+f 518 "src/msp_hal/src/hal_scldpc.c"
+A 3558 518 81
+M i 518 143 143 64 "Copy to debug soft cache2		srcAddress=0x%08x"
+A 3559 518 171
+M i 518 245 247 64 "Serial C Decoder done: status=%u, ASMF[0] = 0x%08X, ASMF[1] = 0x%08X, ASTF[0] = 0x%08X"
+M n 518 248 248 64 "Serial C Decoder done: ASTF[1] = 0x%08X, ASTF[2] = 0x%08X, ASTF[3] = 0x%08X"
+M i 518 257 257 64 "[0x%03x] SerialC - zero syndrome with bit flips detected! - return failure"
+M i 518 262 263 64 "[0x%03x] SerialC - bit flip=%d, last iteration=%d, synd sum first=%d"
+M i 518 267 269 64 "[0x%03x] SerialC - synd sum first=%d, synd sum last=%d"
+A 3560 518 274
+A 3561 518 282
+A 3562 518 292
+A 3563 518 314
+A 3564 518 322
+M i 518 489 489 64 "Serial-C Decoder: Init Done"
+A 3565 518 624
+M i 518 657 658 64 "[0x%03x] Serial-C Decoder: buffer[0]=%d, buffer[1]=%d, buffer[2]=%d "
+M i 518 659 660 64 "[0x%03x] Serial-C Decoder: buffer[3]=%d, buffer[4]=%d, buffer[5]=%d"
+M i 518 669 669 64 "Copy to debug soft cache		srcAddress=0x%08x"
+M i 518 692 692 64 "[0x%03x] Serial-C Decoder: sw tag = 0x%x"
+f 519 "src/msp_hal/src/hal_bch_decoder.c"
+A 3470 519 46
+A 3471 519 51
+M i 519 83 83 64 "BCH decoder done interrupt!, res=%d"
+A 3472 519 107
+M i 519 164 164 64 "BCH decoder enable"
+A 3473 519 173
+M i 519 210 210 64 "BCH decoder disable"
+f 520 "src/msp_hal/src/hal_icacc.c"
+M i 520 204 204 64 "hal_icacc_overflow_channel0_isr"
+A 3498 520 205
+M i 520 210 210 64 "hal_icacc_overflow_channel1_isr"
+A 3499 520 211
+M i 520 456 456 64 "HalIcacc_StatusRepeat: swtag=0x%x, enableCmdIsr=%u"
+M i 520 541 541 64 "HalIcacc_PauseAll - pausing all work in the system"
+M i 520 859 859 64 "HalIcacc_SetActiveDieLimitation channel=%d, g_num_of_dies_per_channel=%d, limitEnable=%d"
+A 3501 520 927
+M i 520 933 933 64 "HalIcacc_Program - Send Phase Prefix =0x%x, program cycle =%u"
+A 3505 520 1178
+M i 520 1449 1450 64 "HalIcacc_WriteThresholdsToNAND [%u, %u]: params 0 and 1: 0x%x, params 2 and 3: 0x%x"
+A 3506 520 1513
+A 3507 520 1543
+M n 520 1585 1589 64 "HalIcacc_MpProgramStartFirst - CE= %u, Page= %d, BlockNumber= %d, PhysicalPlane= %d"
+M n 520 1591 1592 64 "HalIcacc_MpProgramStartFirst(2) - LogicalPlane= %d"
+M n 520 1595 1595 64 "HalIcacc_MpProgramStartFirst(3) - rowAddress=0x%08x"
+A 3508 520 1787
+M i 520 1947 1947 64 "SW Tag 0x%x Pushed for End Command Fifo"
+M i 520 2214 2214 64 "HalIcacc_Program: moved from state %u to %u"
+M i 520 2258 2259 64 "ProgramChef_TerminateCache - different number of planes, terminating. blockData.numOfPlanes = 0x%x GetNumOfPlanesFromDataBase(queueId) = 0x%x"
+M i 520 2265 2267 64 "ProgramChef_TerminateCache: recipe plane = %u, mirror plane = %u, recipe block = %u, mirror block = %u"
+M i 520 2277 2277 64 "ProgramChef_TerminateCache: isTerminateRequired = %u"
+M i 520 2350 2350 64 "HalIcacc_Program: last = %u, progConfig->bitfield.progCacheActive = %u"
+A 3510 520 2388
+M i 520 2397 2397 64 "HalIcacc_Program: cache program state = %u"
+M n 520 2518 2522 64 "HalIcacc_releaseFTLBuffers - BufferId=%d, BufferIndex=%d, Plane=%d, MU index=%d"
+A 5190 520 2549
+A 5191 520 2550
+M i 520 2577 2577 64 "[0x%03x] HalIcacc_Program - select for bypass"
+M n 520 2580 2583 64 "[0x%03x] HalIcacc_Program - mspData.bits.seed=0x%x, mspData.bits.lsb_usb_msb=%d, endurance=%d"
+M n 520 2727 2727 64 "HalIcacc_Program - case of write to buffer, sending 0xFF or 0x11 (Hynix)"
+M n 520 2743 2744 64 "HalIcacc_Program - cache tag = 0x%x, terminate cache %u"
+M i 520 2789 2789 64 "Data: 0x%08x-0x%08x-0x%08x-0x%08x"
+M i 520 2899 2899 64 "HalIcacc_ProgramFTL_SP - Send 0x11"
+M i 520 2949 2949 64 "MSP_Sat_flushProgramPath: status0: 0x%x, status1: 0x%x, cmdFifo:0x%x"
+A 5192 520 2951
+M i 520 2975 2975 64 "HalIcacc_DummyProgram ch = %d"
+M i 520 3018 3021 64 "HalIcacc_DummyProgram - seed=0x%x, swTag=%x, Mu=%u, saturated %d"
+M i 520 3228 3228 64 "DIE RESET queue 0x%x"
+M i 520 3273 3273 64 "DIE RESET queue %x"
+A 3512 520 3379
+M i 520 3703 3703 64 "HalIcacc_set_nand_vref_in_all_dies, enableVref=%d, power_mode=%d"
+M i 520 3750 3750 64 "HalIcacc_set_delay_in_icacc_per_channel, qId=%d, delay=%d"
+A 3514 520 3772
+f 521 "src/msp_hal/src/hal_icacc_read.c"
+A 3500 521 106
+M i 521 460 460 64 "Enter seq cache mode for msp channel %u, die %u"
+M i 521 465 465 64 "HalIcacc_enterCacheMode, Send 0x31"
+A 3513 521 483
+M i 521 513 513 64 "Exit seq cache mode for msp channel %u, die %u, send 0x3F"
+A 3502 521 674
+A 4306 521 690
+A 4307 521 713
+A 4308 521 794
+A 4309 521 795
+f 522 "src/msp_hal/src/hal_scramble.c"
+M n 522 77 77 64 "HAL_ScramblerCalcSeedByMuAndPage - seed=0x%x, Mu=%u, Page=%u"
+A 10662 522 89
+A 3511 522 151
+A 3566 522 181
+A 3567 522 191
+f 523 "src/msp_hal/src/hal_icacc_templates.c"
+A 4310 523 200
+A 4311 523 219
+A 3525 523 621
+f 524 "src/msp_hal/src/hal_program_path.c"
+f 525 "src/msp_hal/src/hal_read_path.c"
+A 3545 525 53
+A 3546 525 95
+A 3547 525 114
+A 3548 525 158
+M i 525 276 276 64 "HalIcacc_ReadThresholdsFromNAND. channel %d. die %d."
+M i 525 277 277 64 "HalIcacc_ReadThresholdsFromNAND. param0 0x%x. param1 0x%x. param2 0x%x. param3 0x%x."
+M i 525 281 281 64 "HalIcacc_ReadThresholdsFromNAND Failure. mirror0 0x%x. mirror1 0x%x. mirror2 0x%x. mirror3 0x%x."
+f 526 "src/msp_hal/src/hal_resource_manager.c"
+A 3549 526 108
+A 3550 526 112
+A 3551 526 298
+A 3552 526 302
+A 3553 526 312
+A 3554 526 362
+A 3555 526 400
+A 3556 526 401
+A 3557 526 422
+f 527 "src/msp_hal/src/hal_staging_buffers.c"
+f 528 "src/msp_hal/src/hw_init.c"
+A 3585 528 82
+A 3586 528 89
+A 3587 528 104
+A 3588 528 354
+f 529 "src/msp_hal/src/hal_acquisition_path.c"
+A 3454 529 139
+A 3455 529 148
+A 3456 529 181
+A 3457 529 197
+A 3458 529 226
+A 3459 529 248
+A 3460 529 251
+A 3461 529 253
+A 3462 529 255
+A 3463 529 280
+A 3464 529 291
+A 3465 529 479
+A 3466 529 497
+A 3467 529 518
+A 3468 529 531
+A 3469 529 574
+f 530 "src/msp_hal/src/hal_internal.c"
+M i 530 244 244 64 "[0x%03x] End CMD ISR: Channel %d"
+A 5193 530 306
+A 3526 530 527
+A 3527 530 528
+M i 530 620 620 64 "hal_internal_cfg_grabber: channel=%d"
+A 3528 530 622
+M i 530 679 679 64 "hal_internal_cfg_grabber: channel=%d"
+A 3529 530 681
+f 531 "src/msp_hal/src/hal_exception_path.c"
+A 3492 531 152
+A 3493 531 153
+A 3494 531 193
+M e 531 289 289 64 "EUB HW DEBUG: EUBs map = 0x%x"
+M e 531 327 327 64 "EUB HW DEBUG: EUB[%u] = 0x%x"
+A 3495 531 334
+f 532 "src/msp_hal/src/hal_clocks.c"
+A 3474 532 142
+A 3475 532 638
+A 3476 532 678
+f 533 "src/msp_hal/src/hal_gpio.c"
+M i 533 226 230 64 "hal_gpio_print_drive_strength, DRVH[0]=%d, DRVL[0]=%d, DRVH[1]=%d, DRVL[1]=%d"
+M i 533 284 284 64 "hal_gpio_move_to_sdr"
+M i 533 1057 1057 64 "hal_gpio_zq_cal_set_soc_drive_strength, TX_DRVH=%d, TX_DRVL=%d, iChannelOffset=%d, "
+M i 533 1127 1127 64 "hal_gpio_zq_cal_set_soc_drive_strength, TX_DRVH=%d, TX_DRVL=%d, iChannelOffset=%d, isCalibDone=%d"
+A 3496 533 1263
+M i 533 1351 1351 64 "hal_gpio_force_zq_calibration: Channel=%d, no_of_blocks=%d, TX_TL=%d, TX_TH=%d"
+M i 533 1353 1353 64 "hal_gpio_force_zq_calibration: TX_TER=%d, TX_DRVL=%d, TX_DRVH=%d"
+M i 533 1530 1530 64 "hal_gpio close_vref"
+M i 533 1567 1567 64 "hal_gpio_open_vref, setDelayToIcacc = %u"
+f 534 "src/msp_hal/src/hal_ccu.c"

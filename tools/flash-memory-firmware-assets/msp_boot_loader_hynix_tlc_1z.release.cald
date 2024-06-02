@@ -1,0 +1,365 @@
+
+C 0 FTL
+C 1 MSP0
+C 2 MSP1
+C 3 MSP2
+C 4 MSP3
+C 5 HW
+C 6 HW_MSP0
+C 7 HW_MSP1
+C 8 HW_MSP2
+C 9 HW_MSP3
+c 0 T_DEVICE DEVICE 
+c 1 T_DEVICE_ASP_CPU DEVICE/ASP_CPU 
+c 2 T_DEVICE_MSP_CPU_0 DEVICE/MSP_CPU_0 
+c 3 T_DEVICE_MSP_CPU_1 DEVICE/MSP_CPU_1 
+c 4 T_DEVICE_MSP_HW DEVICE/MSP_HW 
+c 5 T_DEVICE_COMMON_HW DEVICE/COMMON_HW 
+c 6 T_DEVICE_FLASH DEVICE/FLASH 
+c 7 T_DEVICE_ICACC DEVICE/ICACC 
+c 8 T_DEVICE_SERIALV DEVICE/SERIALV 
+c 9 T_DEVICE_SERIALC DEVICE/SERIALC 
+c 10 T_DEVICE_INTERNAL DEVICE/INTERNAL 
+c 11 T_DEVICE_PROG_PATH DEVICE/PROG_PATH 
+c 12 T_DEVICE_READ_PATH DEVICE/READ_PATH 
+c 13 T_DEVICE_RM DEVICE/RM 
+c 14 T_DEVICE_MSP_STUB DEVICE/MSP_STUB 
+c 15 T_DEVICE_FE_WRITE DEVICE/FE_WRITE 
+c 16 T_DEVICE_FE_READ DEVICE/FE_READ 
+c 17 T_DEVICE_CE_FIFO DEVICE/CE_FIFO 
+c 18 T_DEVICE_DMA DEVICE/DMA 
+c 19 T_DEVICE_RAID DEVICE/T_DEVICE_RAID 
+c 20 T_DEVICE_PMGR DEVICE/PMGR 
+c 21 T_DEVICE_GPIO DEVICE/GPIO 
+c 22 T_DEVICE_PIO DEVICE/PIO 
+c 23 T_DEVICE_FUSES DEVICE/FUSES 
+c 24 T_DEVICE_PL310 DEVICE/PL310 
+c 25 T_DEVICE_TE DEVICE/TE 
+c 26 T_DEVICE_EVENT_HANDLER DEVICE/EVENT_HANDLER 
+c 27 T_DEVICE_DLL_DISPATCHER DEVICE/DLL_DISPATCHER 
+c 28 T_DEVICE_FE DEVICE/FRONT_END 
+c 29 T_DEVICE_CTIMER DEVICE/CTIMER 
+c 30 T_DEVICE_SIMPLE_LOGGER DEVICE/SIMPLE_LOGGER 
+c 31 T_DEVICE_AIC_TIMER DEVICE/AIC_TIMER 
+c 32 T_DEVICE_SPI_HW DEVICE/DEVICE_SPI_HW 
+c 33 T_DEVICE_SCU DEVICE/SCU 
+c 34 T_DEVICE_GIC DEVICE/GIC 
+c 35 T_DEVICE_SYSDMA DEVICE/SYSDMA 
+c 36 T_DEVICE_CTL_TIMER DEVICE/CTL_TIMER 
+c 37 T_DEVICE_IPI DEVICE/IPI 
+c 38 T_DEVICE_UART DEVICE/UART 
+c 39 T_MCHEF MCHEF 
+c 40 T_MCHEF_LUA MCHEF/LUA 
+c 41 T_MCHEF_RUN_TIME_LOG MCHEF/RUN_TIME_LOG 
+c 42 T_ASP ASP 
+c 43 T_ASP_GENERAL ASP/General 
+c 44 T_ASP_TEST ASP/Test 
+c 45 T_ASP_TEST_1 ASP/Test/1 
+c 46 T_ASP_TEST_2 ASP/Test/2 
+c 47 T_ASP_CLI ASP/CLI 
+c 48 T_ASP_SYSLOG ASP/SYSLOG 
+c 49 T_ASP_SYSLOG_KERN ASP/SYSLOG/KERNEL 
+c 50 T_ASP_SYSLOG_USER ASP/SYSLOG/USER 
+c 51 T_ASP_SYSLOG_SYSLOG ASP/SYSLOG/SYSLOG 
+c 52 T_ASP_SYSLOG_DAEMON ASP/SYSLOG/DAEMON 
+c 53 T_ASP_SYSLOG_MCS ASP/SYSLOG/MCS 
+c 54 T_ASP_SYSLOG_MAILBOX ASP/SYSLOG/MAILBOX 
+c 55 T_ASP_SYSLOG_AIC ASP/SYSLOG/AIC 
+c 56 T_ASP_SYSLOG_EXCEP ASP/SYSLOG/EXCEP 
+c 57 T_ASP_SYSLOG_MGMT ASP/SYSLOG/MGMT 
+c 58 T_ASP_SYSLOG_NAND ASP/SYSLOG/NAND 
+c 59 T_ASP_KTRACE ASP/KTRACE 
+c 60 T_ASP_SYS_PRODUCTION ASP/SYSTEM/PRODUCTION 
+c 61 T_ASP_SYS_FW_UPDATE ASP/SYSTEM/FW_UPDATE 
+c 62 T_ASP_SYS_FW_COPY ASP/SYSTEM/FW_COPY 
+c 63 T_ASP_SYS_FW_BURN_IN ASP/SYSTEM/FW_BURN_IN 
+c 64 T_MSP MSP 
+c 65 T_ALGO ALGO 
+c 66 T_MSP_UT MSP_UNIT_TEST 
+c 67 T_PCI_BRIDGE PCI_BRIDGE 
+c 68 T_COMMON COMMON 
+f 501 "src/target/msp_boot_loader/msp_bootloader.c"
+f 502 "src/lib/libk/hardened_buffers.c"
+f 503 "src/lib/libk/printf.c"
+f 504 "src/platform/s3e_msp/platform.c"
+f 505 "src/platform/s3e_msp/variant/s3e/platform_clocks.c"
+f 506 "src/app/msp_boot_loader/main.c"
+f 507 "src/msp_core/src/int_handler.c"
+A 2986 507 58
+A 5203 507 249
+A 2987 507 369
+f 508 "src/msp_core/src/msp_main.c"
+M i 508 362 362 64 "msp %d is Ready !"
+M i 508 365 365 64 "NAND DETECTOR  !"
+M i 508 473 473 64 "DRAM_VERIFICATION test, Msp=%d, Opmode=%d, Scratch3=0x%x"
+M i 508 497 497 64 "MSP INTERNAL TEST, Control Opcode: RECIPE_CONTROL_IF_SETUP: g_p_mu_data 0x%x. g_p_mu_meta_data 0x%x."
+M i 508 616 616 64 "DRAM_VERIFICATION test, starting noise"
+M i 508 624 624 64 "DRAM_VERIFICATION test, stoping noise"
+M i 508 628 628 64 "DRAM_VERIFICATION test, stoping noise complete"
+f 509 "src/msp_core/src/rma_log.c"
+A 3195 509 144
+A 3196 509 145
+M i 509 175 175 64 "RMA log timer wraparound"
+f 510 "src/Algo/flash_tables_F15.c"
+f 511 "src/Algo/flash_tables_HYNIX_TLC.c"
+f 512 "src/Algo/flash_tables_TLC_NAND.c"
+f 513 "src/Algo/flash_tables_SAMSUNG_TLC_1Y.c"
+f 514 "src/Algo/flash_tables_SNDSK_TLC_1Z.c"
+f 515 "src/Algo/flash_tables_TLC_3D.c"
+f 516 "src/Algo/flash_tables_samsung_mlc_3d.c"
+f 517 "src/msp_hal/src/hal.c"
+A 3451 517 67
+A 3452 517 118
+A 3453 517 156
+f 518 "src/msp_hal/src/hal_flash_address.c"
+A 5746 518 148
+f 519 "src/msp_hal/src/hal_page_structure.c"
+A 3539 519 223
+A 3540 519 239
+A 3541 519 256
+A 3542 519 291
+A 3543 519 467
+f 520 "src/msp_hal/src/hal_dma_completion_fifo.c"
+A 3485 520 93
+A 3486 520 149
+A 3487 520 150
+A 3488 520 169
+A 3489 520 173
+A 3490 520 174
+A 3491 520 175
+f 521 "src/msp_hal/src/hal_copy_dma.c"
+M e 521 40 49 64 "COPY DMA ERROR INTERRUPT!"
+A 3477 521 50
+A 3481 521 131
+A 3482 521 134
+A 3483 521 161
+A 3484 521 168
+f 522 "src/msp_hal/src/hal_internal.c"
+M i 522 293 293 64 "[0x%03x] End CMD ISR: Channel %d"
+M i 522 324 324 64 "hal_internal_mdll_avg_ovf_isr!!! Channel %d"
+M i 522 343 343 64 "hal_internal_mdll_offset_ovf_isr!!! Channel %d"
+M i 522 362 362 64 "hal_internal_mdll_offset_underflow_isr!!! Channel %d"
+M i 522 382 382 64 "hal_internal_mdll_filter_ovf_und_isr!!! Channel %d"
+A 5218 522 519
+A 5104 522 840
+M i 522 1090 1090 64 "MDLL experiment:  opt sdll -  rd - %d, wr  - %d"
+M i 522 1091 1091 64 "MDLL experiment:  rd_tap_sel_min_thr - %d, rd_tap_sel_max_thr - %d"
+M i 522 1092 1092 64 "MDLL experiment:  wr_tap_sel_min_thr - %d, wr_tap_sel_max_thr - %d"
+A 3526 522 1125
+A 3527 522 1126
+M i 522 1237 1241 64 "hal_internal_set_tap, wr_tap=%d, rd_tap=%d, mdll_calib_rate=%d, cal_capture_delay=%d"
+A 3528 522 1298
+A 3529 522 1360
+f 523 "src/msp_hal/src/hal_hldpc.c"
+A 3497 523 80
+M i 523 227 227 64 "hal_hldpc_init, isSynchronous=%d"
+f 524 "src/msp_hal/src/hal_scramble.c"
+M n 524 50 50 64 "HAL_ScramblerCalcSeedByMuAndPage - seed=0x%x, Mu=%u, Page=%u"
+A 10662 524 62
+M i 524 120 121 64 "Seed verification has failed, actual: seed %u, algo seed: %u, mu: %u, iterations:%u "
+M i 524 122 122 64 "  block: %u, plane: %u, page: %u, endurance: %u"
+A 7167 524 124
+M n 524 141 155 -1 "================= ASSERT has failed ===========================\n\n"
+A 7763 524 206
+A 7764 524 231
+f 525 "src/msp_hal/src/hal_icacc.c"
+M i 525 257 257 64 "hal_icacc_overflow_channel0_isr"
+A 3498 525 258
+M i 525 263 263 64 "hal_icacc_overflow_channel1_isr"
+A 3499 525 264
+A 6452 525 798
+A 6453 525 819
+M i 525 1080 1080 64 "HalIcacc_SetActiveDieLimitation channel=%d, g_num_of_dies_per_channel=%d, limitEnable=%d"
+A 3505 525 1349
+M i 525 1630 1631 64 "HalIcacc_WriteThresholdsToNAND [%u, %u]: params 0 and 1: 0x%x, params 2 and 3: 0x%x"
+A 3506 525 1689
+A 3507 525 1720
+A 3508 525 1936
+M i 525 2115 2115 64 "[0x%03x] use_71h %d. use_73h %d."
+A 5295 525 2137
+M i 525 2156 2156 64 "SW Tag 0x%x Pushed for End Command Fifo"
+A 6874 525 2281
+M i 525 2430 2430 64 "HalIcacc_Program: moved from state %u to %u"
+M i 525 2474 2475 64 "ProgramChef_TerminateCache - different number of planes, terminating. blockData.numOfPlanes = 0x%x GetNumOfPlanesFromDataBase(queueId) = 0x%x"
+M i 525 2481 2483 64 "ProgramChef_TerminateCache: recipe plane = %u, mirror plane = %u, recipe block = %u, mirror block = %u"
+M i 525 2493 2493 64 "ProgramChef_TerminateCache: isTerminateRequired = %u"
+M i 525 2569 2569 64 "HalIcacc_Program: last = %u, progConfig->bitfield.progCacheActive = %u"
+A 3510 525 2607
+M i 525 2616 2616 64 "HalIcacc_Program: cache program state = %u"
+M n 525 2756 2760 64 "HalIcacc_releaseFTLBuffers - BufferId=%d, BufferIndex=%d, Plane=%d, MU index=%d"
+A 5215 525 2813
+A 5216 525 2814
+M i 525 2842 2842 64 "[0x%03x] HalIcacc_Program - select for bypass"
+M n 525 2846 2849 64 "[0x%03x] HalIcacc_Program - mspData.bits.seed=0x%x, mspData.bits.lsb_usb_msb=%d, endurance=%d"
+M n 525 3014 3015 64 "HalIcacc_Program - cache tag = 0x%x, terminate cache %u"
+M i 525 3035 3035 64 "Data: 0x%08x-0x%08x-0x%08x-0x%08x"
+M i 525 3161 3161 64 "HalIcacc_ProgramFTL_SP - Send 0x11"
+M i 525 3211 3211 64 "MSP_Sat_flushProgramPath: status0: 0x%x, status1: 0x%x, cmdFifo:0x%x"
+A 5217 525 3213
+M i 525 3280 3283 64 "HalIcacc_DummyProgram - seed=0x%x, swTag=%x, Mu=%u, saturated %d"
+M i 525 3538 3538 64 "DIE RESET queue 0x%x"
+M i 525 3664 3664 64 "DIE RESET queue 0x%x"
+M i 525 3710 3710 64 "DIE RESET queue %x"
+M i 525 3853 3853 64 "Going to change clock from %u to %u using %u divider"
+A 3512 525 3891
+A 6904 525 4227
+M i 525 4386 4386 64 "HalIcacc_set_nand_vref_in_all_dies, enableVref=%d, power_mode=%d"
+M i 525 4427 4427 64 "HalIcacc_set_delay_in_icacc_per_channel, qId=%d, delay=%d"
+A 3514 525 4447
+M i 525 4497 4497 64 "HalIcacc_store_variables, g_num_of_dies_per_channel=%d, g_enable_apple_ppm_mode=%d, g_enable_ppm=%d, g_ppm_enable_control=%d"
+M i 525 4534 4534 64 "HalIcacc_warm_boot_init, g_num_of_dies_per_channel=%d, g_enable_ppm=%d, g_enable_apple_ppm_mode=%d, g_ppm_enable_control=%d"
+M i 525 4537 4537 64 "HalIcacc_store_variables, Perfromance Equalization, P_enable=%d, ER_enable=%d eraseDelay=%d"
+M i 525 4538 4538 64 "HalIcacc_store_variables, progLsbDelay=%d, progMsbDelay=%d, senseLsbDelay=%d, senseMsbDelay=%d"
+f 526 "src/msp_hal/src/hal_icacc_read.c"
+A 3500 526 149
+M i 526 620 620 64 "Enter seq cache mode for msp channel %u, die %u"
+M i 526 635 635 64 "HalIcacc_enterCacheMode, Send 0x31"
+A 3513 526 655
+M i 526 687 687 64 "Exit seq cache mode for msp channel %u, die %u, send 0x3F"
+A 3502 526 960
+A 4308 526 1074
+A 4309 526 1075
+f 527 "src/msp_hal/src/hal_icacc_templates.c"
+A 4310 527 233
+A 4311 527 252
+A 3525 527 678
+f 528 "src/msp_hal/src/hal_icacc_hynix.c"
+M i 528 273 274 64 "HalIcacc_ChangeWriteColumnEnhanced Hynix: queue id=0x%x, page=%u, plane and lp=%x, column=%u"
+M i 528 311 311 64 "HalIcaccSpecific_WriteThreshold - die=%d, address=0x%02X, value=0x%02X"
+A 3515 528 338
+M i 528 383 383 64 "HalIcaccSpecific_ChangeVccq - die=%d, address=0x%X, value=%d"
+A 3516 528 419
+M i 528 421 421 64 "HalIcaccSpecific_sendPPMCfgToNand, ppm_erase_enable=%d, ppm_Prog_enable=%d, ppm_read_enable=%d"
+M i 528 441 441 64 "HalIcaccSpecific_sendPPMCfgToNand: send cfg=0x%X for all dies"
+A 3517 528 472
+A 3518 528 473
+M i 528 484 484 64 "Hynix PPM was activated."
+M i 528 490 490 64 "Hynix PPM was deactivated."
+M i 528 498 498 64 "Hynix PPM fire callback."
+M i 528 513 513 64 "HalIcacc_EnablePpm, num_of_sent_cmds=%d, activate=%d"
+M i 528 537 537 64 "HalIcacc_EnablePpm_After_PG"
+M i 528 867 867 64 "HalIcaccSpecific_HalfPageDecision - muBitmap = 0x%X "
+M i 528 884 884 64 "HalIcaccSpecific_HalfPageDecision - half_decision = %u "
+A 3521 528 941
+A 3522 528 942
+M i 528 1046 1046 64 "VTH index=%u - address=0x%02X, value=0x%02X"
+M i 528 1054 1054 64 "VTH FW SLC Mode - address=0x%02X, value=0x%02X"
+f 529 "src/msp_hal/src/hal_icacc_toshiba.c"
+M i 529 187 187 64 "HalIcacc_EnablePpm_After_PG"
+M i 529 303 304 64 "HalIcacc_WriteThresholdsToNAND - queueId:0x%x params 4 and 5: 0x%x, params 6 and 7: 0x%x"
+f 530 "src/msp_hal/src/hal_icacc_sandisk.c"
+A 3523 530 204
+A 3524 530 208
+M i 530 209 210 64 "HalIcacc_WriteThresholdsToNAND - queueId:0x%x params 4 and 5: 0x%x, params 6 and 7: 0x%x"
+M i 530 386 386 64 "HalIcaccSpecific_parseUniqueIdValue - data was found after %d retries"
+f 531 "src/msp_hal/src/hal_icacc_samsung.c"
+A 5895 531 503
+A 5896 531 508
+M i 531 527 528 64 "HalIcaccSpecific_getPrgAddress: pageType %u, wl %u, planeIndex %u, result=>0x%x "
+M i 531 594 594 64 "HalIcaccSpecific_commitCMD: plane %u, order %u, raw address 0x%x"
+A 6008 531 663
+A 6009 531 664
+f 532 "src/msp_hal/src/hal_icacc_device_common.c"
+M i 532 178 179 64 "HalIcacc_ChangeWriteColumnEnhanced: queue id=0x%x, page=%u, plane and lp=%x, column=%u"
+M i 532 286 286 64 "HalIcaccDeviceCommon_parseUniqueIdValue - data was found after %d retries"
+A 3501 532 310
+M i 532 316 316 64 "HalIcacc_Program - Send Phase Prefix =0x%x, program cycle =%u"
+f 533 "src/msp_hal/src/hal_read_path.c"
+A 3545 533 53
+A 3546 533 95
+A 3547 533 114
+A 3548 533 158
+M i 533 276 276 64 "HalIcacc_ReadThresholdsFromNAND. channel %d. die %d."
+M i 533 277 277 64 "HalIcacc_ReadThresholdsFromNAND. param0 0x%x. param1 0x%x. param2 0x%x. param3 0x%x."
+M i 533 281 281 64 "HalIcacc_ReadThresholdsFromNAND Failure. mirror0 0x%x. mirror1 0x%x. mirror2 0x%x. mirror3 0x%x."
+f 534 "src/msp_hal/src/hal_resource_manager.c"
+A 3549 534 110
+A 3550 534 114
+A 3551 534 307
+A 3552 534 311
+A 3553 534 321
+A 3554 534 373
+A 3555 534 415
+A 3556 534 416
+A 3557 534 437
+f 535 "src/msp_hal/src/hal_staging_buffers.c"
+f 536 "src/msp_hal/src/hal_ppm.c"
+M i 536 91 91 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+M i 536 98 98 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+M i 536 105 105 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+M i 536 112 112 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+f 537 "src/msp_hal/src/hal_ccu.c"
+f 538 "src/msp_hal/src/hal_clocks.c"
+A 3474 538 224
+M i 538 305 305 64 "hal_clocks_move_to_high_clock: cpuClockMhz=%d "
+A 3475 538 655
+M i 538 748 748 64 "hal_clocks_s3x_configure_operational_mode. isDdr %d. ddr_rd_freq_mhz %d. ddr_wr_freq_mhz %d."
+A 5087 538 1042
+A 5088 538 1120
+M i 538 1355 1356 64 "hal_clocks_update_s3x_internal_clocks. product_read_freq %d. product_write_freq %d. g_hal_clocks_internal_rd_freq_mhz %d. g_hal_clocks_internal_wr_freq_mhz %d."
+A 7096 538 1358
+A 7097 538 1359
+A 5086 538 1426
+f 539 "src/msp_hal/src/hw_init.c"
+A 8192 539 267
+A 3588 539 287
+f 540 "src/msp_boot_loader/src/boot_loader_main.c"
+M i 540 122 122 64 "Hello from boot_loader_main"
+A 2871 540 144
+M i 540 149 149 64 "Loading DFWOFW (0/1): %d"
+M i 540 165 165 64 "Entering the while loop - FW Type : %d"
+A 2872 540 271
+M i 540 326 326 64 "Read parameters: Plane = %d Block = %d Page = %d"
+M i 540 327 327 64 "\t\t\t    Section = %d Column = %d"
+A 2873 540 426
+A 2874 540 438
+M i 540 460 460 64 "Boot Loader RPMF interrupt"
+A 2875 540 467
+M i 540 473 473 64 "Decoder status (1-Success/0-Fail): %d"
+M i 540 474 474 64 "SW Tag = 0x%x (Page = %d, Sector = %d)"
+A 2876 540 500
+M i 540 503 503 64 "Read fail, trying to read next block"
+M i 540 563 563 64 "mspBootAddress = 0x%08x"
+M i 540 564 564 64 "cpuBootAddress = 0x%08x"
+M i 540 565 565 64 "BL Completed :-)"
+M i 540 720 720 64 "DMA completion ISR"
+M i 540 724 724 64 "DMA completion ISR, section_byte_counter = %d"
+A 2877 540 732
+M i 540 739 739 64 "Initiating a new sub section down load:"
+M i 540 745 745 64 "     bootLoaderDB.section_descriptor_index = %d"
+M i 540 746 746 64 "     bootLoaderDB.logical_page_number      = %d"
+M i 540 757 757 64 "Total copied bytes = %d"
+M i 540 763 763 64 "Completed R5 download"
+M i 540 796 796 64 "Completed A5 download"
+M i 540 819 819 64 "Completed Extra download"
+A 2878 540 831
+M i 540 902 902 64 "     bootLoaderDB.section_byte_counter = %d"
+M i 540 903 903 64 "     bootLoaderDB.p_memory_chunk       = 0x%X"
+M i 540 947 947 64 "TOC Length - %d"
+M i 540 952 952 64 "Read value = 0x%08x"
+M i 540 958 958 64 "bootLoaderDB.toc.Execution_address = 0x%08x"
+M i 540 959 959 64 "bootLoaderDB.toc.magic1 = 0x%08x"
+M i 540 960 960 64 "bootLoaderDB.toc.magic2 = 0x%08x"
+M i 540 961 961 64 "bootLoaderDB.toc.sw_version = 0x%08x"
+M i 540 962 962 64 "bootLoaderDB.toc.toc_element_count = %d"
+M i 540 963 963 64 "bootLoaderDB.toc.toc_length = %d"
+M i 540 965 965 64 "bootLoaderDB.toc.section_descriptor[0].byte_offset = %d"
+M i 540 966 966 64 "bootLoaderDB.toc.section_descriptor[0].dest_mem_address = 0x%08x"
+M i 540 967 967 64 "bootLoaderDB.toc.section_descriptor[0].section_length = %d"
+M i 540 975 975 64 "SW versions are not the same!"
+A 2880 540 982
+A 2881 540 1001
+A 2882 540 1004
+M i 540 1043 1043 64 "Writing to the file for debug"
+A 2883 540 1059
+M i 540 1100 1100 64 "DMA: Bytes to copy = %d"
+M i 540 1101 1101 64 "     SB offset     = 0x%08x"
+M i 540 1102 1102 64 "     Destination   = 0x%08x"
+M i 540 1103 1103 64 "     Last          = %d"
+A 2884 540 1174
+M i 540 1180 1180 64 "Wrong magic1 was identified. State  = %d Magic1 = 0x%08x"
+A 2885 540 1182
+f 541 "src/msp_boot_loader/src/hal_icacc_bl.c"
+f 542 "src/msp_boot_loader/unit_tests/boot_loader_ut.c"
+M i 542 68 68 64 "Hello from boot_loader_ut_main"
+M i 542 245 245 64 "Override decoder result at block = %d, page = %d, sector = %d"

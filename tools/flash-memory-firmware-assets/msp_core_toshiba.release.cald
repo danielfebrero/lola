@@ -1,0 +1,1917 @@
+
+C 0 FTL
+C 1 MSP0
+C 2 MSP1
+C 3 MSP2
+C 4 MSP3
+C 5 HW
+C 6 HW_MSP0
+C 7 HW_MSP1
+C 8 HW_MSP2
+C 9 HW_MSP3
+c 0 T_DEVICE DEVICE 
+c 1 T_DEVICE_ASP_CPU DEVICE/ASP_CPU 
+c 2 T_DEVICE_MSP_CPU_0 DEVICE/MSP_CPU_0 
+c 3 T_DEVICE_MSP_CPU_1 DEVICE/MSP_CPU_1 
+c 4 T_DEVICE_MSP_HW DEVICE/MSP_HW 
+c 5 T_DEVICE_COMMON_HW DEVICE/COMMON_HW 
+c 6 T_DEVICE_FLASH DEVICE/FLASH 
+c 7 T_DEVICE_ICACC DEVICE/ICACC 
+c 8 T_DEVICE_SERIALV DEVICE/SERIALV 
+c 9 T_DEVICE_SERIALC DEVICE/SERIALC 
+c 10 T_DEVICE_INTERNAL DEVICE/INTERNAL 
+c 11 T_DEVICE_PROG_PATH DEVICE/PROG_PATH 
+c 12 T_DEVICE_READ_PATH DEVICE/READ_PATH 
+c 13 T_DEVICE_RM DEVICE/RM 
+c 14 T_DEVICE_MSP_STUB DEVICE/MSP_STUB 
+c 15 T_DEVICE_FE_WRITE DEVICE/FE_WRITE 
+c 16 T_DEVICE_FE_READ DEVICE/FE_READ 
+c 17 T_DEVICE_CE_FIFO DEVICE/CE_FIFO 
+c 18 T_DEVICE_DMA DEVICE/DMA 
+c 19 T_DEVICE_RAID DEVICE/T_DEVICE_RAID 
+c 20 T_DEVICE_PMGR DEVICE/PMGR 
+c 21 T_DEVICE_GPIO DEVICE/GPIO 
+c 22 T_DEVICE_PIO DEVICE/PIO 
+c 23 T_DEVICE_FUSES DEVICE/FUSES 
+c 24 T_DEVICE_PL310 DEVICE/PL310 
+c 25 T_DEVICE_TE DEVICE/TE 
+c 26 T_DEVICE_EVENT_HANDLER DEVICE/EVENT_HANDLER 
+c 27 T_DEVICE_DLL_DISPATCHER DEVICE/DLL_DISPATCHER 
+c 28 T_DEVICE_FE DEVICE/FRONT_END 
+c 29 T_DEVICE_CTIMER DEVICE/CTIMER 
+c 30 T_DEVICE_SIMPLE_LOGGER DEVICE/SIMPLE_LOGGER 
+c 31 T_DEVICE_AIC_TIMER DEVICE/AIC_TIMER 
+c 32 T_DEVICE_SPI_HW DEVICE/DEVICE_SPI_HW 
+c 33 T_DEVICE_SCU DEVICE/SCU 
+c 34 T_DEVICE_GIC DEVICE/GIC 
+c 35 T_DEVICE_SYSDMA DEVICE/SYSDMA 
+c 36 T_DEVICE_CTL_TIMER DEVICE/CTL_TIMER 
+c 37 T_DEVICE_IPI DEVICE/IPI 
+c 38 T_DEVICE_UART DEVICE/UART 
+c 39 T_MCHEF MCHEF 
+c 40 T_MCHEF_LUA MCHEF/LUA 
+c 41 T_MCHEF_RUN_TIME_LOG MCHEF/RUN_TIME_LOG 
+c 42 T_ASP ASP 
+c 43 T_ASP_GENERAL ASP/General 
+c 44 T_ASP_TEST ASP/Test 
+c 45 T_ASP_TEST_1 ASP/Test/1 
+c 46 T_ASP_TEST_2 ASP/Test/2 
+c 47 T_ASP_CLI ASP/CLI 
+c 48 T_ASP_SYSLOG ASP/SYSLOG 
+c 49 T_ASP_SYSLOG_KERN ASP/SYSLOG/KERNEL 
+c 50 T_ASP_SYSLOG_USER ASP/SYSLOG/USER 
+c 51 T_ASP_SYSLOG_SYSLOG ASP/SYSLOG/SYSLOG 
+c 52 T_ASP_SYSLOG_DAEMON ASP/SYSLOG/DAEMON 
+c 53 T_ASP_SYSLOG_MCS ASP/SYSLOG/MCS 
+c 54 T_ASP_SYSLOG_MAILBOX ASP/SYSLOG/MAILBOX 
+c 55 T_ASP_SYSLOG_AIC ASP/SYSLOG/AIC 
+c 56 T_ASP_SYSLOG_EXCEP ASP/SYSLOG/EXCEP 
+c 57 T_ASP_SYSLOG_MGMT ASP/SYSLOG/MGMT 
+c 58 T_ASP_SYSLOG_NAND ASP/SYSLOG/NAND 
+c 59 T_ASP_KTRACE ASP/KTRACE 
+c 60 T_ASP_SYS_PRODUCTION ASP/SYSTEM/PRODUCTION 
+c 61 T_ASP_SYS_FW_UPDATE ASP/SYSTEM/FW_UPDATE 
+c 62 T_ASP_SYS_FW_COPY ASP/SYSTEM/FW_COPY 
+c 63 T_ASP_SYS_FW_BURN_IN ASP/SYSTEM/FW_BURN_IN 
+c 64 T_MSP MSP 
+c 65 T_ALGO ALGO 
+c 66 T_MSP_UT MSP_UNIT_TEST 
+c 67 T_PCI_BRIDGE PCI_BRIDGE 
+c 68 T_COMMON COMMON 
+f 501 "src/arch/arm/exception.c"
+f 502 "src/arch/arm/hibernate.c"
+f 503 "src/arch/arm/mpu.c"
+f 504 "src/arch/arm/mpu_accessors.c"
+f 505 "src/arch/arm/tcm.c"
+f 506 "src/arch/arm/tcm_accessors.c"
+f 507 "src/platform/s3e_msp/pre_init.c"
+f 508 "src/platform/s3e_msp/memmap_mmio.c"
+f 509 "src/platform/s3e_msp/platform.c"
+A 3606 509 204
+f 510 "src/platform/s3e_msp/mpu_platform.c"
+f 511 "src/platform/s3e_msp/tcm_platform.c"
+f 512 "src/platform/s3e_msp/platform_assert.c"
+A 4677 512 114
+A 4678 512 117
+A 4679 512 120
+A 4680 512 123
+f 513 "src/platform/s3e_msp/fuses.c"
+f 514 "src/platform/s3e_msp/alterman_wrapper.c"
+A 3604 514 574
+A 3605 514 671
+f 515 "src/platform/s3e_msp/init_standalone.c"
+f 516 "src/target/msp_core_toshiba/init.c"
+f 517 "src/drivers/apple/s3e_clocks/s3e_clocks.c"
+f 518 "src/rtxc/kernel/rtxc_stubs.c"
+f 519 "src/rtxc/gdb/gdb_stub.c"
+f 520 "src/rtxc/gdb/gdb_command.c"
+f 521 "src/app/msp_core/main.c"
+M i 521 190 190 64 "Hello counter = %d"
+f 522 "src/msp_core/src/power_manager.c"
+A 3098 522 162
+M i 522 222 222 64 "Setting taps to default"
+M i 522 273 273 64 "HARD DIE RESET msp channel %u, die %u"
+M i 522 278 278 64 "SOFT DIE RESET (0x%X) msp channel %u, die %u"
+M i 522 284 284 64 "WARM BOOT DIE RESET msp channel %u, die %u"
+A 4334 522 288
+A 9738 522 296
+M i 522 334 334 64 "Detecting boot information using get_hw_info"
+M i 522 415 415 64 "Get boot info - magic 0x%x"
+M i 522 656 656 64 "hal_internal_calc_tap: ch_0_wr_start=%d, ch_0_wr_stop=%d, ch_0_rd_start=%d, ch_0_rd_stop=%d "
+M i 522 657 657 64 "hal_internal_calc_tap: ch_1_wr_start=%d, ch_1_wr_stop=%d, ch_1_rd_start=%d, ch_1_rd_stop=%d "
+A 3099 522 685
+M i 522 742 743 64 "pm_configure_hw - p_power_state->hw_state=%u, power_mode=%u, nand_mode=%u, rd_freq_mhz|wr_freq_mhz=0x%08X"
+M i 522 751 751 64 "pDriveParameters->drive_geom.ce_per_msp = %u"
+A 5220 522 990
+M i 522 996 996 64 "pm_read_fuse_hard_reset_threshold: fuse_word_1=0x%x, hard_reset_thr_enum=%d"
+M i 522 1018 1018 64 "pm_read_fuse_hard_reset_threshold: current_duration=%d, ThrFromTrim=%d, skiphardreset=%d"
+M i 522 1049 1049 64 "pm_reset_all_dies, channel=%d, die=%d, CE=%d"
+M i 522 1056 1056 64 "pm_reset_all_dies, soft reset duration, channel=%d, die=%d, CE=%d, duration=%d"
+M i 522 1129 1129 64 "pm_change_system_mode, power_mode low, nand_mode=%u, sw_mode=%u, boot_mode=%u"
+M i 522 1157 1157 64 "pm_change_system_mode power_mode=%d, tmp_num_of_dies=%d"
+M i 522 1180 1180 64 "pm_reconfigure_system_mode"
+M i 522 1225 1225 64 "scratch0_val = %u, pFuses->BFH  = %u, are we in BFH ? %d (0/1 - No/Yes)"
+M i 522 1269 1269 64 "pm_start - boot mode = %d"
+M i 522 1416 1416 64 "pm_read_BD_from_NAND: BD successfully read from block %u, plane %u"
+M i 522 1441 1441 64 "pm_update_boot_information: try to get BD"
+M i 522 1455 1455 64 "No BD found, Did you run production? Asserting ..."
+A 3100 522 1456
+M i 522 1516 1516 64 "FW to asic fuse mismatch: expected %d fuse value %d. ASSERTING :("
+A 3101 522 1517
+M i 522 1535 1535 64 "pm_start - boot_mode=%u, required_nand_mode=%u"
+M i 522 1685 1685 64 "pm_set_host_ddr_address - host_ddr_address=0x%08X, off_sram_addr=0x%08X, off_sram_size=%u"
+A 3103 522 1698
+A 3104 522 1709
+A 3105 522 1710
+M i 522 1712 1712 64 "pm_set_host_ddr_address - ddr_addr=0x%08X, sram_section_address=0x%08X, sram_section_size=%u"
+M i 522 1745 1745 64 "pm_enter_failure_analysis_mode - vic[0]=0x%08X, vic[1]=0x%08X, vic[2]=0x%08X, vic[3]=0x%08X"
+M i 522 1769 1769 64 "pm_enter_pg_mode - is_nand_power_off_possible=%u"
+M i 522 1841 1841 64 "pm_leave_pg_mode, canceled sleep = %d"
+M i 522 1846 1846 64 "is_failure_analysis"
+f 523 "src/msp_core/src/always_on_data.c"
+f 524 "src/msp_core/src/sous_chef.c"
+A 3197 524 44
+A 3198 524 46
+M i 524 69 69 64 "[0x%03x] Replacing SLC opmode to TRUE SLC opmode"
+A 3199 524 100
+M i 524 125 125 64 "Identified last page in block, opmode = %u"
+M i 524 131 131 64 "Identified last page in block, opmode = %u"
+M i 524 151 151 64 "[0x%03x] CalculateRnbMeasurementResult - start       = %u"
+M i 524 152 152 64 "[0x%03x] CalculateRnbMeasurementResult - end         = %u"
+M i 524 153 153 64 "[0x%03x] CalculateRnbMeasurementResult - duration    = %u"
+f 525 "src/msp_core/src/erase_chef.c"
+A 2978 525 99
+M i 525 115 115 64 "[0x%03x] EraseChef_Start RecipeIdx=%u MLC/SLC/TLC=%u"
+M i 525 116 117 64 "EraseChef_Start - block0=%u, block1=%u, block2=%u, block3=%u"
+M i 525 163 164 64 "[0x%03x] EraseChef_StartProduction -  msp=%u, die=%u, SP block=%u"
+M i 525 193 194 64 "[0x%03x] EraseChef_EraseFinishCB - recipeIdx=%u, statusFailureBitmapToHost=0x%08x"
+f 526 "src/msp_core/src/control_chef.c"
+M i 526 111 111 64 "[0x%03x] ControlChef_Start - recipeIdx=%u"
+M i 526 112 115 64 "Control Opcode - %d, Number of Args - %d, Number of Buffer Indexes - %d"
+A 2962 526 117
+A 2963 526 118
+M i 526 143 147 64 "Control Opcode: RECIPE_CONTROL_ALTERMAN_EARLY_INIT: wp_addr = 0x%x. rp_addr = 0x%x, buffer_address = 0x%x, buffer_size = %d"
+M i 526 191 192 64 "Control Opcode: RECIPE_CONTROL_SEND_DDR_BASE_ADDRESSES: g_p_mu_data 0x%x. g_p_mu_meta_data 0x%x."
+M i 526 217 217 64 "NAND Mode = %u ddr_rd_freq_mhz = %u ddr_wr_freq_mhz = %u"
+A 2964 526 274
+A 2965 526 275
+M i 526 278 278 64 "Control Opcode: RECIPE_CONTROL_IF_SETUP: g_p_mu_data 0x%x. g_p_mu_meta_data 0x%x. g_msp2asp_ipi_msg_ram 0x%x. g_asp2msp_ipi_msg_ram 0x%x."
+M i 526 292 292 64 "Control Opcode: RECIPE_CONTROL_OPCODE_PROD_SET_ECC_MODE - ECC mode = %d"
+A 2966 526 293
+A 2967 526 294
+M i 526 362 362 64 "Control Opcode: RECIPE_CONTROL_OPCODE_START_MSP_INTERNAL_TEST"
+A 2968 526 370
+M i 526 482 482 64 "Calling hal_exc_activate_eub_debug"
+A 2969 526 491
+A 2970 526 500
+M i 526 593 593 64 "Control Opcode: RECIPE_CONTROL_OPCODE_CONFIGURE_GRABBER"
+A 2971 526 603
+A 2972 526 646
+A 2973 526 656
+A 2974 526 699
+M i 526 715 715 64 "Control Opcode: RECIPE_CONTROL_OPCODE_SET_FAIL_LOGGER_CONTROL, new policy = 0x%x "
+A 4127 526 728
+M i 526 730 730 64 "Control Opcode: RECIPE_CONTROL_OPCODE_FIELD_COUNTERS_RESET, channel id = %d "
+M i 526 772 775 64 "Control Opcode: RECIPE_CONTROL_OPCODE_SET_APPLE_PPM_MODE, num_of_dies_per_channel=%d, g_enable_apple_ppm_mode=%d, pDriveParameters->drive_geom.dies_per_msp=%d"
+M i 526 862 862 64 "Unrecognized Control Opcode: 0x%x"
+M i 526 892 892 64 "[0x%03x] ControlChef_CB - recipeIdx=%u, status=0x%x"
+A 9697 526 921
+A 2976 526 933
+A 2977 526 937
+A 9734 526 948
+f 527 "src/msp_core/src/read_msp_data_chef.c"
+M i 527 140 140 64 "[0x%03x] ReadMspDataChef_Start recipeIdx=%u"
+M i 527 141 141 64 "Read MSP Data Opcode - %d, Number of Args - %d, Number of Buffer Indexes - %d. Start value - %x"
+A 3168 527 143
+A 3169 527 144
+M i 527 186 186 64 "FBBT read: StartAddr = 0x%x"
+M i 527 187 187 64 "FBBT read: AllocatedSize = %d"
+M i 527 193 193 64 "Change Read Path to 3.5K mode"
+A 3170 527 208
+M i 527 241 241 64 "Read MSP Data Opcode [%d]: status = %d"
+M i 527 254 254 64 "  *** Get Boot Information: A5 BI @0x%x, sw_version 0x%x, BI size %d"
+M i 527 289 289 64 "Read MSP Data Opcode:  RECIPE_RMD_OPCODE_GET_GRABBER_RESULTS"
+A 3171 527 298
+M i 527 302 302 64 "Read MSP Data Opcode: RECIPE_RMD_OPCODE_GET_ALGO_COUNTERS - Buffer Index = %d"
+A 3172 527 312
+A 4128 527 328
+A 4129 527 329
+M i 527 331 331 64 "Read MSP Data Opcode: RECIPE_RMD_OPCODE_MSP_GET_FIELD_COUNTERS - Buffer Index = %d"
+M i 527 345 345 64 "Read MSP Data Opcode: RECIPE_RMD_OPCODE_GET_MSP_FAIL_LOG - Buffer Index = %d"
+A 3173 527 367
+M i 527 368 368 64 "Read MSP Data Opcode: RECIPE_RMD_OPCODE_GET_MSP_COUNTERS_TLV_FORMAT - Buffer Index = %d"
+M i 527 378 378 64 "Read MSP Data Opcode: RECIPE_RMD_OPCODE_GET_SINGLE_MSP_COUNTER - Buffer Index = %d, Counter index = %d, counter = %d"
+A 4461 527 381
+A 3174 527 419
+A 3175 527 428
+A 3176 527 436
+A 3177 527 470
+A 4714 527 484
+M i 527 559 559 64 "Unrecognized Read MSP Data Opcode: 0x%x"
+A 3179 527 594
+M i 527 599 599 64 "[0x%03x] ReadMspDataChef_sendCompletion. transferSize: %d. txnIndication: %d."
+M i 527 600 600 64 "[0x%03x] ReadMspDataChef_sendCompletion. recipeIdx=%u. status=%d, statusNotSupported=%u."
+M i 527 703 703 42 "Drive Parameters copied to buffer #%d"
+M i 527 707 707 42 "Writing to address: 0x%08x"
+M i 527 708 708 42 "Read from address: 0x%08x"
+M i 527 737 737 42 "Code coverage data at %x (size %d in bytes)"
+A 3180 527 738
+M i 527 741 741 42 "Code coverage data copied to buffer #%d"
+A 3181 527 771
+M i 527 838 838 64 "FTL ads = %x, from acq buffer idx = %d, Allocated Size = %d"
+M i 527 850 850 64 "numOfPlanesPerMap  = %d"
+M i 527 854 854 64 "numOfBitsPerPlane  = %d"
+M i 527 878 879 64 "copy to FTL buffer ads = 0x%x, from acq buffer idx = %d, Copy Size = %d Src 0x%x"
+A 3183 527 970
+A 3184 527 971
+M i 527 1005 1006 64 "ReadMspData_getTlvInfo: done, tlv 0x%x, transfer length %u tlvs found %u"
+f 528 "src/msp_core/src/int_handler.c"
+A 2986 528 58
+A 5175 528 249
+A 2987 528 369
+f 529 "src/msp_core/src/msp_main.c"
+M i 529 280 280 64 "msp %d is Ready !"
+M i 529 377 377 64 "DRAM_VERIFICATION test, Msp=%d, Opmode=%d, isStartSoft_V_C=%d, Scratch3=0x%x"
+M i 529 391 391 64 "MSP INTERNAL TEST, Control Opcode: RECIPE_CONTROL_IF_SETUP: g_p_mu_data 0x%x. g_p_mu_meta_data 0x%x."
+f 530 "src/msp_core/src/nand_status_handler.c"
+M i 530 79 80 64 "[0x%03x] NandStatusHandler_StatusFifoCB -  fail for planeIndex=%d, status=0x%x, force fail:%u"
+f 531 "src/msp_core/src/program_chef.c"
+M i 531 148 148 64 "[0x%03x] ProgramChef_CRCErrorCB - CRC error detected. crc_value Should be: 0x%x"
+A 3120 531 196
+A 3121 531 197
+M i 531 204 204 64 "ProgramChef_Start - Icacc has already one program recipe, enqueue recipe and abort!, PgmCnt=%d"
+A 3122 531 227
+A 3123 531 232
+M i 531 286 288 64 "[0x%03x] ProgramChef_Start - recipeIdx=%u, endurance=%u, opmode/phase=0x%08x"
+M i 531 289 292 64 "[0x%03x] ProgramChef_Start - block0/block1=0x%08x, block2/block3=0x%08x, page=%u"
+A 3124 531 299
+M i 531 425 425 64 "ProgramChef_TerminateCache: non program opcode, terminating %x"
+M i 531 450 450 64 "ProgramChef_TerminateCache: block missmatch, terminating qID = %x"
+M i 531 458 458 64 "ProgramChef_TerminateCache: forceTerminate=1, cacheTerminate=%u"
+M i 531 463 463 64 "ProgramChef_TerminateCache: forceTerminate=1, die was reset"
+M i 531 511 511 64 "ProgramChef_StartProduction - queueId = 0x%X"
+M i 531 545 545 64 "[0x%03x] ProgramChef_StartProduction page=%u, block=%u, plane=%u"
+M i 531 546 546 64 "[0x%03x]                             first=%u, last=%u opmode=%d"
+A 9698 531 612
+A 9699 531 613
+A 3125 531 657
+M i 531 700 701 64 "[0x%03x] ProgramChef_ProgramFinishCB - recipeIdx=%u, recipeStatus=0x%08x"
+M i 531 706 706 64 "ProgramChef_ProgramFinishCB - Initiating Read After Program for swTag0x%x"
+f 532 "src/msp_core/src/program_flow_control.c"
+M i 532 82 82 64 "FlowControl enqueue (CE = %d, Head = %d, Tail = %d)."
+A 3127 532 85
+A 3128 532 127
+M i 532 136 136 64 "FlowControl dequeue (CE = %d, Head = %d, Tail = %d)."
+f 533 "src/msp_core/src/read_aggregator.c"
+A 3129 533 262
+f 534 "src/msp_core/src/read_chef.c"
+A 3130 534 126
+M i 534 151 153 64 "[0x%03x] Read recipeIdx=%u closed, opcode(16b)/status(16b) 0x%x (1 = failure), mask=0x%X"
+M i 534 235 236 64 "ReadChef_HmCompleteRecipe - muStatus=0x%02X, cnGrade=%u, trGrade=%u, heGrade=%u"
+M i 534 362 362 64 "ReadChef_isCachedModeRequired:cache mode is required"
+M i 534 495 498 64 "[0x%03x] ReadChef_Start - recipeIdx=%u, muBitmap:16b/opmode:4b/page:12b=0x%08x, block0/1=0x%08x"
+M i 534 501 502 64 "[0x%03x] ReadChef_Start - block2/3=0x%08x, opMode=%u"
+A 3131 534 510
+A 3132 534 571
+A 4207 534 623
+A 3133 534 635
+M i 534 768 768 64 "ReadChef_ConvertRDCounter got value of  %d"
+M i 534 795 795 64 "ReadChef_ConvertRDCounter six bit value is  0x%x, sense counter delta val is %d"
+A 3153 534 934
+M i 534 978 978 64 "BDB has returned invalid state %u"
+A 3134 534 979
+A 3135 534 1020
+M i 534 1041 1041 64 "ReadChef_HmStart recipe"
+M i 534 1062 1062 64 "ReadChef_HmStart recipe, policyId = %u"
+A 3136 534 1066
+A 3137 534 1067
+M i 534 1091 1091 64 "ReadChef_SenseStart recipe"
+M i 534 1126 1126 64 "[0x%03x] ReadChef_VendorStart: opcode=%u"
+M i 534 1197 1197 64 "[0x%03x] MEP On, Reread, mask 0x%x"
+M i 534 1256 1256 64 "[0x%03x] RPMF: Decode Failure. Call to FS1"
+M i 534 1278 1278 64 "[0x%03x] RPMF: Decode Failure. Last MU, turn on MEP and reread"
+M i 534 1285 1285 64 "[0x%03x] RPMF: Decode Success. recipeState:%u"
+A 3138 534 1296
+M i 534 1297 1297 64 "[0x%03x] RPMF: Decode Sucess. Last MU, turn on MEP and reread"
+A 4400 534 1316
+M i 534 1381 1381 64 "ReadChef_RpmfCb ASSERT - swTag=0x%x, MU agg state: %u"
+A 3139 534 1382
+M i 534 1397 1397 64 "[0x%03x] ReadChef_RndfCb - msg.word=0x%08x"
+A 3140 534 1412
+M i 534 1420 1420 64 "[0x%03x] ReadChef_RndfCb ASSERT - swTag=0x%x, MU agg state: %u"
+A 3141 534 1421
+M i 534 1444 1445 64 "[0x%03x] ReadChef_CdmfCb - completionMsg=0x%08x, recipe_state=%u"
+M i 534 1454 1454 64 "[0x%03x] ReadChef_CdmfCb - dummy command (FS1), mark as passed"
+A 3142 534 1455
+M i 534 1472 1472 64 "[0x%03x] ReadChef_CdmfCb - last MU, MU state:%u"
+A 3143 534 1509
+A 3149 534 1638
+A 3144 534 1659
+A 3145 534 1663
+A 3146 534 1668
+A 3147 534 1682
+M i 534 1697 1697 64 "[0x%03x] SvmfCb - invalid recipe"
+A 3148 534 1698
+f 535 "src/msp_core/src/read_chef_algo.c"
+A 3150 535 177
+A 3152 535 199
+M i 535 330 330 64 "[0x%03x] ReadChef_AlgoStart: add recipe to ALGO queue for processing"
+A 3154 535 386
+A 3155 535 396
+M i 535 419 419 64 "[0x%03x] Call ALGO - channel=%u, die=%u, plane=%u"
+M i 535 420 420 64 "[0x%03x]             block=%u, page=%u, bpc=%u"
+M i 535 433 433 64 "[0x%03x] Call ALGO with error injection - setting force fail - die=%u, mu=%u,"
+M i 535 473 473 64 "[0x%03x] ReadChef_doReRead: issue reread 0x%x"
+M i 535 526 526 64 "[0x%03x] ReadChef_AlgoClearQueue: clear algo element from the queue"
+M i 535 541 541 64 "[0x%03x] ReadChef_AlgoHandleReread: recipe state 0x%x"
+A 4049 535 565
+A 4050 535 567
+M i 535 579 579 64 "[0x%03x] ReadChef_AlgoExecuteDieTask: is reread required %u"
+M i 535 588 588 64 "[0x%03x] ReadChef_AlgoExecuteDieTask: tmode done %u"
+M i 535 630 630 64 "[0x%03x] ReadChef_AlgoTaskDone"
+A 3158 535 652
+A 3159 535 714
+M i 535 716 716 64 "[0x%03x] ReadChef_algoZeroErasedThrSet - zeroThreshold=%u, erasedThreshold=%u"
+A 3160 535 731
+A 3161 535 732
+A 3162 535 736
+M i 535 754 754 64 "[0x%03x] ALGO DONE - status %u"
+M i 535 767 767 64 "[0x%03x] ReadChef_AlgoDone - SUCCESS"
+M i 535 775 775 64 "[0x%03x] ReadChef_AlgoDone - Allocating staging buffer"
+M i 535 780 780 64 "[0x%03x] ReadChef_AlgoDone - Staging buffer allocated (%u)"
+M i 535 786 786 64 "[0x%03x] ReadChef_AlgoDone - No need to allocate staging buffer"
+M i 535 792 792 64 "[0x%03x] ReadChef_AlgoDone - ERASED/ZERO or FAILURE"
+M i 535 807 807 64 "[0x%03x] ReadChef_AlgoStgBufAllocated - staging buffer=%d"
+A 3163 535 825
+A 3164 535 846
+A 3165 535 866
+M i 535 922 922 64 "[0x%03x] ReadChef_AlgoStgBufCopied - staging buffer=%d"
+M i 535 975 975 64 "[0x%03x] ReadChef_AlgoUpdateMuStatus"
+M i 535 1043 1043 64 "ReadChef_AlgoSetCamValues: setting algo CAM values"
+A 3166 535 1045
+A 3167 535 1046
+f 536 "src/msp_hal/src/hal_icacc_read.c"
+A 3500 536 106
+M i 536 460 460 64 "Enter seq cache mode for msp channel %u, die %u"
+M i 536 465 465 64 "HalIcacc_enterCacheMode, Send 0x31"
+A 3513 536 483
+M i 536 513 513 64 "Exit seq cache mode for msp channel %u, die %u, send 0x3F"
+A 3502 536 674
+A 4306 536 690
+A 4307 536 713
+A 4308 536 794
+A 4309 536 795
+f 537 "src/msp_core/src/algo_cache.c"
+A 2907 537 57
+A 2908 537 58
+A 2909 537 75
+A 2910 537 76
+A 2911 537 77
+A 2912 537 86
+A 2913 537 87
+A 2914 537 88
+A 2915 537 99
+A 2916 537 100
+A 2917 537 101
+A 2918 537 105
+A 2919 537 122
+M i 537 133 133 64 "[0x%03x] ALGO_API_ReleaseCache: release cache %u"
+A 2920 537 145
+A 2921 537 172
+f 538 "src/msp_core/src/production_chef.c"
+M i 538 150 150 64 "ProductionChef_RpmfCb_LDPC - swTag=0x%x, muStatus=%u (pMsg->word0=0x%08x, pMsg->word1=0x%08x)"
+A 3106 538 153
+M i 538 179 179 64 "ProductionChef_CdmfCb_LDPC - swTag=0x%x, completionMsg=0x%08x"
+M i 538 216 216 64 "ProductionChef_StartLDPC - queueId = 0x%X"
+M i 538 250 250 64 "[0x%03x] ProductionChef_StartLDPC - page=%u, block=%u, plane=%u"
+M i 538 251 252 64 "[0x%03x]                            opMode=%d, sectorStart=0x%x, sectorCount=%u"
+A 3107 538 257
+M i 538 300 301 64 "ProductionChef_read_BCH: sector start:%d, currentSector:%d, column:%d, lp:%d"
+A 3108 538 303
+M i 538 334 334 64 "[0x%03x] Scrambling is enabled column is %d"
+M i 538 362 362 64 "ProductionChef_CdmfCb_BCH - swTag=0x%x, completionMsg=0x%08x, currentSector=%u"
+M i 538 382 382 64 "Data: 0x%08x-0x%08x-0x%08x-0x%08x"
+M i 538 392 392 64 "ProductionChef_BchCb - swTag=0x%x, success=%u"
+M i 538 430 430 64 "ProductionChef_RndfCb_BCH - swTag=0x%x, message=0x%08x"
+M i 538 471 471 64 "[0x%03x] ProductionChef_StartReadBCH - Sending sense "
+M i 538 484 485 64 "[0x%03x] ProductionChef_StartReadBCH - page=%u, block=%u, plane|opMode=%u"
+M i 538 818 818 64 "Case of Dummy program"
+M i 538 868 868 64 "Bad block (R5): msp=%u, die=%u, plane=%u, block=%u"
+M i 538 887 888 64 "[0x%03x] ProductionChef_CdmfCb_Read_FBBT - completionMsg=0x%08x, opMode=%d"
+A 3109 538 897
+M i 538 909 909 64 "Change Read Path to 4K mode"
+M i 538 920 920 64 "Fail to read from FBBT from DFW 0, starting to read from DFW 1"
+M i 538 940 940 64 "Fail to read from both DFWs"
+A 3111 538 941
+M i 538 948 948 64 "Reading next logical page, %u"
+M i 538 963 963 64 "ProductionChef_getFBBTOffset: the offset is %u"
+M i 538 978 978 64 "RpmfCb_Read_FBBT: swTag=0x%x, muStatus=%u (pMsg->word0=0x%08x, pMsg->word1=0x%08x)"
+M i 538 988 988 64 "Case of read failure in current MU, release exc buffer %u"
+M i 538 994 994 64 "Case of read success in current MU, with prev read failure in the block. Release stg buffer %u"
+M i 538 1041 1042 64 "Activate DMA, src address 0x%x, dest address 0x%x, transfer size %u, stg buffer id %u"
+M i 538 1113 1113 64 "ProductionChef_StartReadFBBT - swTag=0x%x, page=%u, block=%u, plane=%u"
+A 3112 538 1126
+M i 538 1158 1158 64 "force fail mu %u, block %u, page %u"
+M i 538 1193 1194 64 "ProductionChef_StartReadFBBT - opMode=%d, bytesLeftToCopy = %u, numOfMus = %u"
+M i 538 1254 1254 64 "Send Reset to die = %d, channel = %d"
+M i 538 1349 1349 64 "Flash info: vendor = %d, page size = %d"
+A 3113 538 1383
+M i 538 1443 1443 64 "code = 0x%X, planeIndex =  %d"
+A 3114 538 1458
+A 3115 538 1461
+A 3116 538 1609
+M i 538 1614 1614 64 "Channel 0 - Identified %d dies; Channel 1 - Identified %d dies"
+M i 538 1619 1620 64 "NAND Device ID: 0x%04X%04X%04X"
+M i 538 1691 1695 64 "Drive geometry(1): ce_per_msp=%d, dies_per_msp=%d, planes_per_die=%d, blocks_per_plane=%d"
+M i 538 1697 1701 64 "Drive geometry(2): pages_per_block=%d, pages_per_block_slc=%d, mu_per_page=%d, metadata_bytes_per_mu=%d"
+M i 538 1706 1710 64 "ecc_version: %d, nand_revision: %d, vendor: %d, device_density: %d"
+M i 538 1712 1716 64 "die_capacity: %d, log2_plane_count: %d, lithography: %d, technology : %d"
+M i 538 1736 1736 64 "ProductionChef_ReadUniqueIDFromTLV: ce = %u, uid->valid = %u, queueId = 0x%x"
+M i 538 1777 1777 64 "[0x%03x] ProductionChef_ReadUniqueID - read unique id for ce#%d"
+M i 538 1802 1802 64 "[0x%03x] ProductionChef_ReadUniqueID - read unique id for ce#%d, buffer id %d"
+M i 538 1831 1832 64 "ProductionChef_RndfCb_UniqueId - success: 0x%08x, 0x%08x, 0x%08x, 0x%08x"
+A 4048 538 1844
+M i 538 1849 1849 64 "ProductionChef_RndfCb_UniqueId - buf_id: %u, dstPtr: 0x%08x"
+M i 538 1856 1856 64 "ProductionChef_RndfCb_UniqueId - failed to exctract unique id"
+A 3117 538 1954
+M i 538 2006 2006 64 "ProductionChef_ReadDieCamValues - read CAM values for queueId 0x%x"
+M i 538 2108 2108 64 "CAM value failure for VTH %d - target is 0x%x, trim is (%d), NAND RV value is  - 0x%x "
+M i 538 2120 2120 64 "CAM value failure for VTH %d - target is 0x%x, nominal base is 0x%x, difference is bigger than allowed - %d "
+M i 538 2124 2124 64 "ProductionChef_ReadDieCamValues - cam value for RV#%d = %d"
+M i 538 2128 2128 64 "Calculated trim value for VTH %d is too big. trim is - %d max allowed is - %d ."
+M i 538 2213 2215 64 "ProductionChef_parse_tlv_NAND_desc: eccVersion=0x%x, vendor=0x%x, die_capacity=%u, log 2 planes = %u"
+M i 538 2217 2218 64 "ProductionChef_parseGetNandDescriptor(2): nand_revision=0x%x"
+M i 538 2241 2241 64 "ProductionChef_parse_tlv_OFW_Params_desc: data=0x%x, data=0x%x, data=0x%x, data=0x%x"
+M i 538 2250 2250 64 "ProductionChef_parse_tlv_OFW_Params_desc: sectorNum = %u"
+M i 538 2251 2251 64 "ProductionChef_parse_tlv_OFW_Params_desc: offsetInSector = %u"
+M i 538 2252 2252 64 "ProductionChef_parse_tlv_OFW_Params_desc: size = %u"
+M i 538 2254 2254 64 "ProductionChef_parse_tlv_OFW_Params_desc: here is the offset of OFWP TLV, pBootInformation->ofw_params.ofwp_offset = %u"
+M i 538 2264 2264 64 "ProductionChef_parse_tlv_Unique_Id: data[0]=0x%x, data[1]=0x%x, data[2]=0x%x, data[3]=0x%x"
+M i 538 2278 2279 64 "ProductionChef_parse_tlv_PTS_Header: PTSversion=0x%x, testResults=0x%x expected size = %u"
+A 3118 538 2293
+M i 538 2299 2299 64 "ProductionChef_parse_tlv_CAM_values: length = %u,status = 0x%x"
+M i 538 2320 2321 64 "ProductionChef_parse_tlv_S3X_Disk_Topology: msp_nand_connection %d. ce_per_channel %d. ani_ch_bitmap: %d."
+M i 538 2346 2346 64 "ProductionChef_parse_tlv_last: sectorNum = %u, offsetInSector = %u"
+M i 538 2353 2353 64 "ProductionChef_parse_tlv_last: did not identify an ofw params tlcv, here is the offset of all TLVs, pBootInformation->ofw_params.ofwp_offset = %u"
+f 539 "src/msp_core/src/sous_chef_init.c"
+f 540 "src/msp_core/src/calibration_chef.c"
+f 541 "src/msp_core/src/vendor_production_chef.c"
+M i 541 68 68 64 "[0x%03x] ProductionChef_CB - recipeStatus=0x%08x"
+A 3200 541 121
+A 4005 541 123
+M i 541 131 131 64 "Reset command = 0x%x"
+M i 541 152 152 64 "[0x%03x] Vendor Profuction Reset using polling: queueId = %u, Timer THD = %u"
+M i 541 220 220 64 "[0x%03x] Vendor Profuction Reset using polling: NAND Reply = %u, Duration = %u"
+A 3201 541 273
+A 3202 541 337
+M i 541 395 395 64 "[0x%03x] Vendor Profuction RNDF CB, opcode = %u, recipeIdx=%u"
+A 3203 541 403
+M i 541 440 440 64 "[0x%03x] ID[0] = 0x%02X, ID[1] = 0x%02X, ID[2] = 0x%02X "
+M i 541 441 441 64 "[0x%03x] ID[3] = 0x%02X, ID[4] = 0x%02X, ID[5] = 0x%02X "
+M i 541 446 446 64 "[0x%03x] Byte[0] = 0x%02X, Byte[1] = 0x%02X"
+M i 541 447 447 64 "[0x%03x] Byte[3] = 0x%02X, Byte[4] = 0x%02X"
+M i 541 452 452 64 "[0x%03x] Byte[0] = 0x%02X, Byte[1] = 0x%02X"
+M i 541 453 453 64 "[0x%03x] Byte[3] = 0x%02X, Byte[4] = 0x%02X"
+A 3204 541 460
+M i 541 495 496 64 "[0x%03x] Copy DMA completed. exceptionBufferId = %u"
+A 3205 541 520
+M i 541 543 543 64 "[0x%03x] Set Features: use by die = %u, queueId = %u"
+M i 541 544 544 64 "[0x%03x]               Address = 0x%02X"
+M i 541 545 545 64 "[0x%03x]               Byte[0] = 0x%02X, Byte[1] = 0x%02X"
+M i 541 546 546 64 "[0x%03x]               Byte[2] = 0x%02X, Byte[3] = 0x%02X"
+M i 541 587 587 64 "Set Parameter: Address = 0x%x, Value = 0x%x"
+M i 541 606 606 64 "Get Parameter: Address = 0x%x"
+A 3206 541 637
+M i 541 641 641 64 "Vendor Sequence: busValue0 = 0x%x, busValue1 = 0x%x, cycleType = %u"
+M i 541 652 653 64 "Force Assert: reached timer CB, performing the assert!, time value = %d"
+A 3207 541 654
+M i 541 666 667 64 "Force Assert: Time Period = %dusec, time value = %d"
+f 542 "src/msp_core/src/versioning_chef.c"
+M i 542 40 40 64 "VersioningChef_Start - bufferAddress=0x%08X, bufferSizeInBytes=%u"
+f 543 "src/msp_core/src/recipe_handler.c"
+M i 543 145 145 64 "Channel %d. SW Tag 0x%x Popped from End Command Fifo"
+M i 543 335 335 64 "pRecipeContext->recipePointer = 0x%x, pRecipeContext->msp_task_context=0x%x"
+A 3187 543 365
+A 3188 543 366
+A 3189 543 367
+A 5187 543 424
+M i 543 439 439 64 "recipe_handler_play_recipes: ce %u, index %u, counter %u"
+M i 543 447 447 64 "recipe_handler_play_recipes: found %u recipes in queue %u"
+M i 543 463 463 64 "recipe_handler_play_recipes: going to activate recipe index %u"
+A 5188 543 464
+A 5189 543 468
+M i 543 472 473 64 "recipe_handler_play_recipes: run recipe, opcode %u, index %u, counter %u"
+M i 543 763 763 64 "Receiving first sync word, g_MspID=%d"
+A 3190 543 764
+M i 543 773 773 64 "Receiving second sync word. g_MspID=%d, g_pMsp_task 0x%x."
+A 3191 543 787
+M i 543 819 819 64 " In MSP internal test, recipe ID %d"
+M i 543 911 911 64 "More than one recipes are in the MSP while expected to have only one. g_nOpenRecipes = %u"
+A 3194 543 912
+f 544 "src/msp_core/src/msp_sweep.c"
+A 3066 544 83
+A 3067 544 147
+M i 544 214 214 64 "MSPSweep: stateChange. read_state %d. copy_state %d"
+M i 544 226 226 64 "MSPSweep: stateChange1"
+M i 544 230 230 64 "MSPSweep: stateChange2"
+M i 544 237 237 64 "MSPSweep: stateChange3"
+M i 544 243 243 64 "MSPSweep: stateChange4"
+M i 544 250 250 64 "MSPSweep: stateChange5"
+M i 544 253 253 64 "MSPSweep: stateChange6"
+M i 544 259 259 64 "MSPSweep: No space in DMA fifo"
+A 3068 544 260
+A 3069 544 263
+A 3070 544 282
+A 3071 544 292
+M i 544 294 294 64 "MSPSweep: DMA Complete. sw tag:0x%x"
+A 3072 544 298
+A 3073 544 301
+M i 544 308 308 64 "MSPSweep: Recycling exception buffer %u. cache %u."
+A 3074 544 346
+A 3075 544 347
+A 3076 544 348
+A 3077 544 368
+A 3078 544 397
+M i 544 408 408 64 "MSPSweep: copy from exc buff %d offset %d to app buffer %d, offset %d"
+A 3079 544 412
+A 3080 544 424
+M i 544 453 453 64 "MSPSweep: Recipe exhausted"
+M i 544 461 461 64 "MSPSweep: no more exception buffers"
+M i 544 469 469 64 "MSPSweep: no space in DMA fifo"
+M i 544 484 484 64 "MSPSweep: exc buff id %d. size left in exc buff %d. Size left in app buffer %d. transfer size %d."
+A 3081 544 492
+A 3082 544 493
+A 3083 544 497
+M i 544 504 504 64 "MSPSweep: app buffer %d is full"
+M i 544 514 514 64 "MSPSweep: exc buffer %d completely read"
+M i 544 525 525 64 "MSPSweep: exc buffer %d NOT completely read"
+A 3084 544 554
+A 3085 544 557
+A 3086 544 562
+A 3087 544 564
+M i 544 578 578 64 "MSPSweep: Starting"
+M i 544 589 589 64 "MSPSweep: Continuing"
+A 3088 544 593
+M i 544 609 609 64 "MSPSweep: MSPSweep_complete"
+M i 544 637 637 64 "MSPSweep: exc buff ready. id %d. Size %d. total size %d"
+M i 544 666 666 64 "MSPSweep: pCtx->algo_params.nandID =   0x%X 0x%X 0x%X 0x%X"
+M i 544 667 667 64 "                                       0x%X 0x%X 0x%X 0x%X"
+f 545 "src/msp_core/src/rma_log.c"
+A 3195 545 141
+A 3196 545 142
+M i 545 172 172 64 "RMA log timer wraparound"
+f 546 "src/msp_core/src/msp_fs2.c"
+A 3040 546 118
+M i 546 230 230 64 "[0x%03x] FS2 read: muBitmap:0x%x, page:%u"
+M i 546 294 294 64 "[0x%03x] FS2 recipe start: muBitMap: 0x%x"
+A 3041 546 307
+A 3043 546 329
+A 4121 546 340
+A 4122 546 344
+A 3045 546 391
+M i 546 427 427 64 "[0x%03x] FS push CMD to SerV: swTag:0x%x, buff1:%u, buff2:%u"
+M i 546 428 428 64 "[0x%03x] FS push CMD to SerV: target:%d, forceFail:%d, lastMU:%u"
+M i 546 451 451 64 "[0x%03x] FS push CMD to SerV: get bit flips info"
+M i 546 470 471 64 "[0x%03x] MSP_FS2_isLastMUinPlane: mask 0x%x, planeMask 0x%x, checkMask 0x%x"
+A 3046 546 489
+A 3047 546 490
+A 3048 546 491
+M i 546 494 494 64 "[0x%03x] FS2 RNDF CB: erasedPage:%d, excBuff:%u"
+M i 546 498 498 64 "[0x%03x] FS2 RNDF CB: first call. Update & exit"
+M i 546 518 519 64 "[0x%03x] FS2 RNDF CB[%u]: zero/erased page 0x%x make Serial V to fail and go to ALGO"
+M i 546 524 525 64 "[0x%03x] FS2 RNDF CB[%u]: second call, palnes in ICACC:%u"
+f 547 "src/msp_core/src/msp_fs2_queues.c"
+A 3619 547 79
+A 3051 547 80
+A 3052 547 81
+A 3053 547 83
+A 3054 547 84
+M i 547 93 94 64 "FS2 add new recipe to queue channel %u die %u. Total num of recipes: %u"
+M i 547 102 102 64 "FS2 add new recipe to queue: select die %u"
+A 3055 547 116
+A 3056 547 130
+A 3057 547 145
+A 3058 547 146
+M i 547 150 151 64 "FS2 remove recipe from queue, channel %u die %u. Total num of recipes: %u"
+A 3059 547 167
+M i 547 181 181 64 "FS2 go to next queue: channel %u, new die %u"
+A 3060 547 186
+f 548 "src/msp_core/src/msp_debug.c"
+A 3013 548 138
+A 3014 548 139
+M i 548 143 143 64 "Invalid debug action - %u!"
+M i 548 148 148 64 "Invalid debug mode - %u!"
+M i 548 166 167 64 "Set debug action [%u, %u] action:%u mode:%u"
+A 3015 548 213
+A 3016 548 216
+A 3017 548 233
+A 3018 548 236
+A 3019 548 261
+A 3020 548 262
+A 3021 548 286
+A 3022 548 287
+A 3023 548 371
+A 3024 548 372
+M i 548 386 386 64 "Set MEP On probability [%u, %u] probability:%u"
+M i 548 483 486 64 "Trying to read an open TLC BLock!!!  Open Block : %d, die : %d, Plane=%d"
+A 3025 548 488
+M i 548 511 511 64 "Info		: 0x%08x 0x%08x 0x%08x"
+M i 548 512 512 64 "Data		: 0x%08x 0x%08x 0x%08x 0x%08x"
+M i 548 513 513 64 "Meta data	: 0x%08x 0x%08x 0x%08x 0x%08x"
+A 3026 548 518
+M n 548 529 529 64 "New Block inserted!!!  Current block : %d, previous block : %d"
+M n 548 535 535 64 "Block is closed!!!  Current block : %d, previous block : %d"
+M n 548 539 539 64 "Block Mismatch!!!  Current block : %d, previous block : %d"
+A 3027 548 540
+M i 548 563 565 64 "CheckSum Metadata Mismatch!!!  tempDataCheckSum : 0x%08x, previous checksum : 0x%08x"
+A 3028 548 566
+M i 548 570 572 64 "CheckSum Metadata Mismatch!!!  tempMetaDataCheckSum : 0x%08x, previous checksum : 0x%08x"
+A 3029 548 573
+A 3030 548 592
+M i 548 593 593 64 "Started Register IO Logger"
+f 549 "src/msp_core/src/msp_saturation.c"
+A 5179 549 116
+A 5180 549 117
+M i 549 131 131 64 "MSP_SAT_handleSaturatedQueue: channel %u"
+A 5181 549 134
+M i 549 138 139 64 "MSP_SAT_handleSaturatedQueue: active channel %u, swTag 0x%x"
+A 5182 549 148
+M i 549 151 151 64 "[0x%03x] MSP_SAT_handleSaturatedQueue: channel %u saturated plane %u"
+A 5183 549 152
+A 5184 549 167
+M i 549 168 168 64 "MSP_Sat_pauseIsr: saturation, channel %u, pause status 0x%x"
+A 5185 549 307
+M i 549 324 324 64 "MSP_Sat_flushProgramPath: status0: 0x%x, status1: 0x%x, cmdFifo:0x%x"
+A 5186 549 335
+M i 549 338 338 64 "MSP_Sat_flushProgramPath: queue %x, going to flush %u planes"
+M i 549 398 398 64 "[0x%03x] MSP_Sat_flushSaturatedQueues: start, icaccQueue %u"
+M i 549 418 419 64 "MSP_Sat_flushSaturatedQueues: ICACC queue has been flushed, cmd before %u, cmd after %u, pause int status 0x%x"
+M i 549 443 443 64 "MSP_Sat_flushSaturatedQueues: finished the recipe, last sw tag in ICACC = 0x%x"
+M i 549 515 515 64 "MSP_Sat_bypassScrambler: channel %u die %u"
+M i 549 567 567 64 "MSP_Sat_setScrablerMaxIterations: max iterations %u"
+M i 549 582 582 64 "[0x%03x] MSP_Sat_completionHandler: start, channel %u"
+M i 549 613 613 64 "MSP_Sat_completionHandler: channel %u, finished -> back to normal mode"
+f 550 "src/msp_core/src/msp_debug_verify_rap.c"
+M i 550 87 87 64 "MSP_ReadAfterProgram ERROR: invalid staging buffer index,swTag=0x%x"
+A 3031 550 88
+M i 550 93 93 64 "MSP_ReadAfterProgram ERROR: unexpected MU Index , swTag=0x%x"
+A 3032 550 94
+M i 550 114 114 64 "MSP_ReadAfterProgram - ERROR: LBA error detected for swTag=0x%x !!! "
+M i 550 115 115 64 "MSP_ReadAfterProgram - swTag=0x%x Read LBA = 0x%x "
+M i 550 116 116 64 "MSP_ReadAfterProgram - swTag=0x%x Prog LBA = 0x%x "
+A 3033 550 117
+A 3034 550 122
+M i 550 127 127 64 "MSP_ReadAfterProgram Status - LBA Compare SUCCESS, swTag=0x%x , LBA=0x%x"
+M i 550 138 138 64 "MSP_ReadAfterProgram Status - No errors found for Program Recipe swTag=0x%x , Releasing Recipe!"
+A 3035 550 170
+A 3036 550 211
+M i 550 213 213 64 "MSP_ReadAfterProgram - Sending Read  swTag=0x%x, ,page=0x%x, bpc=0x%x"
+M i 550 274 274 64 "MSP ReadAfterProgram - WRITING LBA swTag=0x%x , LBA=0x%x ,muIndex=0x%x , meta data buffer index=0x%x"
+M i 550 312 312 64 "MSP_ReadAfterProgram setting Die#%d ISR DisableMode=%d, "
+A 3037 550 338
+f 551 "src/msp_core/src/msp_fs1.c"
+A 3038 551 76
+A 3039 551 77
+M i 551 106 106 64 "[0x%03x] FS1 : Algo requests FS1, isFS1Debug=%u, force failure=%d"
+M i 551 119 119 64 "[0x%03x] FS1 : Algo decided to skip FS1, enabling force failure"
+M i 551 140 140 64 "[0x%03x] FS1 : Send Dummy CDMF"
+M i 551 159 159 64 "[0x%03x] FS1 : Send Dummy SVMF"
+f 552 "src/msp_core/src/algo_cmd_queue.c"
+A 2922 552 86
+A 2923 552 87
+A 2924 552 105
+A 2925 552 117
+A 2926 552 118
+f 553 "src/msp_core/src/algo_read_api.c"
+A 2927 553 181
+A 2928 553 199
+A 2929 553 227
+M i 553 232 233 64 "[0x%03x] READ API Start: algoSwId=0x%x, cmdHandle=0x%x, cache=%u"
+A 2930 553 236
+M i 553 251 252 64 "[0x%03x] READ API End: sense only, swId=0x%x, cmdHandle=0x%x"
+A 2931 553 285
+M i 553 306 306 64 "[0x%03x] READ API: issue read with decode, algoSwId=0x%x"
+M i 553 318 318 64 "[0x%03x] READ API: issue read with no decode, algoSwId=0x%x"
+M i 553 327 328 64 "[0x%03x] block=%u, page=%u, mu=%u"
+A 2932 553 349
+A 2933 553 359
+A 2934 553 383
+A 2935 553 384
+A 2936 553 408
+A 2937 553 409
+M i 553 473 474 64 "[0x%03x] READ API: signal decode done, algoSwId=0x%x, result=1, info=0x%x, staging buffer=%u"
+M i 553 478 479 64 "[0x%03x] READ API: signal decode done, algoSwId=0x%x, result=0, info=0x%x"
+M i 553 506 507 64 "[0x%03x] READ API: signal count 1's done, counter1:%u"
+M i 553 512 513 64 "[0x%03x] READ API: signal count 1's done, counter1:%u, counter2=%u"
+M i 553 520 522 64 "READ API: signal count 1's done, counter1:%u, counter2=%u, counter3:%u, counter4=%u"
+A 2938 553 525
+A 2939 553 549
+M i 553 566 567 64 "[0x%03x] READ API: update decode result (if needed) due to thresholds, confZeroThr=%u, confErasedThr=%u, 1's counter=%u"
+M i 553 581 581 64 "[0x%03x] READ API: release acq. buffers"
+A 2940 553 592
+M i 553 617 618 64 "[0x%03x] READ API: signal count 1's done, counter1:%u"
+M i 553 620 621 64 "[0x%03x] READ API: signal count 1's done, counter1:%u, counter2=%u"
+M i 553 623 625 64 "READ API: signal count 1's done, counter1:%u, counter2=%u, counter3:%u, counter4=%u"
+M i 553 627 627 64 "[0x%03x] Error in count 1's calc. actual result=%u, hw returned=%u, num of separators=%u"
+A 2941 553 628
+M i 553 645 646 64 "[0x%03x] READ API: command done, newSwTag=0x%x, algoSwId=0x%x"
+A 2942 553 682
+A 2943 553 686
+A 2944 553 694
+A 2945 553 717
+M i 553 721 722 64 "[0x%03x] READ API: run count 1's, buff1=%x, buff2=%x, buff3=%x"
+M i 553 742 743 64 "[0x%03x] READ API:  MSP dma done newSwTag=0x%x, algoSwId=0x%x"
+A 2946 553 752
+M i 553 757 757 64 "[0x%03x] READ API: command done, newSwTag=0x%x, algoSwId=0x%x"
+A 2947 553 776
+M i 553 782 783 64 "[0x%03x] READ API: run MSP dma algoSwId=0x%x, excBuffId=%u, acqBuffId=%u"
+A 2948 553 797
+A 2949 553 813
+M i 553 825 826 64 "[0x%03x] READ API: allocate acq buffer newSwTag=0x%x, algoSwId=0x%x"
+M i 553 831 832 64 "[0x%03x] READ API: copy exc to acq buffer newSwTag=0x%x, algoSwId=0x%x, acq_buff_id=%u"
+A 2950 553 840
+M i 553 842 842 64 "[0x%03x] READ API: command done, newSwTag=0x%x, algoSwId=0x%x"
+A 2951 553 854
+A 2952 553 947
+A 2953 553 948
+A 2954 553 949
+A 2955 553 950
+M i 553 987 988 64 "[0x%03x] READ API: Add to queue a new ALGO command, algoSwId=0x%x, cache=%u, params=0x%08x"
+A 2956 553 1002
+A 2957 553 1005
+A 2958 553 1006
+A 2959 553 1008
+A 2960 553 1009
+A 2961 553 1012
+f 554 "src/msp_core/src/msp_algo_common.c"
+M i 554 82 82 64 "Going to set ALGO flow, algoId=%x, msp=%u, channel=%u, state=%x"
+A 3000 554 86
+M i 554 111 111 64 "Randomize thresholds, algoId=%x, msp=%u, channel=%u, isOn=%u"
+A 3001 554 118
+A 3002 554 130
+A 4206 554 246
+A 3003 554 268
+M i 554 298 299 64 "[0x%03x] MSP_ALGO_checkPageType: Wrong page type! expected %u and got %u"
+f 555 "src/msp_core/src/msp_algo_comb.c"
+M i 555 103 103 64 "[0x%03x] Comb. Logic handler - cmdHandle = 0x%08x"
+A 2988 555 104
+A 2989 555 124
+A 2990 555 157
+M i 555 192 192 64 "[0x%03x] Comb. Logic handler - waiting for %u buffer allocations, type %u"
+A 4134 555 210
+A 4135 555 222
+A 4136 555 229
+M i 555 235 235 64 "[0x%03x] Comb Logic - Copy from 0x%x to 0x%x"
+M i 555 247 247 64 "[0x%03x] CombLogic_InputBufferCopied_CB - g_combNumOfCopies=%u"
+M i 555 298 298 64 "[0x%03x] Comb. Logic handler - waiting for %u exception buffer allocations"
+M i 555 329 330 64 "[0x%03x] Comb. Logic Execute - inputCaches[0]=%u, inputCaches[1]=%u, inputCaches[2]=%u"
+M i 555 331 332 64 "[0x%03x] Comb. Logic Execute - inputCaches[3]=%u, inputCaches[4]=%u, inputCaches[5]=%u"
+M i 555 333 334 64 "[0x%03x] Comb. Logic Execute - outputCaches[0]=%u, outputCaches[1]=%u, outputCaches[2]=%u"
+A 2991 555 374
+A 2992 555 395
+M i 555 425 425 64 "[0x%03x] Comb. Logic: CB invoked, read buffer_id=%u, dec result 0x%x"
+A 2993 555 463
+M i 555 514 514 64 "[0x%03x] MSP_ALGO_Comb_DecodeDoneCB - excBufferID=%d"
+A 2994 555 515
+M i 555 527 527 64 "[0x%03x] MSP_ALGO_Comb_DecodeDoneCB - acqBufferID=%d"
+A 2995 555 528
+A 2996 555 538
+M i 555 543 543 64 "[0x%03x] MSP_ALGO_Comb_DecodeDoneCB - read result 0x%x"
+M i 555 558 558 64 "[0x%03x] Comb. Logic activated"
+A 2997 555 563
+M i 555 617 617 64 "[0x%03x] Comb. Logic LUT configured - hwPath=%d, outputIndex=%u"
+M i 555 618 618 64 "[0x%03x] Comb. Logic LUT configured - LUT1=0x%08x, LUT2=0x%08x"
+A 2998 555 624
+M i 555 625 625 64 "[0x%03x] Comb. Logic LUT configured - hwPath=ALGO_API_ACQUISITION_PATH, outputIndex=%u, LUT1=0x%08x, LUT2=0x%08x"
+A 2999 555 629
+f 556 "src/msp_core/src/msp_algo_bch.c"
+M i 556 77 77 64 "[0x%03x] algo_api_bch_done: wrong page type. BCH Failure. exc buffer %u"
+f 557 "src/msp_core/src/msp_algo_soft.c"
+M i 557 82 83 64 "[0x%03x] SOFT: copying input data from exc. buffer %u to acq. buffer %u (0x%x)"
+A 3004 557 90
+M i 557 147 147 64 "[0x%03x] Zero page was detected"
+f 558 "src/msp_core/src/algo_acquisition.c"
+M i 558 703 703 64 "[0x%03x] ACQ_MinSyndSumSearchInit"
+A 2896 558 705
+A 2897 558 749
+M i 558 764 764 64 "[0x%03x] ACQ_AcqBufferAllocated - buffer_idx=%u, bufIndex=%u"
+M i 558 796 796 64 "[0x%03x] ACQ_MinSyndSumSearchStepStart"
+A 2898 558 797
+A 2899 558 860
+A 2900 558 877
+M i 558 888 889 64 "[0x%03x] ACQ_UpdateSyndromeLut - syndromeLut.lut[rvIndex][posistion]: [rvIndex][0]=%u, [rvIndex][1]=%u, [rvIndex][2]=%u"
+M i 558 915 915 64 "[0x%03x] ACQ_ConfigureCombLuts - pageType=%u, lutLow=0x%08X, lutHigh=0x%08X"
+M i 558 975 975 64 "[0x%03x] ACQ_DecoderDoneCallback - currReadIndex=%u"
+A 2901 558 1017
+A 2902 558 1028
+M i 558 1041 1042 64 "[0x%03x] ACQ_FillAcqCmd - pCmdInputBuffers[0]=%u, pCmdInputBuffers[1]=%u, pCmdInputBuffers[2]=%u"
+M i 558 1063 1064 64 "[0x%03x] ACQ_AcqPathDoneCallback - pAcqState->currReadC1Sum=%u, COUNTER_01=%u, COUNTER_11=%u"
+M n 558 1065 1065 64 "[0x%03x] ACQ_AcqPathDoneCallback - COUNTER_1=%u, COUNTER_01=%u, COUNTER_11=%u"
+M n 558 1066 1066 64 "[0x%03x] ACQ_AcqPathDoneCallback - COUNTER_001=%u, COUNTER_011=%u"
+M n 558 1067 1067 64 "[0x%03x] ACQ_AcqPathDoneCallback - COUNTER_101=%u, COUNTER_111=%u"
+A 2903 558 1084
+M i 558 1114 1114 64 "[0x%03x] ACQ_UpdateReadResult - pReadResults->arr[readIndex=%u]=%u"
+A 2904 558 1165
+A 2905 558 1221
+M i 558 1228 1228 64 "[0x%03x] ACQ_UpdateCdf - rvIndex=%u, position=%u, newRvC1Value=%u"
+M i 558 1237 1237 64 "[0x%03x] ACQ_SpamAcqBufferAllocated - buffer_idx=%u"
+M i 558 1289 1289 64 "[0x%03x] ACQ_SpamDoneCallback - minSyndSum=%u"
+M i 558 1321 1321 64 "[0x%03x] ACQ_UpdateMinSyndSumCoords - pMinSyndSumCoords->arr[rvIndex=%u]=%u"
+M i 558 1346 1346 64 "[0x%03x] ACQ_UpdateSyndSumTable - pSyndSumTable->table1d[a=%u] = %u"
+M i 558 1362 1362 64 "[0x%03x] ACQ_UpdateSyndSumTable - pSyndSumTable->table2d[a=%u][b=%u] = %u"
+M i 558 1377 1377 64 "[0x%03x] ACQ_UpdateSyndSumTable - a|b|c = 0x%06X, pSyndSumTable->table3d[a][b][c] = %u"
+M i 558 1391 1391 64 "[0x%03x] ACQ_MinSyndSumSearchFinalize"
+A 2906 558 1393
+f 559 "src/msp_core/src/msp_counters.c"
+f 560 "src/msp_core/src/msp_read_params.c"
+M i 560 308 308 64 "[0x%03x] msp_read_debug_req_result: status %u"
+A 4293 560 321
+f 561 "src/msp_core/src/msp_bitflips.c"
+A 3005 561 288
+M i 561 309 309 64 "MSP_BF_fillSeparationPattern: create separators"
+A 5176 561 366
+A 3006 561 415
+M i 561 541 541 64 "[0x%03x] MSP_BF_msp_dma_copy_done_cb1: activated"
+M i 561 598 598 64 "[0x%03x] MSP_BF_process_ready_cb: stg buffer %u, compressed bitflips 0x%08x"
+A 3007 561 600
+A 3008 561 605
+M i 561 663 663 64 "[0x%03x] MSP_BF_canAlgoSystemTaskStart: activated, in process %u, BF returns %u"
+M i 561 673 673 64 "MSP_BF_algoSystemTaskCompleted: activated"
+M i 561 689 689 64 "[0x%03x] MSP_HM_count_bitflips_done_cb: 001:%u, 011:%u"
+M i 561 690 690 64 "[0x%03x] MSP_HM_count_bitflips_done_cb: 101:%u, 111:%u"
+M i 561 704 704 64 "UT ASSERTED: sw bitflips = 0x%x, while hw bitflips = 0x%x. (stg buffer = %u)"
+A 5177 561 714
+M i 561 719 719 64 "Going to resume algo system task..."
+A 5178 561 721
+M i 561 786 786 64 "[0x%03x] MSP_BF_copyToAcqBuffers_cb: stg buffer %u"
+M i 561 807 807 64 "[0x%03x] MSP_BF_copyToAcqBuffers: stg buffer id %u"
+M i 561 833 833 64 "[0x%03x] MSP_BF_bufferAllocatedCB: #%u buffer id %u"
+A 3009 561 835
+A 3010 561 886
+A 3011 561 887
+M i 561 889 889 64 "[0x%03x] MSP_BF_process: stg buffer %u, exc buffer %u"
+M i 561 919 919 64 "[0x%03x] MSP_BF_process: continue to hw bitflips calcuation"
+f 562 "src/msp_core/src/msp_hm_chef.c"
+A 3061 562 92
+A 3062 562 93
+A 3063 562 94
+A 4291 562 142
+A 3065 562 175
+M i 562 180 181 64 "[0x%03x] MSP_HM_read_mu_cb: stg buffer=%u, dec_type=%u, mus_bitflips_processed=%u"
+M i 562 220 221 64 "[0x%03x] MSP_HM_finalizeRecipe: total mus %u, mus_bitflips_processed %u, failures %u"
+f 563 "src/msp_core/src/msp_profiler.c"
+f 564 "src/msp_core/src/msp_fail_logger.c"
+A 4441 564 117
+A 4260 564 122
+A 4444 564 194
+A 4256 564 200
+f 565 "src/msp_core/src/msp_tlvs_parser.c"
+A 3089 565 106
+A 3090 565 107
+A 3091 565 142
+A 3092 565 161
+A 9946 565 168
+M i 565 202 202 64 "MSP_TLV_readSector: read done, buf id %u"
+M i 565 209 209 64 "MSP_TLV_readSector: Failed to decode the data, buf id %u"
+A 3093 565 223
+M i 565 250 250 64 "TLV 0x%x length (%u) > max permitted (%u), consider to increase ..."
+A 3094 565 251
+M i 565 262 262 64 "MSP_TLV_notify: New TLV = %u"
+M i 565 263 264 64 "MSP_TLV_notify: New TLV, type 0x%x, length %u, data1=0x%x, data2=0x%x"
+M i 565 271 271 64 "MSP_TLV_notify: calling to the listener"
+M i 565 311 312 64 "MSP_TLV_ParseSector: header found, type 0x%x, length %u, isLast %u"
+M i 565 326 326 64 "MSP_TLV_ParseSector: is required %u"
+M i 565 330 331 64 "MSP_TLV_ParseSector: the section 0x%x is too large (%u), consider increasing MAX_MSP_TLV_DATA_SECTION_SIZE"
+A 3095 565 332
+M i 565 377 377 64 "Max number of TLVs was parsed (%u), exiting."
+M i 565 421 421 64 "testing block scrambling mode %d , block %d plane %d"
+M i 565 430 430 64 "Swapping boot block indication from %d, to %d"
+M i 565 434 434 64 "Can't determine scrambling mode for boot block index %u, block %u, plane %u, page %d  - scrambled or not"
+M i 565 450 450 64 "Scrambling mode set"
+A 3096 565 459
+M i 565 477 477 64 "Start TLV parsing from boot block index %u, block %u, plane %u"
+M i 565 543 543 64 "BD magic is not correct. Changing read decision to failure."
+M i 565 562 562 64 "MSP_TLV_readBootData: read bd from block %u"
+A 3097 565 604
+M i 565 630 630 64 "MSP_TLV_Parse: Done. Status %u, bootBlock=%u, found %u TLVs"
+f 566 "src/msp_core/src/epr_validation.c"
+A 4155 566 81
+M i 566 95 95 64 "EPRValidation_FindDataHistory - cannot find data history for page %u."
+A 4156 566 96
+M i 566 130 130 64 "EPRValidation_GetBlockState - cannot find (allocate) closed block for CE %u."
+A 4157 566 131
+A 4158 566 195
+M i 566 209 210 64 "ERPValidation_Program - pBlockState->opMode=%u != pRecipe->...operationMode=%u for ce=%u, block_with_plane=%u."
+A 4159 566 211
+M i 566 225 226 64 "ERPValidation_Program - pRecipe->pageInBlock=%u != pBlockState->nextPage=%u for ce=%u, block_with_plane=%u."
+A 4160 566 227
+M i 566 246 247 64 "ERPValidation_Program - recipePage=%u != nextPageNumber=%u for ce=%u, block_with_plane=%u."
+A 4161 566 248
+M i 566 253 254 64 "ERPValidation_Program - recipePhase=%u != nextPhase=%u for ce=%u, block_with_plane=%u."
+A 4162 566 255
+M i 566 283 284 64 "ERPValidation_Program - pDataHistory->endurance=%u != pRecipe->endurance=%u for ce=%u, block_with_plane=%u."
+A 4163 566 285
+M i 566 297 298 64 "ERPValidation_Program - pDataHistory->firstDataDword[mu=%u]=0x%08X != *pData-0x%08X for ce_16b|block_with_plane_16b=0x%08X"
+A 4164 566 299
+A 4165 566 319
+M i 566 349 349 64 "ERPValidation_Read - reading from open block_with_plane=%u, ce=%u"
+A 4166 566 350
+f 567 "src/msp_core/src/msp_read_forces.c"
+A 4398 567 45
+A 4442 567 76
+A 4399 567 105
+A 9735 567 191
+A 9736 567 202
+A 9737 567 219
+f 568 "src/msp_core/src/msp_memory_tests.c"
+M i 568 256 256 64 "MemoryTest_Run - testType=%u, bufferAddress=0x%08X, bufferSize=%u, resultBufferAddress=0x%08X"
+f 569 "src/msp_core/src/power_budget.c"
+f 570 "src/Algo/acq_utils.c"
+f 571 "src/Algo/algo_core.c"
+M i 571 429 429 65 "[0x%03x] Deep-soft failed but one of the next decoders passed, raising PO INDICATION"
+M i 571 437 437 65 "[0x%03x] The bit-flips of DeepSoft (%d) and hard-errors (%d) are too high (bitflipThreshold = %d), raising PO INDICATION"
+M i 571 519 525 65 "[0x%03x] C1 Results for swID = %d, counters = {%d ,%d ,%d ,%d}, enc1 = %d"
+M i 571 646 646 65 "[0x%03x] READALGO Opt read"
+M i 571 787 787 65 "[0x%03x] READALGO sets. FamilyIndex=%d, family=%d"
+M i 571 939 939 65 "[0x%03x] %d static walls were found"
+M i 571 1200 1200 65 "[0x%03x] Starting soft decoder"
+M i 571 1248 1248 65 "[0x%03x] LLR table changed for decoderType = %d --> index = %d"
+M i 571 1289 1292 65 "[0x%03x] READALGO Deep soft start isDSP=%d , isLastWL=%d, Exhaustive Iteration=%d"
+M i 571 1296 1298 65 "[0x%03x] READALGO Deep soft start isLastWL=%d, Exhaustive Iteration=%d"
+M i 571 1394 1394 65 "[0x%03x] Start truly erased check"
+M i 571 1680 1680 65 "[0x%03x] READALGO Error Floor Deep soft read"
+M i 571 1839 1839 65 "[0x%03x] READALGO Error Floor BCH decode request of channel=%d , cache=%d"
+A 2816 571 1933
+A 2817 571 1934
+A 2818 571 1939
+A 2819 571 1948
+M i 571 1976 1976 65 "[0x%03x] READALGO Vertical neighbour is erased "
+M i 571 2065 2065 65 "[0x%03x] Generating wall: side=%d , type=%d , isErased=%d , erasedSamplesBitmap=0x%x , zeroSamplesBitmap=0x%x"
+A 2820 571 2115
+M i 571 2401 2401 65 "[0x%03x] algo_core_DeepSoftDecoderDone : failing chunk due to random fail"
+M i 571 2520 2520 65 "[0x%03x] algo_core_ErrorFloorDecoderDone : failing chunk due to random fail"
+A 2821 571 2550
+M i 571 2567 2567 65 "[0x%03x] We don't run BCH, since [syndrom-sum == %d] > [%d == syndrom-sum th to start BCH] "
+M i 571 2605 2608 65 "[0x%03x] BCH passed but there is BER in byte %d. (expected data)0x%x != 0x%x(recieved data)"
+A 2822 571 2610
+A 2823 571 2680
+A 2824 571 2742
+M i 571 2795 2795 65 "[0x%03x] ALGO_CORE Start reread for codeword %d"
+M i 571 3022 3022 65 "[0x%03x] ALGO_API_StartAlgoSM - algoID=%d, swID=%d, codeword=%d"
+M i 571 3175 3175 65 "[0x%03x] READALGO: MSB page is erased; wordline is in SLC mode"
+M i 571 3186 3186 65 "[0x%03x] READALGO: MSB page is not erased; wordline is in MLC mode"
+M i 571 3423 3428 65 "[0x%03x] ALGO_CORE: Decoder passed for algoID=%d, algoSwID=%d, decoder-type=%d, numOfIterations=%d, bitflips=%d"
+M i 571 3432 3438 65 "[0x%03x] ALGO_CORE: Decoder failed for algoID=%d, algoSwID=%d, decoder-type=%d, isErased=%d, isZero=%d, synd-sum=%d"
+M i 571 3621 3622 65 "[0x%03x] algo_core_SaveMiniAcqResults: CDF values: RV11=%d, RV31=%d, RV32=%d, RV33=%d"
+M i 571 3623 3624 65 "[0x%03x] algo_core_SaveMiniAcqResults: CDF values: RV34=%d, RV35=%d, RV36=%d, RV37=%d"
+M i 571 3626 3627 65 "[0x%03x] algo_core_SaveMiniAcqResults: CDF values: RV11=%d, RV21=%d, RV22=%d, RV23=%d"
+M i 571 3871 3871 65 "[0x%03x] The bit-flips or syndrome-sum of next WL is too high, raising PO INDICATION"
+M i 571 3978 3984 65 "[0x%03x] ALGO_CORE ReadAlgoDone: die=%d , plane=%d , block=%d , page=%d , cw=%d , bpc=%d"
+A 2826 571 4219
+M i 571 4477 4477 65 "[0x%03x] Forcing read fail - due to force algo flow (current-state = %d , last-state = %d)"
+M i 571 4515 4515 65 "[0x%03x] READALGO true SLC BPC check start"
+f 572 "src/Algo/algo_counters.c"
+f 573 "src/Algo/algo_internal_utils.c"
+f 574 "src/Algo/algo_tables_F15.c"
+f 575 "src/Algo/algo_tables_F16.c"
+f 576 "src/Algo/algo_tables_F16_CDIE.c"
+f 577 "src/Algo/algo_tables_HYNIX_TLC_1Y.c"
+f 578 "src/Algo/algo_tables_SNDSK_TLC_1Y.c"
+f 579 "src/Algo/algo_tables_SNDSK_TLC_1Z.c"
+f 580 "src/Algo/algo_tables_Toshiba_MLC_1Z.c"
+f 581 "src/Algo/algo_tables_Toshiba_MLC_1Y.c"
+f 582 "src/Algo/algo_tables_Toshiba_TLC_1Y.c"
+f 583 "src/Algo/algo_tables_Toshiba_TLC_1Z.c"
+f 584 "src/Algo/algo_utils.c"
+M i 584 154 154 65 "[0x%03x] BDB was updated since tmode read - [current BDB version] %d != %d [BDB version during tmode]"
+M i 584 160 160 65 "[0x%03x] BDB wasn't updated since tmode read. BDB version is still %d"
+A 2829 584 548
+f 585 "src/Algo/bdb.c"
+M i 585 271 274 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on LSB - update Rv11 Rv33 Rv37 = {0x%x, 0x%x, 0x%x}"
+M i 585 280 283 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on LSB - update Rv11 Rv31 Rv35 = {0x%x, 0x%x, 0x%x}"
+M i 585 289 291 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on LSB - update Rv11 Rv22 = {0x%x, 0x%x}"
+M i 585 302 305 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on MSB - update Rv32 Rv34 Rv36 = {0x%x, 0x%x, 0x%x}"
+M i 585 310 312 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on MSB - update Rv21 Rv23 = {0x%x, 0x%x}"
+M i 585 323 325 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on USB - update Rv31 Rv35 = {0x%x, 0x%x}"
+M i 585 331 333 65 "[0x%03x] BDB_DynamicBDBUpdate In Set done on USB - update Rv33 Rv37 = {0x%x, 0x%x}"
+M i 585 398 398 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on SLC - update Rv11 = 0x%x"
+M i 585 409 411 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on LSB - update Rv33 Rv37 = {0x%x, 0x%x}"
+M i 585 417 419 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on LSB - update Rv31 Rv35 = {0x%x, 0x%x}"
+M i 585 425 425 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on LSB - update Rv22 = 0x%x"
+M i 585 455 458 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on MSB - update Rv32 Rv34 Rv36 = {0x%x, 0x%x, 0x%x}"
+M i 585 464 466 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on MSB - update Rv21 Rv23 = {0x%x, 0x%x}"
+M i 585 493 495 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on USB - update Rv31 Rv35 = {0x%x, 0x%x}"
+M i 585 501 503 65 "[0x%03x] BDB_DynamicBDBUpdate In ACQ done on USB - update Rv33 Rv37 = {0x%x, 0x%x}"
+M i 585 622 623 65 "[0x%03x] BDB_DynamicBDBUpdate at [true-slc %d][die %d][plane %d], for block %d page %d"
+M i 585 666 666 65 "[0x%03x] BDB_DynamicBDBUpdate switching pageType %d to EOL due to linear regression from pageType %d"
+M i 585 702 702 65 "[0x%03x] BDB_DynamicBDBUpdateCountersAndTryToSwitchEOLtoSOLOrViseVersa: block %d die %d plane %d page %d isDSP %d"
+M i 585 713 713 65 "[0x%03x] BDB_DynamicBDBUpdateCountersAndTryToSwitchEOLtoSOLOrViseVersa increased FS2 passed counter %d"
+M i 585 749 749 65 "[0x%03x] BDB_DynamicBDBUpdateCountersAndTryToSwitchEOLtoSOLOrViseVersa changed to SOL"
+M i 585 764 764 65 "[0x%03x] BDB_DynamicBDBUpdateCountersAndTryToSwitchEOLtoSOLOrViseVersa increased ACQ counter %d"
+M i 585 784 784 65 "[0x%03x] BDB_DynamicBDBUpdateCountersAndTryToSwitchEOLtoSOLOrViseVersa changed to EOL"
+M i 585 792 792 65 "[0x%03x] BDB_DynamicBDBUpdateCountersAndTryToSwitchEOLtoSOLOrViseVersa reset FS2 counter"
+f 586 "src/Algo/bdb_tmode.c"
+M i 586 159 159 65 "[0x%03x] BDB_DynamicGetIndex - use Host BDB"
+f 587 "src/Algo/bdb_utils.c"
+f 588 "src/Algo/flash_tables_F15.c"
+f 589 "src/Algo/flash_tables_HYNIX_TLC.c"
+f 590 "src/Algo/flash_tables_TLC_NAND.c"
+f 591 "src/Algo/flash_tables_SNDSK_TLC_1Z.c"
+f 592 "src/Algo/health_monitor.c"
+A 2834 592 167
+A 2835 592 168
+M i 592 283 283 65 "[0x%03x] Health Monitor Output: CN-Grade = %d, TR-Grade = %d, HE-Grade = %d"
+M i 592 289 289 65 "[0x%03x] Health Monitor Output: CN-Grade per chunk => [%d , %d , %d , %d]"
+M i 592 290 290 65 "[0x%03x] Health Monitor Output: TR-Grade per chunk => [%d , %d , %d , %d]"
+M i 592 295 295 65 "[0x%03x] Health Monitor Bit Flip Count: Set-Hard Phase %d => [%d , %d , %d , %d]"
+M i 592 300 300 65 "[0x%03x] Health Monitor Bit Flip Count: Opt-Hard Phase %d => [%d , %d , %d , %d]"
+M i 592 306 306 65 "[0x%03x] Health Monitor Bit Flip Count: deepSoftNoDsp Phase %d => [%d , %d , %d , %d]"
+M i 592 311 311 65 "[0x%03x] Health Monitor Bit Flip Count: deepSoftExhNoDsp Phase %d => [%d , %d , %d , %d]"
+M i 592 316 316 65 "[0x%03x] Health Monitor Bit Flip Count: deepSoftWithDsp Phase %d => [%d , %d , %d , %d]"
+M i 592 321 321 65 "[0x%03x] Health Monitor Bit Flip Count: deepSoftExhWithDsp Phase %d => [%d , %d , %d , %d]"
+M i 592 327 327 65 "[0x%03x] Health Monitor Bit Flip Count: Deep-Soft Phase %d => [%d , %d , %d , %d]"
+M i 592 332 332 65 "[0x%03x] Health Monitor Bit Flip Count: Exhaustive Phase %d => [%d , %d , %d , %d]"
+M i 592 338 338 65 "[0x%03x] Health Monitor Bit Flip Count: Err-Floor Phase %d => [%d , %d , %d , %d]"
+f 593 "src/Algo/llr_table_F15.c"
+f 594 "src/Algo/llr_table_F16.c"
+f 595 "src/Algo/llr_table_F16_CDIE.c"
+f 596 "src/Algo/llr_table_Toshiba_MLC_1Z.c"
+f 597 "src/Algo/LlrTable_HYNIX_TLC_1Y.c"
+f 598 "src/Algo/LlrTable_SNDSK_TLC_1Y.c"
+f 599 "src/Algo/LlrTable_SNDSK_TLC_1Z.c"
+f 600 "src/Algo/LlrTable_Toshiba_TLC_1Y.c"
+f 601 "src/Algo/LlrTable_Toshiba_TLC_1Z.c"
+f 602 "src/Algo/mini_acq.c"
+M i 602 483 483 65 "[0x%03x] MINI-ACQ Start: Mode %u dspIndex %u"
+M i 602 558 558 65 "[0x%03x] MINI-ACQ Test - shift initial Rv%u by %d"
+A 2836 602 614
+M i 602 757 757 65 "[0x%03x] MINI-ACQ Send Reads: isReadRequired=0x%06x"
+M i 602 881 881 65 "[0x%03x] MINI-ACQ Received C1 Results - CDF_11 = %u"
+M i 602 903 904 65 "[0x%03x] MINI-ACQ Process - CDF_31-34 = {%u, %u, %u, %u}"
+M i 602 905 906 65 "[0x%03x] MINI-ACQ Process - CDF_35-37 = {%u, %u, %u}"
+M i 602 913 913 65 "[0x%03x] MINI-ACQ Process - CDF_11 = %u"
+M i 602 919 919 65 "[0x%03x] MINI-ACQ Process - CDF_22 = %u"
+M i 602 927 928 65 "[0x%03x] MINI-ACQ Process - CDF_21-23 = {%u, %u, %u}"
+M i 602 964 964 65 "[0x%03x] MINI-ACQ Invalid read - Wall in LSB page, lower Rv22 to %d"
+M i 602 978 978 65 "[0x%03x] MINI-ACQ Invalid read - Wall in MSB page, lower Rv21 to %d"
+M i 602 996 996 65 "[0x%03x] MINI-ACQ Invalid read - Wall in LSB-Only page, increase Rv11 to %d"
+M i 602 1027 1028 65 "[0x%03x] MINI-ACQ Invalid read - Overlap of Rv%u downwards, increase it to %d"
+M i 602 1039 1040 65 "[0x%03x] MINI-ACQ Invalid read - Overlap of Rv%u upwards, lower it to %d"
+M i 602 1183 1183 65 "[0x%03x] MINI-ACQ Analyze: Rv%u raised to %d"
+M i 602 1190 1190 65 "[0x%03x] MINI-ACQ Analyze: Rv%u lowered to %d"
+M i 602 1283 1283 65 "[0x%03x] MINI-ACQ Done. Rv11-Rv33 in mV = {%d; %d, %d, %d}"
+M i 602 1284 1284 65 "[0x%03x] MINI-ACQ Done. Rv34-Rv37 in mV = {%d, %d, %d, %d}"
+M i 602 1294 1294 65 "[0x%03x] MINI-ACQ Done. Rv11-Rv23 in mV = {%d; %d, %d, %d}"
+M i 602 1305 1305 65 "[0x%03x] MINI-ACQ Test - shift result Rv%u by %d"
+f 603 "src/Algo/shilah.c"
+M i 603 200 200 65 "[0x%03x] Starting shilah algorithm"
+A 2838 603 274
+M i 603 286 286 65 "[0x%03x] Starting shilah comb-logic for zone %d"
+M i 603 441 447 65 "[0x%03x] Shilah fixing row = %d , RvIndex = %d , cellsPerZoneHistogram=[%d,%d,%d,%d]"
+M i 603 450 456 65 "[0x%03x] shilaRvType = %d , xtValue = %d , zoneMasks = [%d,%d,%d,%d]"
+M i 603 472 478 65 "[0x%03x] Original llr row = [%d , %d , %d , %d , %d , %d]"
+M i 603 508 514 65 "[0x%03x] Fixed llr row = [%d , %d , %d , %d , %d , %d]"
+f 604 "src/Algo/soft_wall_handler.c"
+M i 604 213 213 65 "[0x%03x] Soft sample %d of type %d was erased = %d or zero =%d, pageType=%d, BitsPerCellWlState=%d"
+M i 604 340 340 65 "[0x%03x] In deep soft 2 we can't handle dynamic wallType=1 --> using wallType=2 instead due to XOR between sample 0 and 2"
+M i 604 346 346 65 "[0x%03x] Dynamic wall found : wallType=%d , rvIndex=RV%d , wallSide=%d"
+M i 604 403 409 65 "[0x%03x] Old softSpacing[] = {%d,%d,%d,%d,%d,%d}"
+M i 604 428 428 65 "[0x%03x] Static wall found : wallType=%d , rvIndex=RV%d , wallSide=%d , maxSpacing=%d"
+M i 604 438 444 65 "[0x%03x] New softSpacing[] = {%d,%d,%d,%d,%d,%d}"
+M i 604 514 518 65 "[0x%03x] Changing LLR at row=%d , column=%d from %d to %d"
+M i 604 534 538 65 "[0x%03x] Changing LLR at row=%d , column=%d from %d to %d"
+M i 604 545 549 65 "[0x%03x] Changing LLR at row=%d , column=%d from %d to %d"
+A 2839 604 731
+f 605 "src/Algo/synd_sum_min_search.c"
+M i 605 317 317 65 "[0x%03x] SYND_SUM_StartMinSearch: Starting (codeword = %d)"
+A 2840 605 424
+M i 605 489 489 65 "[0x%03x] synd_sum_StartSearchStage: No more search stages (stage index %d)"
+A 2841 605 494
+M i 605 499 499 65 "[0x%03x] synd_sum_StartSearchStage: Skipping stage index %d (0 iterations)"
+M i 605 513 514 65 "[0x%03x] synd_sum_StartSearchStage: Starting stage index %d (%d iterations)"
+M i 605 893 894 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d: min synd sum is valid, best sample is at index %d"
+A 2842 605 902
+M i 605 916 917 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d: Infection sources on indices 1 and 0 => choosing index 2"
+M i 605 923 924 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d: Infection sources on indices 1 and 2 => choosing index 0"
+M i 605 932 933 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d: Infection source on a side index => choosing index 1"
+M i 605 951 952 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d: Side index Vth is out of bounds (left=%d, right=%d, min=%d, max=%d) => choosing index 1"
+M i 605 968 969 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d CDF deltas are close - |%d - %d| < %d => best sample is at index 1"
+M i 605 975 976 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d c1Delta10 == %d < %d == c1Delta21 => best sample is at index 0"
+M i 605 982 983 65 "[0x%03x] synd_sum_DecideMovement_BinarySearch: RV%d c1Delta10 == %d > %d == c1Delta21 => best sample is at index 2"
+M i 605 1010 1011 65 "[0x%03x] synd_sum_DecideMovement_CenterSearch: RV%d: Min-synd-sum is in the middle (or too high) => center found"
+M i 605 1029 1030 65 "[0x%03x] synd_sum_DecideMovement_CenterSearch: RV%d: Min-synd-sum is in the side but side Vth is too low/high => center found"
+M i 605 1037 1038 65 "[0x%03x] synd_sum_DecideMovement_CenterSearch: RV%d: Min-synd-sum is at index %d => shifting"
+M i 605 1144 1144 65 "[0x%03x] synd_sum_AnalyzeSearchStepOutput: Updated the syndrome sum table with infection data."
+M i 605 1184 1185 65 "[0x%03x] synd_sum_AnalyzeIterationCompletion: Minimal syndrome sum is below %d, converging search."
+M i 605 1233 1235 65 "[0x%03x] synd_sum_AnalyzeIterationCompletion: Completed stage %d, iteration %d."
+M i 605 1243 1243 65 "[0x%03x] synd_sum_AnalyzeIterationCompletion: Early exit from current search stage, keeping current iteration results."
+M i 605 1259 1259 65 "[0x%03x] synd_sum_AnalyzeIterationCompletion: Moving to the next search stage."
+M i 605 1348 1348 65 "[0x%03x] synd_sum_OnStageStart_BinarySearch: Starting binary search stage"
+M i 605 1362 1362 65 "[0x%03x] synd_sum_OnStageStart_CenterSearch: Starting center search stage"
+M i 605 1495 1496 65 "[0x%03x] synd_sum_SearchComplete: Optimal Vths: RV%d=%d"
+M i 605 1506 1508 65 "[0x%03x] synd_sum_SearchComplete: Optimal Vths in code: RV11=0x%02x, RV31=0x%02x, RV32=0x%02x, RV33=0x%02x"
+M i 605 1509 1511 65 "[0x%03x] synd_sum_SearchComplete: Optimal Vths in code: RV34=0x%02x, RV35=0x%02x, RV36=0x%02x, RV37=0x%02x"
+M i 605 1513 1515 65 "[0x%03x] synd_sum_SearchComplete: Optimal Vths in code: RV11=0x%02x, RV21=0x%02x, RV22=0x%02x, RV23=0x%02x"
+M i 605 1517 1521 65 "[0x%03x] synd_sum_SearchComplete: die=%d, block=%d, plane=%d, page=%d"
+A 2846 605 1658
+A 2847 605 1715
+M i 605 1750 1751 65 "[0x%03x] synd_sum_PrintMovementTable: RV%d: | %c | %c | %c |"
+M i 605 1770 1774 65 "[0x%03x] synd_sum_PrintVthTable: RV%d: [%d, %d, %d]"
+M i 605 1793 1794 65 "[0x%03x] synd_sum_PrintReadSpec: Read %d: [%d, %d, %d]"
+M i 605 1814 1816 65 "[0x%03x] synd_sum_PrintSyndromeSumData: Min coords=[%d, %d, %d], minSyndSum=%d"
+M i 605 1828 1828 65 "[0x%03x] synd_sum_PrintSyndromeSumData: -------------------------"
+M i 605 1832 1835 65 "[0x%03x] synd_sum_PrintSyndromeSumData: | %5d | %5d | %5d |"
+M i 605 1856 1860 65 "[0x%03x] synd_sum_PrintCdfTable: CDF Table: RV%d: [%5d, %5d, %5d]"
+M i 605 1894 1895 65 "[0x%03x] synd_sum_PrintInfectionTable: RV%d infection status: | %c | %c | %c |"
+M i 605 2062 2063 65 "[0x%03x] synd_sum_CheckReadResultForFlagCellInfection: Read index %d: Flag cell wall, marking RV%d as source - vth=%d, safeSetVth=%d, cdf=%d, safeSetCdf=%d"
+M i 605 2078 2079 65 "[0x%03x] synd_sum_CheckReadResultForFlagCellInfection: Read index %d result is erased page, marking RV%d as source."
+M i 605 2129 2131 65 "[0x%03x] synd_sum_CheckReadResultForOverlapInfection: Read index %d: Marking RV%d as source, CDF (%d) too close to RV%d CDF (%d)"
+M i 605 2162 2163 65 "[0x%03x] synd_sum_CheckReadResultForInfection: Setting read index %d as erased page"
+M i 605 2189 2190 65 "[0x%03x] synd_sum_InfectionAnalysis: Read index %d: Marking RV%d as carrier"
+M i 605 2272 2273 65 "[0x%03x] synd_sum_InfectionAnalysis: RV%d is all infection sources - converging the search"
+A 2848 605 2344
+A 2849 605 2353
+M i 605 2383 2384 65 "[0x%03x] synd_sum_SetVthAwayFromStaticWalls: Changed RV%d: %d -> %d"
+f 606 "src/Algo/vth.c"
+M i 606 596 600 65 "[0x%03x] VTH_GetReadParams for FS2 USB: Set[0]={RV31=0x%x, RV35=0x%x} , Set[1]={RV31=0x%x, RV35=0x%x}"
+M i 606 604 606 65 "[0x%03x] VTH_GetReadParams for Hard USB: RV31=0x%x, RV35=0x%x"
+M i 606 613 617 65 "[0x%03x] VTH_GetReadParams for FS2 USB: Set[0]={RV33=0x%x, RV37=0x%x} , Set[1]={RV33=0x%x, RV37=0x%x}"
+M i 606 621 623 65 "[0x%03x] VTH_GetReadParams for Hard USB: RV33=0x%x, RV37=0x%x"
+M i 606 646 652 65 "[0x%03x] VTH_GetReadParams for FS2 LSB: Set[0]={RV11=0x%x, RV33=0x%x, RV37=0x%x} , Set[1]={RV11=0x%x, RV33=0x%x, RV37=0x%x}"
+M i 606 656 659 65 "[0x%03x] VTH_GetReadParams for Hard LSB: RV11=0x%x, RV33=0x%x, RV37=0x%x"
+M i 606 664 670 65 "[0x%03x] VTH_GetReadParams for FS2 LSB: Set[0]={RV11=0x%x, RV31=0x%x, RV35=0x%x} , Set[1]={RV11=0x%x, RV31=0x%x, RV35=0x%x}"
+M i 606 674 677 65 "[0x%03x] VTH_GetReadParams for Hard LSB: RV11=0x%x, RV31=0x%x, RV35=0x%x"
+M i 606 684 688 65 "[0x%03x] VTH_GetReadParams for FS2 LSB: Set[0]={RV11=0x%x, RV22=0x%x} , Set[1]={RV11=0x%x, RV22=0x%x}"
+M i 606 692 694 65 "[0x%03x] VTH_GetReadParams for Hard LSB: RV11=0x%x, RV22=0x%x"
+M i 606 714 720 65 "[0x%03x] VTH_GetReadParams for FS2 MSB: Set[0]={RV32=0x%x, RV34=0x%x, RV36=0x%x} , Set[1]={RV32=0x%x, RV34=0x%x, RV36=0x%x}"
+M i 606 724 727 65 "[0x%03x] VTH_GetReadParams for Hard MSB: RV32=0x%x, RV34=0x%x, RV36=0x%x"
+M i 606 734 738 65 "[0x%03x] VTH_GetReadParams for FS2 MSB: Set[0]={RV21=0x%x, RV23=0x%x} , Set[1]={RV21=0x%x, RV23=0x%x}"
+M i 606 742 744 65 "[0x%03x] VTH_GetReadParams for Hard MSB: RV21=0x%x, RV23=0x%x"
+M i 606 997 1001 65 "[0x%03x] VTH_GetReadParams. NumOfParams=2 : RV%d=0x%x, RV%d=0x%x"
+M i 606 1005 1011 65 "[0x%03x] VTH_GetReadParams. NumOfParams=3 : RV%d=0x%x, RV%d=0x%x, RV%d=0x%x"
+f 607 "src/Algo/algo_sweep.c"
+M i 607 329 334 65 "[0x%03x] ALGO_API_StartSweep: die=%d , plane=%d , block=%d , wl=%d , bpc=%d"
+M i 607 336 340 65 "[0x%03x] Sweep params: sweepMode=%d, vthStep=%d, isDSP=%d, isToCompress=%d"
+M i 607 344 347 65 "[0x%03x] Sweep limits: RV%d minVth = %d, maxVth = %d"
+M i 607 838 838 65 "[0x%03x] Sending sweep read with comb algoSwID=%d, codeword=%d, pageType=%d, inputCache=%d, outputCaches=[%d,%d]"
+M i 607 853 853 65 "[0x%03x] Sending sweep read algoSwID=%d, codeword=%d, pageType=%d, wordline=%d, cache=%d"
+M i 607 1128 1134 65 "[0x%03x] Compressing dataCache %d and xorCache %d for codeword %d (bitFlipCounter = %d, evaluatedSpace = %d, remainedSpace = %d)"
+M i 607 1171 1171 65 "[0x%03x] Compression done - used %d bytes (%d bitflips compressed to 1 byte , %d bitflips compressed to 3 bytes, %d bitflips compressed to 5 bytes)"
+f 608 "src/Algo/algo_sweep_utils.c"
+M i 608 180 180 65 "[0x%03x] Sweep number of buffers is %d"
+f 609 "src/msp_hal/src/hal.c"
+A 3451 609 68
+A 3452 609 119
+A 3453 609 157
+f 610 "src/msp_hal/src/hal_flash_address.c"
+f 611 "src/msp_hal/src/hal_page_structure.c"
+A 3539 611 212
+A 3540 611 228
+A 3541 611 245
+A 3542 611 280
+A 3543 611 441
+f 612 "src/msp_hal/src/hal_copy_dma.c"
+M e 612 34 34 64 "COPY DMA ERROR INTERRUPT!"
+A 3477 612 35
+A 3478 612 87
+A 3479 612 88
+A 3480 612 89
+A 3481 612 116
+A 3482 612 119
+A 3483 612 146
+A 3484 612 153
+f 613 "src/msp_hal/src/hal_msp_dma.c"
+A 3536 613 93
+A 3537 613 94
+A 3538 613 95
+f 614 "src/msp_hal/src/hal_dma_completion_fifo.c"
+A 3485 614 93
+M n 614 97 97 64 "dma_completion_common_isr - fifo_select=%u, messege=0x%x"
+A 3486 614 149
+A 3487 614 150
+A 3488 614 169
+A 3489 614 173
+A 3490 614 174
+A 3491 614 175
+f 615 "src/msp_hal/src/hal_hldpc.c"
+A 3497 615 73
+M i 615 220 220 64 "hal_hldpc_init, isSynchronous=%d"
+f 616 "src/msp_hal/src/hal_svldpc.c"
+M i 616 175 176 64 "hal_svldpc_push_queue_cmds: remove element from the sw queue, elements:%u"
+M i 616 186 187 64 "hal_svldpc_push_queue_cmds: sw queue elements:%u"
+M i 616 196 196 64 "hal_svldpc_almost_empty_ISR: was triggered"
+M i 616 209 209 64 "hal_svldpc_almost_empty_ISR: disable almost empty ISR"
+M i 616 222 222 64 "hal_svldpc_add_cmd_to_sw_queue: enable almost empty ISR"
+M i 616 239 240 64 "hal_svldpc_add_cmd_to_sw_queue: add element to sw queue, elements:%u"
+A 3568 616 262
+A 3569 616 296
+A 3570 616 297
+A 3571 616 298
+A 3572 616 315
+A 3573 616 316
+A 3574 616 346
+A 3575 616 347
+A 3576 616 348
+M i 616 356 356 64 "serial_v_pause_isr"
+A 3577 616 362
+M i 616 372 372 64 "SerialV initialization done"
+A 3578 616 382
+A 3579 616 395
+M i 616 406 406 64 "hal_svldpc_init_matrix: src 0x%x, dest 0x%x, length %d"
+M i 616 413 413 64 "hal_svldpc_init_matrix: second dma src 0x%x, dest 0x%x, length %d"
+A 3580 616 449
+A 3581 616 473
+A 3582 616 778
+A 3583 616 841
+A 3584 616 858
+f 617 "src/msp_hal/src/hal_scldpc.c"
+A 3558 617 81
+M i 617 143 143 64 "Copy to debug soft cache2		srcAddress=0x%08x"
+A 3559 617 171
+M i 617 245 247 64 "Serial C Decoder done: status=%u, ASMF[0] = 0x%08X, ASMF[1] = 0x%08X, ASTF[0] = 0x%08X"
+M n 617 248 248 64 "Serial C Decoder done: ASTF[1] = 0x%08X, ASTF[2] = 0x%08X, ASTF[3] = 0x%08X"
+M i 617 257 257 64 "[0x%03x] SerialC - zero syndrome with bit flips detected! - return failure"
+M i 617 262 263 64 "[0x%03x] SerialC - bit flip=%d, last iteration=%d, synd sum first=%d"
+M i 617 267 269 64 "[0x%03x] SerialC - synd sum first=%d, synd sum last=%d"
+A 3560 617 274
+A 3561 617 282
+A 3562 617 292
+A 3563 617 314
+A 3564 617 322
+M i 617 489 489 64 "Serial-C Decoder: Init Done"
+A 3565 617 624
+M i 617 657 658 64 "[0x%03x] Serial-C Decoder: buffer[0]=%d, buffer[1]=%d, buffer[2]=%d "
+M i 617 659 660 64 "[0x%03x] Serial-C Decoder: buffer[3]=%d, buffer[4]=%d, buffer[5]=%d"
+M i 617 669 669 64 "Copy to debug soft cache		srcAddress=0x%08x"
+M i 617 692 692 64 "[0x%03x] Serial-C Decoder: sw tag = 0x%x"
+f 618 "src/msp_hal/src/hal_bch_decoder.c"
+A 3470 618 46
+A 3471 618 51
+M i 618 83 83 64 "BCH decoder done interrupt!, res=%d"
+A 3472 618 107
+M i 618 164 164 64 "BCH decoder enable"
+A 3473 618 173
+M i 618 210 210 64 "BCH decoder disable"
+f 619 "src/msp_hal/src/hal_exception_path.c"
+A 3492 619 152
+A 3493 619 153
+A 3494 619 193
+M e 619 289 289 64 "EUB HW DEBUG: EUBs map = 0x%x"
+M e 619 327 327 64 "EUB HW DEBUG: EUB[%u] = 0x%x"
+A 3495 619 334
+f 620 "src/msp_hal/src/hal_icacc.c"
+M i 620 204 204 64 "hal_icacc_overflow_channel0_isr"
+A 3498 620 205
+M i 620 210 210 64 "hal_icacc_overflow_channel1_isr"
+A 3499 620 211
+M i 620 456 456 64 "HalIcacc_StatusRepeat: swtag=0x%x, enableCmdIsr=%u"
+M i 620 541 541 64 "HalIcacc_PauseAll - pausing all work in the system"
+M i 620 859 859 64 "HalIcacc_SetActiveDieLimitation channel=%d, g_num_of_dies_per_channel=%d, limitEnable=%d"
+A 3501 620 927
+M i 620 933 933 64 "HalIcacc_Program - Send Phase Prefix =0x%x, program cycle =%u"
+A 3505 620 1178
+M i 620 1449 1450 64 "HalIcacc_WriteThresholdsToNAND [%u, %u]: params 0 and 1: 0x%x, params 2 and 3: 0x%x"
+A 3506 620 1513
+A 3507 620 1543
+M n 620 1585 1589 64 "HalIcacc_MpProgramStartFirst - CE= %u, Page= %d, BlockNumber= %d, PhysicalPlane= %d"
+M n 620 1591 1592 64 "HalIcacc_MpProgramStartFirst(2) - LogicalPlane= %d"
+M n 620 1595 1595 64 "HalIcacc_MpProgramStartFirst(3) - rowAddress=0x%08x"
+A 3508 620 1787
+M i 620 1947 1947 64 "SW Tag 0x%x Pushed for End Command Fifo"
+M i 620 2214 2214 64 "HalIcacc_Program: moved from state %u to %u"
+M i 620 2258 2259 64 "ProgramChef_TerminateCache - different number of planes, terminating. blockData.numOfPlanes = 0x%x GetNumOfPlanesFromDataBase(queueId) = 0x%x"
+M i 620 2265 2267 64 "ProgramChef_TerminateCache: recipe plane = %u, mirror plane = %u, recipe block = %u, mirror block = %u"
+M i 620 2277 2277 64 "ProgramChef_TerminateCache: isTerminateRequired = %u"
+M i 620 2350 2350 64 "HalIcacc_Program: last = %u, progConfig->bitfield.progCacheActive = %u"
+A 3510 620 2388
+M i 620 2397 2397 64 "HalIcacc_Program: cache program state = %u"
+M n 620 2518 2522 64 "HalIcacc_releaseFTLBuffers - BufferId=%d, BufferIndex=%d, Plane=%d, MU index=%d"
+A 5190 620 2549
+A 5191 620 2550
+M i 620 2577 2577 64 "[0x%03x] HalIcacc_Program - select for bypass"
+M n 620 2580 2583 64 "[0x%03x] HalIcacc_Program - mspData.bits.seed=0x%x, mspData.bits.lsb_usb_msb=%d, endurance=%d"
+M n 620 2727 2727 64 "HalIcacc_Program - case of write to buffer, sending 0xFF or 0x11 (Hynix)"
+M n 620 2743 2744 64 "HalIcacc_Program - cache tag = 0x%x, terminate cache %u"
+M i 620 2789 2789 64 "Data: 0x%08x-0x%08x-0x%08x-0x%08x"
+M i 620 2899 2899 64 "HalIcacc_ProgramFTL_SP - Send 0x11"
+M i 620 2949 2949 64 "MSP_Sat_flushProgramPath: status0: 0x%x, status1: 0x%x, cmdFifo:0x%x"
+A 5192 620 2951
+M i 620 2975 2975 64 "HalIcacc_DummyProgram ch = %d"
+M i 620 3018 3021 64 "HalIcacc_DummyProgram - seed=0x%x, swTag=%x, Mu=%u, saturated %d"
+M i 620 3228 3228 64 "DIE RESET queue 0x%x"
+M i 620 3273 3273 64 "DIE RESET queue %x"
+A 3512 620 3379
+M i 620 3703 3703 64 "HalIcacc_set_nand_vref_in_all_dies, enableVref=%d, power_mode=%d"
+M i 620 3750 3750 64 "HalIcacc_set_delay_in_icacc_per_channel, qId=%d, delay=%d"
+A 3514 620 3772
+f 621 "src/msp_hal/src/hal_srm.c"
+f 622 "src/msp_hal/src/hal_scramble.c"
+M n 622 77 77 64 "HAL_ScramblerCalcSeedByMuAndPage - seed=0x%x, Mu=%u, Page=%u"
+A 10662 622 89
+A 3511 622 151
+A 3566 622 181
+A 3567 622 191
+f 623 "src/msp_hal/src/hal_icacc_templates.c"
+A 4310 623 200
+A 4311 623 219
+A 3525 623 621
+f 624 "src/msp_hal/src/hal_program_path.c"
+f 625 "src/msp_hal/src/hal_read_path.c"
+A 3545 625 53
+A 3546 625 95
+A 3547 625 114
+A 3548 625 158
+M i 625 276 276 64 "HalIcacc_ReadThresholdsFromNAND. channel %d. die %d."
+M i 625 277 277 64 "HalIcacc_ReadThresholdsFromNAND. param0 0x%x. param1 0x%x. param2 0x%x. param3 0x%x."
+M i 625 281 281 64 "HalIcacc_ReadThresholdsFromNAND Failure. mirror0 0x%x. mirror1 0x%x. mirror2 0x%x. mirror3 0x%x."
+f 626 "src/msp_hal/src/hal_resource_manager.c"
+A 3549 626 108
+A 3550 626 112
+A 3551 626 298
+A 3552 626 302
+A 3553 626 312
+A 3554 626 362
+A 3555 626 400
+A 3556 626 401
+A 3557 626 422
+f 627 "src/msp_hal/src/hal_staging_buffers.c"
+f 628 "src/msp_hal/src/hal_internal.c"
+M i 628 244 244 64 "[0x%03x] End CMD ISR: Channel %d"
+A 5193 628 306
+A 3526 628 527
+A 3527 628 528
+M i 628 620 620 64 "hal_internal_cfg_grabber: channel=%d"
+A 3528 628 622
+M i 628 679 679 64 "hal_internal_cfg_grabber: channel=%d"
+A 3529 628 681
+f 629 "src/msp_hal/src/hal_internal_cal.c"
+M i 629 311 311 64 "hal_internal_set_spare_register: spare reg=%d"
+A 3530 629 470
+A 3531 629 522
+M i 629 551 551 64 "mdll_calib_max_value_wr=%d,	mdll_calib_min_value_wr=%d"
+M i 629 553 553 64 "filt_max_tap_sel=%d, filt_min_tap_sel=%d"
+M i 629 555 555 64 "filt_max_thr_limit_count=%d, filt_min_thr_limit_count=%d"
+M i 629 557 557 64 "filt_dec_count=%d, filt_inc_count=%d"
+M i 629 621 621 64 "mdll_calib_max_value_wr=%d,	mdll_calib_min_value_wr=%d"
+M i 629 623 623 64 "filt_max_tap_sel=%d, filt_min_tap_sel=%d"
+M i 629 625 625 64 "filt_max_thr_limit_count=%d, filt_min_thr_limit_count=%d"
+M i 629 627 627 64 "filt_dec_count=%d, filt_inc_count=%d"
+M i 629 669 669 64 "hal_internal_mdll_get_char_counters: channel=%d"
+M i 629 718 718 64 "hal_internal_sdll_calib: channel=%d, rdTapDelay=%d, wrTapDelay=%d"
+f 630 "src/msp_hal/src/hal_clocks.c"
+A 3474 630 142
+A 3475 630 638
+A 3476 630 678
+f 631 "src/msp_hal/src/hal_gpio.c"
+M i 631 226 230 64 "hal_gpio_print_drive_strength, DRVH[0]=%d, DRVL[0]=%d, DRVH[1]=%d, DRVL[1]=%d"
+M i 631 284 284 64 "hal_gpio_move_to_sdr"
+M i 631 1057 1057 64 "hal_gpio_zq_cal_set_soc_drive_strength, TX_DRVH=%d, TX_DRVL=%d, iChannelOffset=%d, "
+M i 631 1127 1127 64 "hal_gpio_zq_cal_set_soc_drive_strength, TX_DRVH=%d, TX_DRVL=%d, iChannelOffset=%d, isCalibDone=%d"
+A 3496 631 1263
+M i 631 1351 1351 64 "hal_gpio_force_zq_calibration: Channel=%d, no_of_blocks=%d, TX_TL=%d, TX_TH=%d"
+M i 631 1353 1353 64 "hal_gpio_force_zq_calibration: TX_TER=%d, TX_DRVL=%d, TX_DRVH=%d"
+M i 631 1530 1530 64 "hal_gpio close_vref"
+M i 631 1567 1567 64 "hal_gpio_open_vref, setDelayToIcacc = %u"
+f 632 "src/msp_hal/src/hal_gpio_s3x.c"
+f 633 "src/msp_hal/src/hw_init.c"
+A 3585 633 82
+A 3586 633 89
+A 3587 633 104
+A 3588 633 354
+f 634 "src/msp_hal/src/hal_acquisition_path.c"
+A 3454 634 139
+A 3455 634 148
+A 3456 634 181
+A 3457 634 197
+A 3458 634 226
+A 3459 634 248
+A 3460 634 251
+A 3461 634 253
+A 3462 634 255
+A 3463 634 280
+A 3464 634 291
+A 3465 634 479
+A 3466 634 497
+A 3467 634 518
+A 3468 634 531
+A 3469 634 574
+f 635 "src/msp_hal/src/hal_fe.c"
+f 636 "src/msp_hal/src/hal_ppm.c"
+M i 636 91 91 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+M i 636 98 98 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+M i 636 105 105 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+M i 636 112 112 64 "hal_ppm_configure_gpio_mux: 0x%x <---- 0x%x"
+f 637 "src/msp_hal/src/hal_ccu.c"
+f 638 "src/msp_hal/src/hal_icacc_hynix.c"
+M i 638 319 320 64 "HalIcacc_ChangeWriteColumnEnhanced Hynix: queue id=0x%x, page=%u, plane and lp=%x, column=%u"
+M i 638 357 357 64 "HalIcaccSpecific_WriteThreshold - die=%d, address=0x%02X, value=0x%02X"
+A 3515 638 383
+M i 638 419 419 64 "HalIcaccSpecific_ChangeVccq - die=%d, address=0x%X, value=%d"
+A 3516 638 448
+M i 638 450 450 64 "HalIcaccSpecific_sendPPMCfgToNand, ppm_erase_enable=%d, ppm_Prog_enable=%d, ppm_read_enable=%d"
+M i 638 470 470 64 "HalIcaccSpecific_sendPPMCfgToNand: send cfg=%x for ll dies"
+A 3517 638 502
+A 3518 638 503
+M i 638 513 513 64 "Hynix PPM was activated."
+M i 638 517 517 64 "Hynix PPM was deactivated."
+M i 638 523 523 64 "Hynix PPM fire callback."
+M i 638 534 534 64 "HalIcacc_EnablePpm, num_of_sent_cmds=%d, activate=%d"
+A 3521 638 937
+A 3522 638 938
+M i 638 1044 1044 64 "VTH index=%u - address=0x%02X, value=0x%02X"
+M i 638 1052 1052 64 "VTH FW SLC Mode - address=0x%02X, value=0x%02X"
+f 639 "src/msp_hal/src/hal_icacc_toshiba.c"
+M i 639 296 297 64 "HalIcacc_WriteThresholdsToNAND - queueId:0x%x params 4 and 5: 0x%x, params 6 and 7: 0x%x"
+f 640 "src/msp_hal/src/hal_icacc_sandisk.c"
+A 3523 640 191
+A 3524 640 194
+M i 640 195 196 64 "HalIcacc_WriteThresholdsToNAND - queueId:0x%x params 4 and 5: 0x%x, params 6 and 7: 0x%x"
+M i 640 349 349 64 "HalIcaccSpecific_parseUniqueIdValue - data was found after %d retries"
+f 641 "src/msp_hal/src/hal_icacc_device_common.c"
+M i 641 174 175 64 "HalIcacc_ChangeWriteColumnEnhanced: queue id=0x%x, page=%u, plane and lp=%x, column=%u"
+M i 641 222 222 64 "HalIcaccDeviceCommon_parseUniqueIdValue - data was found after %d retries"
+f 642 "src/msp_hal/src/hal_ppa.c"
+A 3544 642 87
+f 643 "src/msp_hal/src/hal_ldpc_ppa.c"
+f 644 "src/msp_hal/src/hal_sb.c"
+f 645 "src/msp_hal/src/hal_mep.c"
+M i 645 68 68 64 "hal_mep_power_seq_done_isr"
+A 3532 645 74
+A 3533 645 168
+M i 645 182 182 64 "hal_mep_warm_init: start (MEP should be off...)"
+M i 645 196 196 64 "hal_mep_cold_init: start & turn mep off"
+M i 645 229 229 64 "Activate MEP, recipes counter %u"
+A 3534 645 234
+A 3535 645 284
+M i 645 292 292 64 "DeActivate MEP, recipes counter %u"
+f 646 "src/msp_hal/src/msp_algo_matrixes.c"
+f 647 "src/msp_core/unit_tests/copy_dma_ut.c"
+M i 647 36 36 42 "ISR Invoked"
+M i 647 49 49 42 "ISR Invoked"
+M i 647 54 54 42 "ISR Invoked"
+M i 647 59 59 42 "ISR Invoked"
+M i 647 64 64 42 "ISR Invoked"
+M i 647 69 69 42 "ISR Invoked"
+M i 647 74 74 42 "ISR Invoked"
+M i 647 79 79 42 "ISR Invoked"
+M i 647 84 84 42 "ISR Invoked"
+f 648 "src/msp_core/unit_tests/icacc_ut.c"
+M i 648 76 76 64 "ASSERT!!! "
+M i 648 88 88 64 "Icacc paused received, %d"
+M i 648 104 104 64 "Icacc overflow received"
+M i 648 131 131 64 "---------------------------  Yoram"
+M i 648 162 162 64 "ICACC UT - MP Erase die=%d"
+M i 648 167 167 64 "ICACC UT - MP Program die=%d"
+M i 648 172 172 64 "ICACC UT - MP Read die=%d"
+M i 648 177 177 64 "ICACC UT - SP Erase die=%d"
+M i 648 183 183 64 "ICACC UT - SP Program die=%d"
+M i 648 187 187 64 "ICACC UT - SP Read die=%d"
+M i 648 207 207 64 "Icacc full received"
+M i 648 370 370 64 "Hello from testIcacc"
+M i 648 387 387 64 "Test ended, read"
+f 649 "src/msp_core/unit_tests/msp_asp_fifos_loop_ut.c"
+M i 649 37 37 42 "ISR Invoked"
+M i 649 51 51 42 "ISR Invoked"
+M i 649 56 56 42 "ISR Invoked"
+f 650 "src/msp_core/unit_tests/msp_cpu_status_fifo_ut.c"
+M i 650 40 40 64 "StatusFifoAlmostFullISR called MSP %d."
+M i 650 42 42 64 "StatusFifoAlmostFullISR. MSP %d number of messages: ### %d ###"
+A 3362 650 44
+M i 650 49 49 64 "StatusFifoAlmostFullISR. MSP %d Popped 0x%08x"
+f 651 "src/msp_core/unit_tests/read_path_ut.c"
+f 652 "src/msp_core/unit_tests/recipe_handler_ut.c"
+M n 652 38 38 68 "recipe_handler_ut.								**** programChef called ****."
+M n 652 45 45 68 "recipe_handler_ut.								**** readChef called	****."
+M n 652 52 52 68 "recipe_handler_ut.								**** eraseChef called	****."
+A 3382 652 89
+f 653 "src/msp_core/unit_tests/serial_v_ut.c"
+M i 653 87 87 9 "Found byte missmatch at %d "
+A 3396 653 88
+M i 653 99 99 64 "SvVerifyRes, DecodeSuccess=%d, syndrom_sum=%d"
+A 3397 653 101
+A 3398 653 106
+A 3399 653 107
+A 3400 653 108
+A 3401 653 112
+A 3402 653 113
+A 3403 653 114
+A 3404 653 126
+M i 653 128 128 64 "SvUniTest_svmfCB"
+A 3405 653 161
+A 3406 653 168
+M i 653 175 175 8 "Serial V Decoder Start: ExceptionBuffer=%d"
+f 654 "src/msp_core/unit_tests/serial_c_ut.c"
+M i 654 67 67 9 "Found byte missmatch at %d "
+A 3383 654 68
+A 3384 654 75
+M i 654 76 76 9 "Serial C Decoder status = %d"
+M i 654 80 80 9 "bit_flips_counter = %d"
+M i 654 81 81 9 "last_iteration = %d"
+M i 654 84 84 9 "Serial C Decoder End :-) "
+A 3385 654 182
+M i 654 193 193 9 "SharedSramBufferIndex=%d, ExceptionBufferIndex=%d"
+A 3386 654 195
+A 3387 654 197
+M i 654 212 212 9 "Start soft noise"
+M i 654 223 223 9 "testSerialC_Algo_API"
+A 3388 654 237
+A 3389 654 253
+A 3390 654 254
+A 3391 654 255
+M i 654 257 257 9 "serial_c_verify_response, SyndSum0_2=%d, SyndSum3_12=%d"
+A 3392 654 259
+A 3393 654 260
+A 3394 654 262
+A 3395 654 263
+f 655 "src/msp_core/unit_tests/bch_dec_ut.c"
+A 3620 655 45
+f 656 "src/msp_core/unit_tests/msp_ut_main.c"
+M i 656 123 123 64 "Allocate recipe index = %u, ce = %u "
+M i 656 132 132 64 "Release recipe index = %u, ce = %u, msp = %u"
+A 3374 656 133
+M i 656 157 159 64 ">>> MSP internal test. Send ERASE Recipe. recipeIdx %d. ceId %d."
+A 3375 656 157
+M i 656 181 181 64 " Send ERASE Recipe. recipeIdx %d ceId %d fifoMsgCeId %d"
+M i 656 196 198 64 ">>> MSP internal test. Send PROGRAM Recipe. recipeIdx %d. ceId %d."
+A 3376 656 196
+M i 656 259 261 64 ">>> MSP internal test. Send READ Recipe. recipeIdx %d. ceId %d."
+A 3377 656 259
+M i 656 311 311 42 ">>> MSP internal test, Send CONTROL Recipe. recipeIdx=%d, ceId=%d, mspId=%d"
+M i 656 364 364 64 "!!!FAIL VERIFY INCREMENTAL!!!- last_byte=0x%x  read byte=0x%x readVerifyErrorCounter=%d"
+M i 656 375 375 64 "Get Read status recipeID=%d"
+M i 656 379 379 64 "==========================="
+M i 656 380 380 64 "== Read PASS !!! "
+M i 656 381 381 64 "==========================="
+M i 656 383 383 64 "==========================="
+M i 656 384 384 64 "== ReadFAIL !!! "
+M i 656 385 385 64 "==========================="
+M i 656 393 393 64 "sram2=0x%x, p_mu=0x%x"
+M i 656 437 437 64 " new stage=%d"
+M i 656 448 448 64 " index=%d, status = %d"
+M i 656 475 475 64 "============================================================"
+M i 656 476 476 64 " EPR - finish erase, try program page %d"
+M i 656 495 495 64 "============================================================"
+M i 656 496 496 64 "EPR finish program, try read muBitmap 0x%x from page %d"
+M i 656 513 513 64 "EPR finish read, check data"
+M i 656 601 601 64 "Iligal location status=%d"
+M i 656 611 611 64 "msp_int_test_random_sequence recipeIdx=%d"
+M i 656 614 614 64 "RANDOM - finish erase, block=%d"
+M i 656 622 622 64 "RANDOM finish program from page %d"
+M i 656 631 632 64 "All pages programmed in block %d start from 0 again"
+M i 656 637 637 64 "RANDOM finish read, check data"
+M i 656 649 649 64 "MSP INTERNAL TEST FINISHED after %d iterations - Stay in while 1"
+M i 656 650 650 64 "TEST Statistics: Erase counter=%d,complition=%d,Errors=%d"
+M i 656 651 651 64 " Program counter=%d,complition=%d,Errors=%d"
+M i 656 652 652 64 " Read counter=%d,complition=%d,Verified=%d,Read_Verified_Errors=%d"
+M i 656 662 662 64 " ========================== transactionCounter incremented to ====== %d ========"
+M i 656 669 669 64 " New location index=%d"
+M i 656 676 676 64 "recipeID = %d "
+M i 656 679 679 64 "It was control recipe -> ignore"
+M i 656 877 877 64 "EPR location index=%d, die = %d, block0 = %d, block1 = %d"
+A 3378 656 943
+A 3379 656 993
+A 3380 656 1066
+A 3381 656 1081
+M i 656 1111 1111 64 " Start msp_ut_test1()"
+M i 656 1177 1177 64 " Send control recipe to start msp internal test"
+M i 656 1191 1191 64 " Start msp internal test from recipe, args num=%d"
+M i 656 1192 1192 64 " iterationsNumber- arg1=%d"
+M i 656 1193 1193 64 " seed- arg2=%d"
+M i 656 1194 1194 64 " erase_erased_prob- arg3=0x%x"
+M i 656 1195 1195 64 " erase_programmed_prob- arg4=0x%x"
+M i 656 1196 1196 64 " program_programmed_prob- arg5=0x%x"
+M i 656 1209 1209 64 "[0x%03x] internal_test_mu_result: stg buffer %u, decoder %u"
+M i 656 1229 1230 64 "[0x%03x] msp_read_debug_req_result: mask %u"
+f 657 "src/msp_core/unit_tests/acquisition_path_ut.c"
+A 3208 657 695
+M i 657 700 700 64 "MSP %d: xor2Test starting"
+A 3209 657 732
+A 3210 657 733
+A 3211 657 738
+M i 657 741 741 64 "MSP %d: xor2Test complete"
+M i 657 748 748 64 "MSP %d: xor6Test starting"
+A 3212 657 796
+A 3213 657 804
+A 3214 657 809
+A 3215 657 815
+M i 657 818 818 64 "MSP %d: xor6Test complete"
+M i 657 825 825 64 "MSP %d: syndromeCalculationTest starting"
+A 3216 657 877
+A 3217 657 878
+A 3218 657 885
+A 3219 657 892
+A 3220 657 896
+A 3221 657 917
+A 3222 657 921
+M i 657 930 931 64 "MSP : calculates synd sum is %d, result sum is %d"
+A 3223 657 932
+M i 657 934 934 64 "MSP %d: syndromeCalculationTest complete"
+M i 657 942 942 64 "MSP %d: count1sSingleInputTest starting"
+A 3224 657 1016
+A 3225 657 1021
+A 3226 657 1030
+A 3227 657 1035
+A 3228 657 1036
+A 3229 657 1037
+A 3230 657 1038
+A 3231 657 1039
+A 3232 657 1040
+A 3233 657 1044
+M i 657 1049 1049 64 "MSP %d: count1sSingleInputTest complete"
+M i 657 1055 1055 64 "MSP %d: count1sMultipleInputsTest starting"
+A 3234 657 1129
+A 3235 657 1136
+A 3236 657 1145
+A 3237 657 1152
+A 3238 657 1153
+A 3239 657 1154
+A 3240 657 1155
+A 3241 657 1162
+A 3242 657 1163
+A 3243 657 1164
+A 3244 657 1166
+A 3245 657 1170
+A 3246 657 1171
+A 3247 657 1172
+A 3248 657 1177
+A 3249 657 1178
+A 3250 657 1179
+A 3251 657 1180
+M i 657 1185 1185 64 "MSP %d: count1sMultipleInputsTest complete"
+M i 657 1191 1191 64 "MSP %d: continuousTest starting"
+A 3252 657 1226
+A 3253 657 1235
+A 3254 657 1254
+M i 657 1257 1257 64 "MSP %d: continuousTest complete"
+M i 657 1264 1264 64 "MSP %d: spamTest starting"
+A 3255 657 1364
+A 3256 657 1371
+A 4006 657 1375
+A 3257 657 1376
+A 3258 657 1425
+A 3259 657 1440
+A 4007 657 1444
+A 3260 657 1445
+A 3261 657 1458
+M i 657 1461 1461 64 "MSP %d: spamTest complete"
+M i 657 1480 1480 64 "MSP %d: All tests complete"
+f 658 "src/msp_core/unit_tests/msp_dma_ut.c"
+A 3363 658 101
+A 3364 658 136
+A 3365 658 142
+M i 658 155 155 64 "MSP %d: basicCopyTest starting"
+A 3366 658 178
+A 3367 658 183
+A 3368 658 188
+M i 658 191 191 64 "MSP %d: basicCopyTest complete"
+M i 658 199 199 64 "MSP %d: multipleCopiesTest starting"
+A 3369 658 241
+A 3370 658 250
+A 3371 658 261
+A 3372 658 262
+M i 658 267 267 64 "MSP %d: multipleCopiesTest complete"
+M i 658 278 278 64 "MSP %d: All tests complete"
+A 3373 658 282
+f 659 "src/msp_core/unit_tests/timers_ut.c"
+A 3423 659 112
+A 3424 659 133
+M i 659 147 147 64 "MSP %d: repeatedOneShotTest starting"
+A 3425 659 172
+A 3426 659 181
+M i 659 184 185 64 "MSP %d: repeatedOneShotTest: isrCount %d"
+A 3427 659 192
+A 3428 659 193
+M i 659 197 197 64 "MSP %d: repeatedOneShotTest complete"
+M i 659 210 210 64 "MSP %d: multiTimerOneShotTest starting"
+A 3429 659 254
+A 3430 659 255
+M i 659 259 260 64 "MSP %d: multiTimerOneShotTest: Timer %d done"
+A 3431 659 267
+M i 659 283 283 64 "MSP %d: multiTimerOneShotTest: Timer %d ISR"
+A 3432 659 285
+A 3433 659 287
+M i 659 305 305 64 "MSP %d: multiTimerOneShotTest complete"
+M i 659 332 332 64 "MSP %d: periodicTimerTest starting"
+A 3434 659 358
+A 3435 659 364
+M i 659 367 368 64 "MSP %d: periodicTimerTestIsr: isrCount %d"
+A 3436 659 378
+A 3437 659 380
+A 3438 659 381
+M i 659 389 389 64 "MSP %d: periodicTimerTest complete"
+M i 659 402 402 64 "MSP %d: pauseTest starting"
+A 3439 659 435
+A 3440 659 443
+M i 659 446 447 64 "MSP %d: pauseTestIsr0: isrCount %d"
+A 3441 659 454
+A 3442 659 455
+M i 659 468 469 64 "MSP %d: pauseTestIsr0: timer 1 value is %d"
+A 3443 659 471
+A 3444 659 472
+A 3445 659 482
+A 3446 659 493
+A 3447 659 500
+M i 659 503 504 64 "MSP %d: pauseTestIsr1: isrCount %d"
+A 3448 659 511
+A 3449 659 512
+M i 659 514 514 64 "MSP %d: pauseTestIsr complete"
+M i 659 525 525 64 "MSP %d: All tests complete"
+A 3450 659 529
+f 660 "src/msp_core/unit_tests/exception_path_ut.c"
+A 3316 660 225
+A 3317 660 284
+M i 660 317 317 64 "MSP %d: CL6To3Xor2Test starting"
+A 3318 660 361
+A 3319 660 365
+A 3320 660 369
+A 3321 660 374
+M i 660 377 377 64 "MSP %d: CL6To3Xor2Test complete"
+M i 660 388 388 64 "MSP %d: CL6To3Xor6Test starting"
+A 3322 660 425
+A 3323 660 429
+A 3324 660 433
+A 3325 660 438
+M i 660 441 441 64 "MSP %d: CL6To3Xor6Test complete"
+M i 660 451 451 64 "MSP %d: CL6To3MultipleOutputsTest starting"
+A 3326 660 493
+A 3327 660 496
+A 3328 660 500
+M i 660 503 504 64 "MSP %d: CL6To3MultipleOutputsTestIsr: isrCount %d"
+A 3329 660 513
+A 3330 660 515
+A 3331 660 517
+A 3332 660 546
+A 3333 660 548
+A 3334 660 550
+A 3335 660 574
+A 3336 660 576
+A 3337 660 578
+M i 660 581 581 64 "MSP %d: CL6To3MultipleOutputsTest complete"
+A 3338 660 588
+M i 660 601 601 64 "MSP %d: All tests complete"
+A 3339 660 605
+M i 660 685 685 64 "g_CL6to3_LUT[%d] = 0x%08x"
+A 3340 660 686
+A 3341 660 722
+M i 660 725 725 64 "Exception buffer ID = %d"
+A 3342 660 730
+M i 660 733 733 64 "Exception buffer ID = %d"
+f 661 "src/msp_core/unit_tests/algo_ut.c"
+A 3262 661 57
+A 3263 661 70
+A 3264 661 77
+A 3265 661 78
+A 3266 661 79
+A 3267 661 80
+A 3268 661 82
+A 3269 661 83
+A 3270 661 84
+A 3271 661 127
+A 3272 661 128
+A 3273 661 129
+A 3274 661 130
+A 3275 661 132
+A 3276 661 133
+A 3277 661 134
+A 3278 661 204
+A 3279 661 205
+A 3280 661 206
+A 3281 661 207
+A 3282 661 210
+A 3283 661 212
+A 3284 661 214
+A 3285 661 255
+A 3286 661 256
+A 3287 661 257
+A 3288 661 258
+A 3289 661 261
+A 3290 661 263
+A 3291 661 265
+A 3292 661 338
+A 3293 661 343
+A 3294 661 355
+A 3295 661 372
+A 3296 661 373
+A 3297 661 374
+A 3298 661 375
+A 3299 661 378
+A 3300 661 380
+A 3301 661 382
+A 3302 661 387
+A 3303 661 388
+A 3304 661 389
+A 3305 661 437
+A 3306 661 438
+A 3307 661 439
+A 3308 661 440
+A 3309 661 443
+A 3310 661 445
+A 3311 661 447
+A 3312 661 501
+A 3313 661 509
+A 3314 661 527
+A 3315 661 540
+M i 661 546 548 64 "--- Start Test %u"
+M i 661 580 580 64 "---------------------------"
+M i 661 581 581 64 "--- ALGO UT has PASSED! ---"
+M i 661 582 582 64 "---------------------------"
+f 662 "src/msp_core/unit_tests/status_abort_ut.c"
+M i 662 59 59 66 "Overflow Test. Masking Channel %d Pause ISR."
+M i 662 66 66 66 "icaccPause_ISR. Channel %d. Status 0x%X."
+M i 662 84 84 66 "Channel %d. Die %d. ICACC Size Before/After Flush 0x%08X. Command 0x%X."
+M i 662 97 97 66 "icaccOverflow_ISR. Channel %d. Status 0x%X."
+M i 662 113 113 66 "Channel %d. Die %d. ICACC Size Before Flush %d. ICACC Size After Flush %d."
+M i 662 126 126 66 "icaccAlmostEmpty_ISR. Channel %d. Status 0x%X."
+M i 662 138 138 66 "Channel %d. Die %d. ICACC Size %d."
+M i 662 151 151 66 "icaccAlmostFull_ISR. Channel %d. Status 0x%X."
+M i 662 163 163 66 "Channel %d. Die %d. ICACC Size %d."
+M i 662 243 243 66 "Status Abort Request. Channel %d. DieBM 0x%X. val0 0x%X. val1 0x%X."
+M i 662 302 302 66 "Pausing. Channel %d. Die %d. Command 0x%X."
+M i 662 314 314 66 "Sensing. Channel %d. Die %d. Block %d. ICACC Size Before/After Sense 0x%08X."
+M i 662 336 336 66 "Unmasking Channel %d Pause ISR."
+f 663 "src/msp_core/unit_tests/hw_test_mem.c"
+A 3358 663 473
+M e 663 517 518 39 "mem test failed: phase %d, on address 0x%x expected 0x%x but received 0x%x"
+A 3359 663 519
+A 3360 663 783
+A 3361 663 797
+f 664 "src/msp_core/unit_tests/hw_dma_test.c"
+A 3357 664 129
+f 665 "src/msp_core/unit_tests/hw_fifo_test.c"
+f 666 "src/drivers/apple/loader/loader_info.c"
+f 667 "src/platform/common/system_init.c"
+M i 667 102 102 50 "%p"
+M e 667 105 105 50 "An ERROR (%x) occurred while trying to resume, forcing cold boot"
+M i 667 213 213 50 "Platform feature flags: 0x%08x"
+M n 667 307 307 50 "Started app %d: %p @%p %d"
+f 668 "src/platform/common/power.c"
+f 669 "src/drivers/generic/console_null/console.c"
+f 670 "src/drivers/arm/cache_info_armv7/cache_info_v7.c"
+f 671 "src/drivers/arm/cache_ops_armv7_generic/cache_v7.c"
+f 672 "src/drivers/arm/cortex_r5/cache.c"
+f 673 "src/drivers/generic/gdb_stub_transport/null/transport.c"
+f 674 "src/drivers/apple/s3e_gp_timers/s3e_gp_timers.c"
+f 675 "src/drivers/apple/s3e_pmgr/s3e_pmgr.c"
+f 676 "src/drivers/arm/etb/etb.c"
+f 677 "src/drivers/arm/etm/etm.c"
+f 678 "src/drivers/arm/ptm/ptm.c"
+f 679 "src/drivers/arm/cstf/cstf.c"
+f 680 "src/drivers/generic/debug_traces/debug_traces.c"
+f 681 "src/drivers/generic/alterman_engine/alterman_engine.c"
+A 2854 681 309
+A 2855 681 365
+A 2856 681 367
+M e 681 629 629 68 "!!!! ASSERT !!!! fileID = %d, line = %d"
+A 2857 681 660
+A 2858 681 692
+A 2859 681 707
+f 682 "src/drivers/generic/alterman_transport_nvme/alterman_nvme.c"
+A 2868 682 82
+A 2869 682 218
+A 2870 682 241
+f 683 "src/drivers/generic/syslog_console/syslog_console.c"
+f 684 "src/lib/libk/init.c"
+f 685 "src/lib/libk/arm/ssp.c"
+M e 685 42 42 48 "Stack smash detected! Hanging here...\n"
+f 686 "src/lib/libk/elapsed_time.c"
+f 687 "src/lib/libk/errno.c"
+f 688 "src/lib/libk/mem.cpp"
+f 689 "src/lib/libk/new.cpp"
+f 690 "src/lib/libk/rand.c"
+f 691 "src/lib/libk/stdio.c"
+f 692 "src/lib/libk/printf.c"
+f 693 "src/lib/libk/sys.c"
+f 694 "src/lib/libk/syscall.c"
+f 695 "src/lib/libk/strtoul.c"
+f 696 "src/lib/libk/strtol.c"
+f 697 "src/lib/libk/chartab.c"
+f 698 "src/lib/libk/memory/BlockHeap.cpp"
+f 699 "src/lib/libk/memory/MemoryAllocator.cpp"
+f 700 "src/lib/libk/memory/Glue.cpp"
+f 701 "src/lib/libk/hardened_buffers.c"
+f 702 "src/lib/libk/strlcat.c"
+f 703 "src/lib/libk/strlcpy.c"
+f 704 "src/lib/libk/strncat.c"
+f 705 "src/lib/libk/strncpy.c"
+f 706 "src/lib/libk/stpncpy.c"
+f 707 "src/arch/arm/init.c"

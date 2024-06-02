@@ -1,0 +1,119 @@
+0x80010028 ASPCORE_test_01                                             		#Params: anint netint  		
+0x8001002c ASPCORE_test_02                                             		#Params: cmd lba  		
+0x80010030 ASPCORE_test_03                                             		#Params: cmd name  		
+0x80010034 ASPCORE_test_04                                             		#Params: name1 name2 counter 		
+0x80010038 ASPCORE_test_05                                             		#Params: test   		
+0x8001003c ASPCORE_test_06                                             		#Params: verbose_test   		
+0x80010040 ASPCORE_L2V_UPDATE                                          		#Params: anint netint  		
+0x80010044 ASPCORE_L2V_REPACK                                          		#Params: anint netint  		
+0x80010048 ASPCORE_CLOG_REPLAY                                         		#Params: test   		
+0x8001004c ASPCORE_CLOG_SAVE                                           		#Params: siloNum   		
+0x80010050 ASPCORE_CMD_SHUTDOWN                                        		#Params: save_cxt   		
+0x80010054 ASPCORE_CMD_EXPEDITE                                        		#Params: LBA new_priority err 		
+0x80010058 ASPCORE_CMD_SHUTDOWN_GC                                     		#Params: eraseable_intr eraseable_user pending_intr pending_user		
+0x8001005c ASPCORE_HOST_SLOW_TAG                                       		#Params: tag   		
+0x80010060 ASPCORE_PUSH_ERASE                                          		#Params: band flow  		
+0x80010064 ASPCORE_PUSH_ABORT_SKIP                                     		#Params: flow band  		
+0x80010068 ASPCORE_PUSH_PAGES                                          		#Params: flow band page size		#Matchby: Arg1	
+0x8001006c ASPCORE_PUSH_CLOG                                           		#Params: SecLeftInBand   		
+0x80010070 ASPCORE_PUSH_PAUSE                                          		#Params: req ack  		
+0x80010074 ASPCORE_PUSH_RESUME                                         		#Params: test   		
+0x80010078 ASPCORE_PUSH_HOST                                           		#Params: flow accum  		
+0x8001007c ASPCORE_PUSH_GC_DESTINATION                                 		#Params: band   		
+0x80010080 ASPCORE_PUSH_ERASE_SUSPEND                                  		#Params: test   		
+0x80010084 ASPCORE_PUSH_NEXT_BAND                                      		#Params: flow band free_intr free_user		#Matchby: Arg1	
+0x80010088 ASPCORE_PUSH_NEXT_BAND_BUSY_ON_RAID                         		#Params: flow   		#Matchby: Arg1	
+0x8001008c ASPCORE_PUSH_ABORT_PAD                                      		#Params: flow   		#Matchby: Arg1	
+0x8001016c ASPCORE_PUSH_WAIT_GPS                                       		#Params: flow band  		#Matchby: Arg1	
+0x80010090 ASPCORE_CACHE_STALL                                         		#Params: err aw_buffer_sz  		
+0x80010094 ASPCORE_CACHE_UNSTALL                                       		#Params: anint netint  		
+0x80010098 ASPCORE_CACHE_HOST_RD_GC                                    		#Params: anint netint  		
+0x8001009c ASPCORE_CACHE_EVICT                                         		#Params: todo dirty evict 		
+0x8001022c ASPCORE_LDEFRAG_ACTIVE                                      		#Params: thres   		
+0x800100a0 ASPCORE_QOS_MODE_SWITCH                                     		#Params: QoSmode   		
+0x800100a4 ASPCORE_QOS_PRIORITY_THRESHOLD_EXPIRE                       		#Params: tier   		
+0x800100a8 ASPCORE_GC_ACTIVE                                           		#Params: bu bi reason dirtlc		
+0x800100ac ASPCORE_GC_SOURCE                                           		#Params: band band_flow flow validity		
+0x800100b0 ASPCORE_GC_DEFERRED                                         		#Params: dst_band   		
+0x800100b4 ASPCORE_GC_LDEFRAG                                          		#Params: dst_band   		
+0x800100b8 ASPCORE_GC_LOW                                              		#Params: intr_partition user_partition memory 		
+0x800100bc ASPCORE_GC_READ_FOR_GC                                      		#Params: anint netint  		
+0x800100c0 ASPCORE_GC_THROTTLE_ENABLE                                  		#Params: idle   		
+0x800100c4 ASPCORE_GC_THROTTLE_DISABLE                                 		#Params: reason   		
+0x800100c8 ASPCORE_BAND_READ_VERIFY                                    		#Params: band status  		
+0x800100cc ASPCORE_BAND_IMMEDIATE_PAD                                  		#Params: flow band success 		
+0x80010170 ASPCORE_DYNCHOKEBAND                                        		#Params: scan band isfat validity		
+0x80010174 ASPCORE_DYNCHOKE                                            		#Params: so slcgcchoke hostchoke gcoff		
+0x800100d0 ASPCORE_DM_READ                                             		#Params: anint netint  		
+0x800100d4 ASPCORE_NANDENG_NAND_ERROR                                  		#Params: nand_op error segIdx 		
+0x80010200 ASPCORE_GEN_ERROR_SEG                                       		#Params: segIdx errorSegIdxAndErr dip page		
+0x80010204 ASPCORE_ERROR_INJ                                           		#Params: hix segIdx dip page		
+0x80010208 ASPCORE_OFFLINE_SEG                                         		#Params: segIdx page dip 		
+0x800100d8 ASPCORE_NANDENG_READ_DISPATCH                               		#Params: die dieDepth page band		
+0x800100dc ASPCORE_NANDENG_READ_STATUS_DONE                            		#Params: die dieDepth page band		
+0x800100e0 ASPCORE_NANDENG_PROG_DISPATCH                               		#Params: die dieDepth page band		#Matchby: Arg1	
+0x800100e4 ASPCORE_NANDENG_PROG_IO_DONE                                		#Params: die stepovers page band		#Matchby: Arg1	
+0x800101d8 ASPCORE_NANDENG_PROG_STATUS_DISPATCH                        		#Params: die dieDepth page band		#Matchby: Arg1	
+0x80010220 ASPCORE_NANDENG_PROG_SPECIAL_DISPATCH                       		#Params: ncType mspId qId flags		#Matchby: Arg1	
+0x800100e8 ASPCORE_NANDENG_PROG_STATUS_DONE                            		#Params: die dieDepth page band		#Matchby: Arg1	
+0x800101dc ASPCORE_NANDENG_READ_UTIL_DISPATCH                          		#Params: die dieDepth page band		
+0x800100ec ASPCORE_NANDENG_ERASE_DISPATCH                              		#Params: die dieDepth band 		
+0x800101e0 ASPCORE_NANDENG_ERASE_SUSPEND                               		#Params: die dieDepth band 		
+0x800100f0 ASPCORE_NANDENG_ERASE_STATUS_DONE                           		#Params: die dieDepth band 		
+0x800100f4 ASPCORE_PROCESS_OFFLINE_BLOCK_RETIRE                        		#Params: band page dip sec		
+0x800100f8 ASPCORE_PROCESS_OFFLINE_BLOCK_SEND                          		#Params: band page dip sec		
+0x800100fc ASPCORE_TAKING_BAND_OFFLINE                                 		#Params: dip newCnt prevWorstDip prevWorstCnt		
+0x80010178 ASPCORE_TAKING_DIE_OFFLINE                                  		#Params: lun newCnt prevWorstLun prevWorstCnt		
+0x80010218 ASPCORE_SENDING_GPS                                         		#Params: wait activeGPS  		
+0x800101f0 ASPCORE_NANDENG_FOLDING_START                               		#Params: page   		
+0x800101f4 ASPCORE_NANDENG_FOLDING_DONE                                		#Params: page   		
+0x80010100 ASPCORE_KRNL_WAIT                                           		#Params: anint netint  		
+0x8001017c ASPCORE_KRNL_PICK                                           		#Params: oldTask newTask  		
+0x80010180 ASPCORE_KRNL_IDLE                                           		#Params: task   		
+0x800101c8 ASPCORE_KRNL_BLOCK_HOST                                     		#Params: prevBlockStopTS blockHostMask  		
+0x80010104 ASPCORE_READ_TRIMMED                                        		#Params: tag LBA size 		
+0x80010108 ASPCORE_TAG_ACTION                                          		#Params: tag line action_code io_rec		
+0x8001010c ASPCORE_MPBX_FOLD_START                                     		#Params: band   		
+0x80010110 ASPCORE_MPBX_EOB_RV_START                                   		#Params: band   		
+0x80010114 ASPCORE_MPBX_PARITY_SAVE_START                              		#Params: band   		
+0x80010118 ASPCORE_STRIPE_FINISH                                       		#Params: band page  		
+0x8001011c ASPCORE_SPBX_GC_EVICT                                       		#Params: flow band  		
+0x8001023c ASPCORE_EOB_PARITY_SAVE                                     		#Params: flow band protectionType 		
+0x80010120 ASPCORE_CMD_READ                                            		#Params: tag priority lba size		#Matchby: Arg1	
+0x80010124 ASPCORE_CMD_WRITE                                           		#Params: tag priority lba size		#Matchby: Arg1	
+0x80010128 ASPCORE_CMD_UNMAP                                           		#Params: tag priority lba size		#Matchby: Arg1	
+0x8001012c ASPCORE_CMD_FLUSH                                           		#Params: tag priority lba size		#Matchby: Arg1	
+0x80010130 ASPCORE_CMD_FENCE                                           		#Params: tag priority lba size		#Matchby: Arg1	
+0x8001018c ASPCORE_CMD_CACHEBLOCK                                      		#Params: opType lba size 		#Matchby: opType	
+0x80010134 ASPCORE_QOS_EVENT                                           		#Params: tag timeout  		#Matchby: Arg1	
+0x80010138 ASPCORE_DIRM_DECISION                                       		#Params: type   		
+0x8001013c ASPCORE_OSLC_VOTES_STATE                                    		#Params: reason state  		
+0x80010140 ASPCORE_OSLC_TUNNEL_STATE                                   		#Params: reason state  		
+0x80010144 ASPCORE_SLC_DEMAND                                          		#Params: type reason detectedSize slcSize		#Matchby: Arg1	
+0x80010148 ASPCORE_SLC_DEMAND_BURST                                    		#Params: onoff FsDs buf_free buf_thresh		#Matchby: Arg1	
+0x8001014c ASPCORE_SM_STATE                                            		#Params: state flow slcHasBudget tlcHasBudget		#Matchby: Arg1	
+0x80010150 ASPCORE_SM_IDLE                                             		#Params: bi directToTLCLock msLastWrite waterfallLock		#Matchby: Arg1	
+0x80010154 ASPCORE_AW_ALLOC_OK                                         		#Params: allocated requested  		
+0x80010158 ASPCORE_AW_ALLOC_FAIL                                       		#Params: requested aw_hw aw_sw 		
+0x8001015c ASPCORE_AW_FETCH_OK                                         		#Params: tag_size aw_hw aw_sw 		
+0x80010160 ASPCORE_AW_FETCH_REG                                        		#Params: tag_size   		
+0x80010164 ASPCORE_WRITE_TIME                                          		#Params: band flow  		#Matchby: Arg1	
+0x80010168 ASPCORE_READ_TIME                                           		#Params: band flow  		#Matchby: Arg1	
+0x80010190 ASPCORE_TICKS_TO_SKIP                                       		#Params: flow   		#Matchby: Arg1	
+0x80010194 ASPCORE_TIMEOUT_CHOKE_P_L                                   		#Params: isPChoke isLChoke delta_tPms delta_tLms		
+0x80010198 ASPCORE_TIMEOUT_GC_WRITES                                   		#Params: delta_gcW delta_gcLW  		
+0x8001019c ASPCORE_TIMEOUT_GC_FLAGS                                    		#Params: mem user intr 		
+0x800101a0 ASPCORE_TIMEOUT_GC_WAMP_U                                   		#Params: gcWampUAvgX10   		
+0x800101a4 ASPCORE_TIMEOUT_CMD                                         		#Params: cmdType   		
+0x800101a8 ASPCORE_TIMEOUT_DEFECTS                                     		#Params: factoryDefects grownDefects retiredBlocks totNumBlocks		
+0x800101ac ASPCORE_NRP_LOW_POWER_BUDGET                                		#Params: new_pb old_pb  		
+0x800101b0 ASPCORE_MAX_POWER_BUDGET                                    		#Params: new_pb old_pb  		
+0x800101b4 ASPCORE_HR_THROTTLE                                         		#Params: slcBlocks tlcBlocks  		
+0x800101b8 ASPCORE_CPU_TRACEPOINT                                      		#Params: id   		#Matchby: Arg1	
+0x800101c4 ASPCORE_TUNNEL_CMD                                          		#Params: tunnel_op tunnel_status  		
+0x800101e4 ASPCORE_SEG_START                                           		#Params: segIdx size skippedPlanes failedSectorsBM		
+0x800101e8 ASPCORE_PART_REREAD                                         		#Params: boff size  		
+0x800101ec ASPCORE_PART_COMPLETE                                       		#Params: boff size  		
+0x80010214 ASPCORE_BLANK_READ                                          		#Params: band flags valid err		
+0x8001021c ASPCORE_DISPATCHER_ADD_BARRIER                              		#Params: qLevel type page band		#Matchby: Arg1	
+0x80010224 ASPCORE_DISPATCHER_SAMPLE                                   		#Params: qLevel topElement event0 event1		#Matchby: Arg1	
