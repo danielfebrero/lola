@@ -1,0 +1,37 @@
+;;
+;; fontmover - sandbox profile
+;; Copyright 2009 - 2022 Apple, Inc.  All Rights reserved.
+;;
+;; WARNING: The sandbox rules in this file currently constitute
+;; Apple System Private Interface and are subject to change at any time and
+;; without notice.
+;;
+
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(allow signal)
+
+(allow file-read-metadata)
+
+(allow file-read* (extension "com.apple.app-sandbox.read"))
+(allow file-read* file-write* (extension "com.apple.app-sandbox.read-write"))
+
+(allow file-read* file-write* 
+    (subpath "/Library/Fonts")
+    (subpath "/Library/Fonts (Removed)")
+)
+
+(allow file-issue-extension)
+
+(allow ipc-posix-shm)
+
+(allow mach-lookup)
+
+(allow sysctl-read)
+
+(allow authorization-right-obtain
+    (right-name "com.apple.XType.fontmover.install")
+    (right-name "com.apple.XType.fontmover.restore")
+    (right-name "com.apple.XType.fontmover.remove")
+)

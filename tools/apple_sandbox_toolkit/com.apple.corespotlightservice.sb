@@ -1,0 +1,31 @@
+;;; For macos: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlightService
+(version 1)
+(import "system.sb")
+
+(define (param-subpath param-name param-relative-subpath)
+(subpath (string-append (param param-name) param-relative-subpath)))
+
+(define (home-subpath home-relative-subpath)
+(param-subpath "_HOME" home-relative-subpath))
+
+(deny default)
+
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+
+(allow file-read* (require-all (extension "com.apple.corespotlightservice.read-write")))
+(allow file-write* (require-all (extension "com.apple.corespotlightservice.read-write")))
+
+(allow file-read* (require-all (subpath "/Library/AssetsV2") (extension "com.apple.assets.read")))
+(allow file-read* (require-all (subpath "/Library/LinguisticData") (extension "com.apple.assets.read")))
+
+(allow mach-lookup
+    (global-name "com.apple.mobileassetd.v2"))
+
+(allow user-preference-read (preference-domain "com.apple.SoftwareUpdate"))
+
+;; Allow fsctl(APFSIOC_VOLUME_CLASSKB_OP), fsctl(APFSIOC_FAST_PROMOTE_DATA), fsctl(HFSIOC_VOLUME_STATUS), ffsctl(APFSIOC_MARK_PURGEABLE) for SpotlightIndexer
+(allow system-fsctl
+    (fsctl-command APFSIOC_VOLUME_CLASSKB_OP)
+    (fsctl-command APFSIOC_MARK_PURGEABLE)
+    (fsctl-command HFSIOC_VOLUME_STATUS)
+    (fsctl-command APFSIOC_FAST_PROMOTE_DATA))

@@ -1,0 +1,28 @@
+;;
+;; Quick Look Plug-in - sandbox profile
+;; Copyright (c) 2011 Apple Inc.  All Rights reserved.
+;;
+;; WARNING: The sandbox rules in this file currently constitute 
+;; Apple System Private Interface and are subject to change at any time and
+;; without notice. The contents of this file are also auto-generated and not
+;; user editable; it may be overwritten at any time.
+;;
+
+(version 1)
+(import "quicklook-satellite.sb")
+
+
+;; Plug-in specific extensions
+;; Contacts
+(import "contacts.sb")
+(contacts-client (param "_HOME") (param "application_darwin_temp_parent_dir"))
+
+;; Calendar
+(allow file-read*
+       (home-subpath "/Library/Application Support/Calendars")
+       (home-subpath "/Library/Calendars"))
+
+;; Notes
+(allow file-read* (home-subpath "/Library/Containers/com.apple.Notes"))
+(allow file-read* (home-subpath "/Library/Group Containers/group.com.apple.Notes"))
+(allow file-read* (home-subpath "/Library/Group Containers/group.com.apple.ironcademac"))

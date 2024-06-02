@@ -47,12 +47,13 @@ add_library(ArgumentParser
   Utilities/StringExtensions.swift
   Utilities/Tree.swift)
 
-# Example of set_target_properties
-set_target_properties(main.cpp PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+add_executable(main main.cpp)
+
+set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 target_compile_options(ArgumentParser PRIVATE $<$<BOOL:${BUILD_TESTING}>:-enable-testing>)
 target_link_libraries(ArgumentParser PRIVATE $<$<NOT:$<PLATFORM_ID:Darwin>>:Foundation>)
 
 # Installation command
-install(TARGETS main.cpp DESTINATION bin)
+install(TARGETS main DESTINATION bin)
 
 set_property(GLOBAL APPEND PROPERTY ArgumentParser_EXPORTS ArgumentParser)
