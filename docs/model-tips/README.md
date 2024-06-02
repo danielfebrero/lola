@@ -1,8 +1,8 @@
-# Unleash model performances
+# Correctly exploit your model (benchmark results issued by simulation)
 
 - reduce memory consumption by 30%
 - increase inference spead by 30%
-- response accuracy drop from 95% to 94%
+- accuracy will vary from -1% (because of float16) to +x% (because of 9B)
 
 https://chatgpt.com/share/b4f81846-d103-4921-8905-aeab2b540cb3
 
@@ -33,7 +33,6 @@ model = AutoModelForVision2Seq.from_pretrained(
 
 ```python
 import torch
-from typing import Dict, List, Any
 from transformers import AutoProcessor, AutoModelForCausalLM
 
 # Set the device to CPU
