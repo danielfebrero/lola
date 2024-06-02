@@ -1,0 +1,3 @@
+[submodule "code/idfx-mba-m2-mps/idefics"]
+	path = code/idfx-mba-m2-mps/idefics
+	url = https://huggingface.co/machinev/idefics-9b-LPU_model

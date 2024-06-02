@@ -1,0 +1,9 @@
+numpy==1.26.4
+pillow==10.3.0
+requests==2.32.3
+safetensors==0.4.3
+torch==2.3.0
+torchaudio==2.3.0
+torchvision==0.18.0
+transformers==4.41.2
+typing_extensions==4.12.1
