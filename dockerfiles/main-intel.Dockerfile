@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-COPY . .
+COPY ./CMakeLists.txt ./CMakeLists.txt
 
 RUN if [ "${LLAMA_SYCL_F16}" = "ON" ]; then \
     echo "LLAMA_SYCL_F16 is set" && \

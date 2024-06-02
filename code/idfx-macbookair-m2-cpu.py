@@ -6,6 +6,7 @@ from safetensors.torch import load_file
 
 # Set the device to CPU
 DEVICE = torch.device('cpu')
+print("Using CPU device")
 
 # Define the model directory
 model_dir = "../idfx"  # Update the path as needed
@@ -22,10 +23,10 @@ model_weights_path = os.path.join(model_dir, "adapter_model.safetensors")
 state_dict = load_file(model_weights_path)
 model.load_state_dict(state_dict, strict=False)  # Allow some flexibility in loading
 
-# Move the model to the appropriate device (CPU)
+# Move the model to the appropriate device (CPU or MPS)
 model.to(DEVICE)
 
-# Quantize the model dynamically
+# Quantize the model dynamically (optional, for reducing memory usage)
 model = torch.quantization.quantize_dynamic(
     model, {torch.nn.Linear}, dtype=torch.qint8
 )
