@@ -1,0 +1,16 @@
+name: Notify Team on stale pull requests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    name: Send MS notifications for Stale PR/Issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"

@@ -1,0 +1,45 @@
+name: EMBA Docker Image build
+
+on:
+  # push:
+  #  branches:
+  #    - '**'        # matches every branch
+  # pull_request:
+  #  branches:
+  #    - '**'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # do it every day
+
+
+jobs:
+  docker-build:
+    if: github.repository_owner == 'e-m-b-a'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          swap-storage: true
+      - name: EMBA container build
+        run: |
+            sudo docker image prune -f
+            sudo docker container prune -f
+            sudo apt-get update -y
+            sudo apt-get install python3-venv -y
+            sudo apt-get install docker-compose -y
+            mkdir ./external
+            python3 -m venv "./external/emba_venv"
+            source "./external/emba_venv/bin/activate"
+            echo "GH_action:true" > ./config/gh_action
+            sudo docker-compose build --no-cache --pull
+            NO_UPDATE_CHECK=1 sudo -E sudo ./emba -d 2 -y
