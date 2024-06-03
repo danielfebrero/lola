@@ -1,0 +1,115 @@
+{
+  "homebrew_version": "4.1.14-7-gb855a9e",
+  "used_options": [
+
+  ],
+  "unused_options": [
+
+  ],
+  "built_as_bottle": true,
+  "poured_from_bottle": true,
+  "loaded_from_api": true,
+  "installed_as_dependency": false,
+  "installed_on_request": true,
+  "changed_files": [
+    "libexec/lib/node_modules/bit-bin/node_modules/jest-environment-jsdom-fourteen/node_modules/fsevents/build/Makefile",
+    "libexec/lib/node_modules/bit-bin/node_modules/jest-environment-jsdom-fourteen/node_modules/fsevents/build/config.gypi",
+    "libexec/lib/node_modules/bit-bin/node_modules/leveldown/build/Makefile",
+    "libexec/lib/node_modules/bit-bin/node_modules/leveldown/build/config.gypi",
+    "libexec/lib/node_modules/bit-bin/node_modules/watchpack-chokidar2/node_modules/fsevents/build/Makefile",
+    "libexec/lib/node_modules/bit-bin/node_modules/watchpack-chokidar2/node_modules/fsevents/build/config.gypi",
+    "libexec/lib/node_modules/bit-bin/node_modules/webpack-dev-server/node_modules/fsevents/build/Makefile",
+    "libexec/lib/node_modules/bit-bin/node_modules/webpack-dev-server/node_modules/fsevents/build/config.gypi"
+  ],
+  "time": 1717410699,
+  "source_modified_time": 499162500,
+  "compiler": "clang",
+  "aliases": [
+
+  ],
+  "runtime_dependencies": [
+    {
+      "full_name": "brotli",
+      "version": "1.1.0",
+      "revision": 0,
+      "pkg_version": "1.1.0",
+      "declared_directly": false
+    },
+    {
+      "full_name": "c-ares",
+      "version": "1.29.0",
+      "revision": 0,
+      "pkg_version": "1.29.0",
+      "declared_directly": false
+    },
+    {
+      "full_name": "icu4c",
+      "version": "74.2",
+      "revision": 0,
+      "pkg_version": "74.2",
+      "declared_directly": false
+    },
+    {
+      "full_name": "libnghttp2",
+      "version": "1.61.0",
+      "revision": 0,
+      "pkg_version": "1.61.0",
+      "declared_directly": false
+    },
+    {
+      "full_name": "libuv",
+      "version": "1.48.0",
+      "revision": 0,
+      "pkg_version": "1.48.0",
+      "declared_directly": false
+    },
+    {
+      "full_name": "ca-certificates",
+      "version": "2024-03-11",
+      "revision": 0,
+      "pkg_version": "2024-03-11",
+      "declared_directly": false
+    },
+    {
+      "full_name": "openssl@3",
+      "version": "3.3.0",
+      "revision": 0,
+      "pkg_version": "3.3.0",
+      "declared_directly": false
+    },
+    {
+      "full_name": "node",
+      "version": "22.2.0",
+      "revision": 0,
+      "pkg_version": "22.2.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "terminal-notifier",
+      "version": "2.0.0",
+      "revision": 0,
+      "pkg_version": "2.0.0",
+      "declared_directly": true
+    }
+  ],
+  "source": {
+    "spec": "stable",
+    "versions": {
+      "stable": "14.8.8",
+      "head": null,
+      "version_scheme": 0
+    },
+    "path": "/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/b/bit.rb",
+    "tap_git_head": null,
+    "tap": "homebrew/core"
+  },
+  "arch": "arm64",
+  "built_on": {
+    "os": "Macintosh",
+    "os_version": "macOS 14",
+    "cpu_family": "dunno",
+    "xcode": "15.0",
+    "clt": "15.0.0.0.1.1694021235",
+    "preferred_perl": "5.34"
+  }
+}
