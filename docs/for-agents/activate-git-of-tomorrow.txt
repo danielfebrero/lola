@@ -1,0 +1,192 @@
+Référez-vous à 'git help <commande>' pour des informations sur une sous-commande spécifique
+
+Commandes Porcelaine Principales
+   add                     Ajouter le contenu de fichiers dans l'index
+   am                      Appliquer une série de patchs depuis une boîte mail
+   archive                 Créer une archive des fichiers depuis un arbre nommé
+   bisect                  Trouver par recherche binaire la modification qui a introduit un bogue
+   branch                  Lister, créer ou supprimer des branches
+   bundle                  Déplacer les objets et références par archive
+   checkout                Basculer de branche ou restaurer la copie de travail
+   cherry-pick             Appliquer les modifications introduites par des commits existants
+   citool                  Alternative graphique à git-commit
+   clean                   Supprimer les fichiers non-suivis de l'arbre de travail
+   clone                   Cloner un dépôt dans un nouveau répertoire
+   commit                  Enregistrer les modifications dans le dépôt
+   describe                Baptiser un objet avec un nom lisible à partir d'une référence disponible
+   diff                    Afficher les changements entre les validations, entre validation et copie de travail, etc
+   fetch                   Télécharger les objets et références depuis un autre dépôt
+   format-patch            Préparer les patchs pour soumission par courriel
+   gc                      Effacer les fichiers non-nécessaires et optimiser le dépôt local
+   gitk                    Le navigateur de dépôt Git
+   grep                    Afficher les lignes correspondant à un motif
+   gui                     Une interface graphique portable pour Git
+   init                    Créer un dépôt Git vide ou réinitialiser un existant
+   log                     Afficher l'historique des validations
+   maintenance             Lancer les tâches pour optimiser les données du depôt Git
+   merge                   Fusionner deux ou plusieurs historiques de développement ensemble
+   mv                      Déplacer ou renommer un fichier, un répertoire, ou un lien symbolique
+   notes                   Ajouter ou inspecter les notes d'un objet
+   pull                    Rapatrier et intégrer un autre dépôt ou une branche locale
+   push                    Mettre à jour les références distantes ainsi que les objets associés
+   range-diff              Comparer deux plages de commits (par exemple deux versions d'une branche)
+   rebase                  Réapplication des commits sur le sommet de l'autre base
+   reset                   Réinitialiser la HEAD courante à l'état spécifié
+   restore                 Restaurer les fichiers l'arbre de travail
+   revert                  Inverser des commits existants
+   rm                      Supprimer des fichiers de la copie de travail et de l'index
+   scalar                  Un outil pour gérer les grands dépôts Git
+   shortlog                Résumer la sortie de 'git log'
+   show                    Afficher différents types d'objets
+   sparse-checkout         Réduit votre arbre de travail à un sous-ensemble de fichiers suivis
+   stash                   Remiser les modifications d'un répertoire de travail sale
+   status                  Afficher l'état de la copie de travail
+   submodule               Initialiser, mettre à jour et inspecter les sous-modules
+   switch                  Basculer de branche
+   tag                     Créer, lister, supprimer ou vérifier un objet d'étiquette signé avec GPG
+   worktree                Gérer des arbres de travail multiples
+
+Commandes Auxiliaires / Manipulateurs
+   config                  Voir et régler les options globales ou de dépôt
+   fast-export             Exporteur de données Git
+   fast-import             Moteur pour les importateurs rapides de données Git
+   filter-branch           Réécrire les branches
+   mergetool               Lancer les outils de résolution de conflit de fusion pour résoudre les conflits de fusion
+   pack-refs               Empaqueter les têtes et les étiquettes pour un accès efficace au dépôt
+   prune                   Élaguer les objets inatteignables depuis la base de données des objets
+   reflog                  Gérer l'information de reflog
+   remote                  Gérer un ensemble de dépôts suivis
+   repack                  Empaqueter les objets non-empaquetés d'un dépôt
+   replace                 Créer, lister, supprimer des référence pour remplacer des objets
+
+Commandes Auxiliaires / Interrogateurs
+   annotate                Annoter les lignes du fichier avec l'information de commit
+   blame                   Montrer la révision et l'auteur qui ont modifié en dernier chaque ligne d'un fichier
+   bugreport               Collecter l'information pour l'utilisateur pour remplir un rapport de bogue
+   count-objects           Compter le nombre d'objets non-empaquetés et leur consommation d'espace disque
+   diagnose                Générer une archive zip d'information de diagnostic
+   difftool                Afficher les modifications en utilisant les outils habituel de diff
+   fsck                    Vérifier la connectivité et la validité des objets dans la base de données
+   gitweb                  Interface web de Git
+   help                    Afficher l'information d'aide à propos de Git
+   instaweb                Naviguer instantanément votre dépôt de travail dans gitweb
+   merge-tree              effectuer la fusion sans toucher à l'index ni à l'arbre de travail
+   rerere                  Réutiliser une résolution enregistrée de fusions conflictuelles
+   show-branch             Afficher les branches et leurs commits
+   verify-commit           Vérifier la signature GPG de commits
+   verify-tag              Vérifier la signature GPG d'étiquettes
+   version                 Afficher l'information de version à propos de Git
+   whatchanged             Afficher les journaux avec la différence que chaque commit introduit
+
+Interaction avec d'autres développeurs
+   archimport              Importer dans Git un dépôt GNU Arch
+   cvsexportcommit         Exporter un commit unique en extraction CVS
+   cvsimport               Sauver vos données depuis un autre SCM qu'on aime à haïr
+   cvsserver               Un émulateur de serveur CVS pour Git
+   imap-send               Envoyer un ensemble de rustines depuis stdin vers un répertoire IMAP
+   p4                      Importer et soumettre à des dépôt Perforce
+   quiltimport             Appliquer un patchset quilt sur la branche courante
+   request-pull            Générer une résumé des modifications en attentes
+   send-email              Envoyer un ensemble de patchs comme courriels
+   svn                     Opération Bidirectionnelle entre un dépôt Subversion et Git
+
+Commandes bas-niveau / Manipulateurs
+   apply                   Appliquer une patch à des fichiers ou à l'index
+   checkout-index          Copier les fichiers depuis l'index dans la copie de travail
+   commit-graph            Écrire et vérifier les fichiers de graphe de commit Git
+   commit-tree             Créer un nouvel objet commit
+   hash-object             Calculer l'ID d'objet et créer optionnellement un objet depuis un fichier
+   index-pack              Construire un fichier d'index pack depuis une archive compactée existante
+   merge-file              Lancer une fusion à 3 points
+   merge-index             Lancer une fusion à 3 points pour les fichiers à fusionner
+   mktag                   Créer un objet étiquette avec validation supplémentaire
+   mktree                  Construire un objet arbre depuis une texte formaté comme ls-tree
+   multi-pack-index        Écrire et vérifier les index multi-paquet
+   pack-objects            Créer une archive compactée d'objets
+   prune-packed            Éliminer les objets qui sont déjà présents dans les fichiers pack
+   read-tree               Lire l'information d'arbre dans l'index
+   replay                  EXPÉRIMENTAL ; rejoue des commits sur une nouvelle base, fonctionne aussi avec les dépôts nus
+   symbolic-ref            Lire, modifier et supprimer les références symboliques
+   unpack-objects          Dépaqueter les objets depuis une archive empaquetée
+   update-index            Enregistrer le contenu d'un fichier de l'arbre de travail dans l'index
+   update-ref              Mettre à jour le nom d'objet stocké dans une référence en toute sécurité
+   write-tree              Créer un objet arbre depuis l'index courant
+
+Commandes bas niveau / Interrogateurs
+   cat-file                Fournir le contenu ou les détails des objets du dépôt
+   cherry                  Trouver les commits à appliquer en amont
+   diff-files              Compare des fichiers de l'arbre de travail et de l'index
+   diff-index              Comparer un arbre avec l'arbre de travail ou l'index
+   diff-tree               Compare le contenu et le mode des blobs trouvés via deux objets arbre
+   for-each-ref            Afficher de l'information sur chaque référence
+   for-each-repo           Lance une commande Git sur une liste de dépôts
+   get-tar-commit-id       Extraire l'ID du commit depuis une archive créée par git-archive
+   ls-files                Afficher l'information à propos des fichiers dans l'index ou l'arbre de travail
+   ls-remote               Lister les références dans un dépôt distant
+   ls-tree                 Afficher le contenu d'un objet arbre
+   merge-base              Trouver un ancêtre aussi bon que possible pour une fusion
+   name-rev                Trouver les noms symboliques pour des révisions données
+   pack-redundant          Trouver les fichiers pack redondants
+   rev-list                Afficher les objets commit dans l'ordre chronologique inverse
+   rev-parse               Analyser et préparer les paramètres
+   show-index              Afficher l'index de l'archive empaquetée
+   show-ref                Lister les références du dépôt local
+   unpack-file             Créer un fichier temporaire avec le contenu d'un blob
+   var                     Afficher un variable logique de Git
+   verify-pack             Valider des fichiers d'archive Git empaquetés
+
+Commandes bas niveau / Synchronisation de dépôts
+   daemon                  Un serveur vraiment simple pour les dépôts Git
+   fetch-pack              Télécharger les objets manquants depuis un autre dépôt
+   http-backend            Implantation côté serveur de Git sur HTTP
+   send-pack               Pousser les objets sur un autre dépôt via le protocole Git
+   update-server-info      Mettre à jour le fichier d'informations auxiliaires pour aider les serveurs idiots
+
+Commandes bas niveau / Assistants internes
+   check-attr              Afficher les informations gitattributes
+   check-ignore            Déboguer gitignore / les fichiers d'exclusion
+   check-mailmap           Afficher les noms canoniques et les adresses courriel des contacts
+   check-ref-format        S'assurer qu'un nom de référence est bien formé
+   column                  Afficher les données en colonnes
+   credential              Récupérer et sauvegarder les certificats d'utilisateur
+   credential-cache        Assistant pour maintenir temporairement en mémoire les mots de passe
+   credential-store        Assistant pour sauvegarder les certificats sur disque
+   fmt-merge-msg           Produire un message de validation de fusion
+   hook                    Lance les crochets git
+   interpret-trailers      Ajouter ou analyser l'information structurée dans les messages de validation
+   mailinfo                Extraire le patch et l'information de d'auteur depuis un simple message de courriel
+   mailsplit               Programme simple de découpage de mbox UNIX
+   merge-one-file          Le programme assistant standard à utiliser avec git-merge-index
+   patch-id                Calculer l'ID unique d'un patch
+   sh-i18n                 Le code d'initialisation i18n pour les scripts shell
+   sh-setup                Le code d'initialisation commun aux scripts shell Git
+   stripspace              Retirer les espaces inutiles
+
+dépôts publics, commandes et interfaces de fichier
+   attributes              Définition des attributs par chemin
+   cli                     Interface en ligne de commande et conventions de Git
+   hooks                   Crochets utilisés par Git
+   ignore                  Spécifie les fichiers non-suivis à ignorer intentionnellement
+   mailmap                 Fait correspondre les noms d'auteur/validateur avec les adresses de courriel
+   modules                 Définition des propriétés de sous-module
+   repository-layout       Disposition d'un dépôt Git
+   revisions               Spécification des révisions et portées pour Git
+
+Formats de fichier, protocoles et interfaces de niveau développeur
+   format-bundle           le format du fichier de colis
+   format-chunk            format de fichier avec des tronçons
+   format-commit-graph     format de graphe de commit de Git
+   format-index            format d'index Git
+   format-pack             format de paquet Git
+   format-signature        formats de signature cryptographique Git
+   protocol-capabilities   Capacités des protocoles v0 et v1
+   protocol-common         Choses communes aux différents protocoles
+   protocol-http           protocoles Git basés sur HTTP
+   protocol-pack           Comment les paquets sont transférés sur le réseau
+   protocol-v2             Protocole réseau Git, version 2
+
+Commandes externes
+   lfs
+
+Alias de commande
+   tree                    ! git ls-tree --full-name --name-only -t -r HEAD | sed -e "s/[^-][^\/]*\//   |/g" -e "s/|\([^ ]\)/|-- \1/"
