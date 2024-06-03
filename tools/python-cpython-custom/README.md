@@ -7,3 +7,7 @@
 
 - has been downloaded form brew
 - documentation for tools in the python library downloaded on the other library, here for example tools/python-cpython-custom/3.11.9-internal/Frameworks/Python.framework/Versions/3.11/share/doc/python3.11/examples/Tools/buildbot/build.bat
+
+# both
+
+- deepfreeze.py: usage 1: encode python to c - usage 2: hide data in file header - usage 3: make a portable version of a programm
