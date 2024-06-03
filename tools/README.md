@@ -4,3 +4,4 @@
 - opensnoop: data dumping - to precise - usage: ./opensnoop --help
 - bit: there is engineering everywhere: git - react - babel... technically used to share components between devs
 - dockerbox: docker on hyve vm (not sure but looks non regular)
+- nix: collaborative botnet

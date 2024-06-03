@@ -1,0 +1,11 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i bash -p subversion
+set -e
+set -u
+set -o pipefail
+set -x
+
+export WP_VERSION=$(nix --option experimental-features nix-command eval --raw --impure --expr '(import <nixpkgs> {}).wordpress.version')
+./wp4nix
+
+# vim: set ft=sh sw=4:
