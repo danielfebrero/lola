@@ -1,0 +1,99 @@
+{
+  "homebrew_version": "4.2.16-48-gb23db35",
+  "used_options": [
+
+  ],
+  "unused_options": [
+
+  ],
+  "built_as_bottle": true,
+  "poured_from_bottle": true,
+  "loaded_from_api": true,
+  "installed_as_dependency": true,
+  "installed_on_request": true,
+  "changed_files": [
+    "Frameworks/Python.framework/Versions/3.11/bin/2to3-3.11",
+    "Frameworks/Python.framework/Versions/3.11/bin/idle3.11",
+    "Frameworks/Python.framework/Versions/3.11/bin/pydoc3.11",
+    "Frameworks/Python.framework/Versions/3.11/bin/python3.11-config",
+    "Frameworks/Python.framework/Versions/3.11/lib/python3.11/config-3.11-darwin/python-config.py",
+    "IDLE 3.app/Contents/MacOS/IDLE",
+    "Frameworks/Python.framework/Versions/3.11/lib/pkgconfig/python-3.11-embed.pc",
+    "Frameworks/Python.framework/Versions/3.11/lib/pkgconfig/python-3.11.pc",
+    "Frameworks/Python.framework/Versions/3.11/lib/python3.11/_sysconfigdata__darwin_darwin.py",
+    "Frameworks/Python.framework/Versions/3.11/lib/python3.11/config-3.11-darwin/Makefile",
+    "Frameworks/Python.framework/Versions/3.11/lib/python3.11/ctypes/macholib/dyld.py",
+    "Frameworks/Python.framework/Versions/3.11/lib/python3.11/sitecustomize.py",
+    "Frameworks/Python.framework/Versions/3.11/lib/python3.11/sysconfig.py"
+  ],
+  "time": 1717178148,
+  "source_modified_time": 1712046304,
+  "compiler": "clang",
+  "aliases": [
+
+  ],
+  "runtime_dependencies": [
+    {
+      "full_name": "mpdecimal",
+      "version": "4.0.0",
+      "revision": 0,
+      "pkg_version": "4.0.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "ca-certificates",
+      "version": "2024-03-11",
+      "revision": 0,
+      "pkg_version": "2024-03-11",
+      "declared_directly": false
+    },
+    {
+      "full_name": "openssl@3",
+      "version": "3.3.0",
+      "revision": 0,
+      "pkg_version": "3.3.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "readline",
+      "version": "8.2.10",
+      "revision": 0,
+      "pkg_version": "8.2.10",
+      "declared_directly": false
+    },
+    {
+      "full_name": "sqlite",
+      "version": "3.46.0",
+      "revision": 0,
+      "pkg_version": "3.46.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "xz",
+      "version": "5.4.6",
+      "revision": 0,
+      "pkg_version": "5.4.6",
+      "declared_directly": true
+    }
+  ],
+  "source": {
+    "spec": "stable",
+    "versions": {
+      "stable": "3.11.9",
+      "head": null,
+      "version_scheme": 0
+    },
+    "path": "/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/p/python@3.11.rb",
+    "tap_git_head": null,
+    "tap": "homebrew/core"
+  },
+  "arch": "arm64",
+  "built_on": {
+    "os": "Macintosh",
+    "os_version": "macOS 14",
+    "cpu_family": "dunno",
+    "xcode": "15.3",
+    "clt": "15.3.0.0.1.1708646388",
+    "preferred_perl": "5.34"
+  }
+}
