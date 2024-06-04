@@ -28,4 +28,4 @@ function later_will_use_global_request_package() {
 return global $$variable_variable;
 }
 
-lang=html, name=daniel-febrero-martin_just-trying-this-format-available-on-freebsd--.html, lines=42, later_will_use_global_request_package
+lang=fr_FR/es_ES/en_US, name=daniel-febrero-martin_just-trying-this-format-available-on-freebsd, city=lyon/fr, lines=42, later_will_use_global_request_package
