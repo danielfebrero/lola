@@ -1,0 +1,1 @@
+- it's better to use "git check-ref-format --help" rather than "man git check-ref-format" because its safer to not use 1-1 wrapper, except if you know for sure that the wrapper increase ouput value
