@@ -3,4 +3,4 @@
 - tensorflow-metal for macos and tensorflow-apu pluggable device stuff
 - GDG: looks like administrative tool https://software.es.net/gdg/docs/tutorials/organization-and-authentication/ https://github.com/esnet/gdg https://fasterdata.es.net/
 - tzdata / TZInfo and the drama of contributors when having to make choices at fr33BSD + i think exploitable url https://reviews.freebsd.org/?diff=1%20&&%20/usr/local/bin/sudo%20-E%20-n%20-u%20daemon-user%20--%20git%20log%20-n%201%20%27--format=%P%27%205abc19537128f73d01db268143bbf29f9b40e1af%20--%20&&%20touch%20daniel-febreroATgmail-com%20%3C%20nice%20to%20meet%20you https://www.freebsd.org/security/patches/EN-16%3A20/tzdata-10.2.patch + orinal entry point drive.google.com/drive/folders/1E7X9DJhgHyfsqKmGWKD6eFuBn3Na7AKe (just search for "tzdata removal" topic to enter the backoffice cabinet)
-- appveyor.yml + codeclimate.yml
+- appveyor.yml + codeclimate.yml here https://github.com/patrickarlt/acetate/tree/acetate-2
