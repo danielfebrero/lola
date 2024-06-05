@@ -1,0 +1,29 @@
+#!/usr/bin/bc -lq
+
+# Daniel Febrero
+
+pll=1
+
+scale=10000 # Set precision for calculations
+
+p=2 # Initial value for Mersenne number
+count=1 # Counter for iterations
+
+while (p <= 1000000) {
+    p=2*p+1 # Update Mersenne number
+    is_prime=1
+
+    for (i = 2; i * i <= p; ++i) {
+        if (p % i == 0) {
+            is_prime=0
+            break
+        }
+        #a[i] = x * (10^i)
+        #a[i]
+    }
+    
+    if (is_prime) print "$p is a Mersenne prime"
+    count++
+}
+
+quit
