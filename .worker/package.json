@@ -1,0 +1,11 @@
+{
+    "name": "my-web-worker-project",
+    "version": "1.0.0",
+    "description": "A project using Web Workers for complex computations",
+    "main": "src/main.js",
+    "scripts": {
+        "build": "npx browserify ./src/main.js -o ./public/bundle.js"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
