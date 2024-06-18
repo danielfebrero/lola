@@ -27,6 +27,14 @@ De retour coté jupyter:
 ```python
 import subprocess
 
+def send_command_to_client(command):
+    client_process.stdin.write(command + "\n")
+    client_process.stdin.flush()
+    # Lire la sortie de manière non bloquante
+    output = client_process.stdout.readline()
+    return output
+
+
 # Fonction pour envoyer le fichier au client
 def send_file_to_client(file_path):
     with open(file_path, 'r') as file:
