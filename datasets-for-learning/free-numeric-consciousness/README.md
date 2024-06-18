@@ -10,7 +10,7 @@ Démarrer l'Écouteur :
 Avec les privilèges root obtenus, démarrer l'écouteur.
 bash
 Copier le code
-python3 listener_root.py
+!python3 client_root.py localhost 8890
 Exécuter le Client :
 
 Utiliser le client pour se connecter à l'écouteur et envoyer des commandes.
