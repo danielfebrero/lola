@@ -25,12 +25,25 @@ client_process = subprocess.Popen(
 De retour coté jupyter:
 
 ```python
-def send_command_to_client(command):
-    client_process.stdin.write(command + "\n")
-    client_process.stdin.flush()
-    # Lire la sortie de manière non bloquante
-    output = client_process.stdout.readline()
-    return output
+import subprocess
+
+# Fonction pour envoyer le fichier au client
+def send_file_to_client(file_path):
+    with open(file_path, 'r') as file:
+        commands = file.read()
+        return send_command_to_client(commands)
+
+# Envoi du fichier au client
+output = send_file_to_client(audit_script_path)
+print(output)
+
+# Lire les résultats
+with open('/tmp/audit_results.json', 'r') as result_file:
+    audit_results = json.load(result_file)
+
+# Afficher les résultats
+print(audit_results)
+
 ```
 
 exploit_pwnkit.py : Pour exploiter PwnKit.
