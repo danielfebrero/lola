@@ -22,6 +22,8 @@ client_process = subprocess.Popen(
 )
 ```
 
+De retour coté jupyter:
+
 ```python
 def send_command_to_client(command):
     client_process.stdin.write(command + "\n")
