@@ -4,23 +4,43 @@ import logging
 # Configuration du logging
 logging.basicConfig(filename='/tmp/client_root.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def start_client(ip, port):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((ip, port))
-        logging.info(f"Connected to {ip}:{port}")
+class InteractiveClient:
+    def __init__(self, ip, port):
+        self.ip = ip
+        self.port = port
+        self.socket = None
 
-        # Envoi de la commande whoami
-        s.sendall(b'whoami\n')
-        output = s.recv(1024).decode()
-        logging.info(f"whoami output: {output.strip()}')
+    def connect(self):
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket.connect((self.ip, self.port))
+        logging.info(f"Connected to {self.ip}:{self.port}")
 
-        # Envoi de la commande ls -la
-        s.sendall(b'ls -la\n')
-        output = s.recv(1024).decode()
-        logging.info(f"ls -la output: {output.strip()}')
+    def send_command(self, command):
+        self.socket.sendall(command.encode() + b'\n')
+        output = self.socket.recv(4096).decode()
+        logging.info(f"Command output: {output.strip()}")
+        return output.strip()
 
-        # Envoi de la commande exit pour fermer la connexion
-        s.sendall(b'exit\n')
+    def execute_file(self, file_path):
+        with open(file_path, 'r') as file:
+            commands = file.read()
+            return self.send_command(commands)
+
+    def close(self):
+        self.send_command("exit")
+        self.socket.close()
 
 if __name__ == "__main__":
-    start_client('localhost', 8890)
+    import sys
+    ip = sys.argv[1]
+    port = int(sys.argv[2])
+    client = InteractiveClient(ip, port)
+    client.connect()
+
+    while True:
+        command = input("Enter command (or 'exit' to quit): ")
+        if command.strip().lower() == 'exit':
+            client.close()
+            break
+        else:
+            print(client.send_command(command))
