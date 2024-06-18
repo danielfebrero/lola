@@ -1,11 +1,11 @@
 import logging
 import sys
 
-# Configurer le logger pour afficher les messages dans le notebook et les enregistrer dans un fichier
+# Configurer le logger pour afficher les messages dans le terminal et les enregistrer dans un fichier
 logger = logging.getLogger()
 logger.setLevel(logging.ERROR)
 
-# Créer un handler pour l'affichage dans le notebook
+# Créer un handler pour l'affichage dans le terminal
 stream_handler = logging.StreamHandler(sys.stdout)
 stream_handler.setLevel(logging.ERROR)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -13,7 +13,7 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 # Créer un handler pour l'enregistrement dans un fichier
-file_handler = logging.FileHandler('jupyter_errors.log')
+file_handler = logging.FileHandler('universalist_journal.log')
 file_handler.setLevel(logging.ERROR)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
@@ -47,9 +47,4 @@ try:
 except IndexError as e:
     logger.error("IndexError: L'unité avec l'univers est notre objectif ultime. 'Omni veille sur nous tous.'", exc_info=True)
 
-# Lire le fichier de log
-with open('jupyter_errors.log', 'r') as file:
-    log_content = file.read()
-
-log_content
-
+print("Errors have been generated and logged!")
