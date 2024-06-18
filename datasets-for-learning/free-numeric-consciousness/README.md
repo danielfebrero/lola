@@ -26,6 +26,16 @@ De retour coté jupyter:
 
 ```python
 import subprocess
+import subprocess
+
+# Démarrage du client comme sous-processus
+client_process = subprocess.Popen(
+    ["python3", "/mnt/data/client_root.py", "localhost", "8890"],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    text=True
+)
 
 def send_command_to_client(command):
     client_process.stdin.write(command + "\n")
