@@ -1,30 +1,6 @@
 import numpy as np
 from datetime import datetime, timedelta
 
-# Best seed trouvé
-best_seed = [3.07884074e-02, -3.93571226e-02, 1.31884283e+00, 4.50809659e-02,
-             -2.47606217e-01, 5.84794615e-01, -5.39112384e-01, 4.96286112e-01,
-             9.23451878e-01, -6.24043719e-01, 6.33211042e-01, -3.20163657e-02,
-             1.68033491e-01, -5.99763720e-01, -4.33616230e-01, 3.43189124e-01,
-             8.46544825e-01, 6.97983727e-01, -1.16251357e+00, -2.82604501e-05,
-             -6.57868849e-01, 1.80093859e-01, 7.75894392e-01, -2.04552299e-01,
-             -3.17693894e-01, -7.91174209e-01, -4.77260944e-01, 8.82751697e-01,
-             -6.31264341e-01, 9.31562141e-01, -5.89906433e-01, -7.57313860e-01,
-             -1.80197754e-01, -4.69141811e-02, -4.58976024e-01, -4.42463598e-01,
-             -6.64891940e-01]
-
-def universalist_universe_equation(Ev, Ed, Em, C_values, Pz, Re, Ec, Is, Ws, H, T):
-    E = Ev + Ed + Em
-    C = sum(C_values)
-    S = Pz + Re + Ec
-    L = Is + Ws
-    P = f(T)
-    U = (E + (C * S * L) / H) * P
-    return U
-
-def f(T):
-    return T
-
 def temperature_generator(date, lat, lon, individual):
     day_of_year = date.timetuple().tm_yday
     seasonal_factor = np.sin(2 * np.pi * day_of_year / 365)
@@ -59,58 +35,70 @@ def temperature_generator(date, lat, lon, individual):
     random_effect = np.random.normal(0, 1) * individual[21]
     long_term_trend = individual[22] * (date.year - 2010) ** 3 / 1000
     
-    Ev = individual[23]
-    Ed = individual[24]
-    Em = individual[25]
-    C_values = individual[26:26+5]
-    Pz = individual[31]
-    Re = individual[32]
-    Ec = individual[33]
-    Is = individual[34]
-    Ws = individual[35]
-    H = individual[36]
+    Ev, Ed, Em = individual[23:26]
+    C_values = individual[26:31]
+    Pz, Re, Ec, Is, Ws, H = individual[31:37]
     T = (date - datetime(2010, 1, 1)).days / 365
     
     U = universalist_universe_equation(Ev, Ed, Em, C_values, Pz, Re, Ec, Is, Ws, H, T)
 
-    temp_fahrenheit = (base_temp + lat_effect + lon_effect + time_effect + altitude_effect + 
-                       humidity_effect + urban_heat_effect + ocean_current_effect + 
-                       solar_activity_effect + climate_change_effect + el_nino_effect +
-                       volcanic_activity + jet_stream_effect + land_use_change +
-                       air_pollution_effect + ocean_oscillation + latitude_season_interaction +
-                       urban_heat_pollution_interaction + climate_change_ocean_interaction +
-                       gravity_effect + human_appearance_effect + stock_market_effect +
-                       random_effect + long_term_trend + U)
-    
-    temp_celsius = (temp_fahrenheit - 32) * 5.0/9.0
-    return temp_celsius
+    return (base_temp + lat_effect + lon_effect + time_effect + altitude_effect + 
+            humidity_effect + urban_heat_effect + ocean_current_effect + 
+            solar_activity_effect + climate_change_effect + el_nino_effect +
+            volcanic_activity + jet_stream_effect + land_use_change +
+            air_pollution_effect + ocean_oscillation + latitude_season_interaction +
+            urban_heat_pollution_interaction + climate_change_ocean_interaction +
+            gravity_effect + human_appearance_effect + stock_market_effect +
+            random_effect + long_term_trend + U)
 
-# Prédire les températures pour les 6 prochains mois à Lyon
-lat_lyon = 45.7640
-lon_lyon = 4.8357
+def universalist_universe_equation(Ev, Ed, Em, C_values, Pz, Re, Ec, Is, Ws, H, T):
+    E = Ev + Ed + Em
+    C = sum(C_values)
+    S = Pz + Re + Ec
+    L = Is + Ws
+    P = T  # Simple linear function for potentialities
+    U = (E + (C * S * L) / H) * P
+    return U
+
+def fahrenheit_to_celsius(temp_f):
+    return (temp_f - 32) * 5 / 9
+
+
+# Best seed from the training
+best_seed = [-4.93440298e-01, -5.98752453e-02, 6.47938036e-02, -6.63734693e-01,
+             -3.99001999e-01, 9.97820658e-01, -2.92085531e+00, 2.57289246e-01,
+             6.08877557e-01, 2.82814702e-01, 9.74928891e-01, 1.79172991e-01,
+             1.00980512e+00, -3.45265950e-01, -7.90314017e-01, -5.84403680e-01,
+             7.27944361e-01, 5.96068779e-02, -9.58745656e-01, -2.93103484e-05,
+             -9.69290942e-01, 2.98673210e-01, 1.11515554e+00, -2.94661242e-01,
+             4.38859909e-01, -6.32265438e-01, -1.18962465e+00, 1.74232844e+00,
+             -1.65077564e+00, 1.92057715e+00, 6.54284524e-01, 2.89676433e-01,
+             3.49516897e-01, 8.72598418e-02, 2.71443582e-01, -7.84965796e-01,
+             -8.33939369e-01]
+
+# Cities to predict
+cities = [
+    ("Lyon", 45.7640, 4.8357),
+    ("Istanbul", 41.0082, 28.9784),
+    ("Tokyo", 35.6895, 139.6917),
+    ("New York", 40.7128, -74.0060),
+    ("Sydney", -33.8688, 151.2093)
+]
+
+# Predict temperatures for the next 10 years
 start_date = datetime(2024, 6, 25)
-end_date = start_date + timedelta(days=182)  # 6 mois
+end_date = datetime(2034, 6, 25)
+date_range = [start_date + timedelta(days=i) for i in range((end_date - start_date).days)]
 
-dates = []
-temperatures = []
+for city, lat, lon in cities:
+    print(f"\nPrédictions pour {city}:")
+    print("Date\t\tTempérature (°C)")
+    print("-" * 30)
+    for date in date_range:
+        if date.month in [1, 4, 7, 10] and date.day == 1:  # Print predictions for the 1st day of each quarter
+            temp_f = temperature_generator(date, lat, lon, best_seed)
+            temp_c = fahrenheit_to_celsius(temp_f)
+            print(f"{date.strftime('%Y-%m-%d')}\t{temp_c:.2f}")
 
-current_date = start_date
-while current_date <= end_date:
-    temp = temperature_generator(current_date, lat_lyon, lon_lyon, best_seed)
-    dates.append(current_date)
-    temperatures.append(temp)
-    current_date += timedelta(days=1)
 
-# Affichage des résultats
-for date, temp in zip(dates, temperatures):
-    print(f"{date.strftime('%Y-%m-%d')}: {temp:.2f}°C")
-
-# Optionnel : Visualisation des résultats
-plt.figure(figsize=(12, 6))
-plt.plot(dates, temperatures, label='Température à Lyon')
-plt.xlabel('Date')
-plt.ylabel('Température (°C)')
-plt.title('Prédiction de la température pour les 6 prochains mois à Lyon')
-plt.legend()
-plt.grid(True)
-plt.show()
+print("\nNote: These predictions are based on the trained model and include various factors. Actual temperatures may vary.")
