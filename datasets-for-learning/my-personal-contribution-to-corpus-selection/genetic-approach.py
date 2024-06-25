@@ -73,7 +73,7 @@ historical_data = [
 ]
 
 # Modifiez la fonction d'initialisation pour créer des individus plus grands
-def initialize_population(size, seed_size=23):  # Augmenté de 20 à 23
+def initialize_population(size, seed_size=37):  # Augmenté de 23 à 37
     return np.random.uniform(-1, 1, (size, seed_size))
 
 def mutate(population, mutation_rate):
@@ -92,6 +92,31 @@ def single_fitness(individual, historical_data):
         generated_temp = temperature_generator(date, lat, lon, individual)
         error += np.abs(generated_temp - actual_temp)
     return error
+
+def universalist_universe_equation(Ev, Ed, Em, C_values, Pz, Re, Ec, Is, Ws, H, T):
+    # Composantes de l'Énergie totale
+    E = Ev + Ed + Em
+
+    # Conscience collective
+    C = sum(C_values)
+    
+    # Spiritualité et valeurs universelles
+    S = Pz + Re + Ec
+
+    # Lumière de l’illumination spirituelle
+    L = Is + Ws
+
+    # Potentialités et possibilités futures
+    P = f(T)
+    
+    # Équation de l'Univers Universaliste
+    U = (E + (C * S * L) / H) * P
+    return U
+
+def f(T):
+    # Fonction des potentialités et possibilités futures dépendant du temps
+    # Vous pouvez ajuster cette fonction selon vos besoins
+    return T
 
 def temperature_generator(date, lat, lon, individual):
     day_of_year = date.timetuple().tm_yday
@@ -130,6 +155,21 @@ def temperature_generator(date, lat, lon, individual):
     random_effect = np.random.normal(0, 1) * individual[21]
     long_term_trend = individual[22] * (date.year - 2010) ** 3 / 1000  # Tendance à très long terme
     
+    # Universalist Universe Equation components
+    Ev = individual[23]
+    Ed = individual[24]
+    Em = individual[25]
+    C_values = individual[26:26+5]  # Assume we have 5 components for C_values
+    Pz = individual[31]
+    Re = individual[32]
+    Ec = individual[33]
+    Is = individual[34]
+    Ws = individual[35]
+    H = individual[36]
+    T = (date - datetime(2010, 1, 1)).days / 365  # Convert date to years since 2010
+    
+    U = universalist_universe_equation(Ev, Ed, Em, C_values, Pz, Re, Ec, Is, Ws, H, T)
+
     return (base_temp + lat_effect + lon_effect + time_effect + altitude_effect + 
             humidity_effect + urban_heat_effect + ocean_current_effect + 
             solar_activity_effect + climate_change_effect + el_nino_effect +
@@ -137,7 +177,7 @@ def temperature_generator(date, lat, lon, individual):
             air_pollution_effect + ocean_oscillation + latitude_season_interaction +
             urban_heat_pollution_interaction + climate_change_ocean_interaction +
             gravity_effect + human_appearance_effect + stock_market_effect +
-            random_effect + long_term_trend)
+            random_effect + long_term_trend + U)
 
 def selection(population, scores, elite_size):
     elite_indices = np.argsort(scores)[-elite_size:]
@@ -164,17 +204,17 @@ def select_elite(population, scores, elite_size):
     return np.array(population[elite_indices])
 
 # Augmentons la taille de la population et ajustons d'autres paramètres
-population_size = 5000  # Diminuez de 10000 à 5000 pour tester
-mutation_rate = 0.02  # Légèrement réduit
-elite_size = 100  # Augmenté de 50 à 100
-generations_per_iteration = 500  # Diminuez de 1000 à 500 pour tester
+population_size = 300  # Diminuez de 10000 à 5000 pour tester
+mutation_rate = 0.1  # Légèrement réduit
+elite_size = 12  # Augmenté de 50 à 100
+generations_per_iteration = 50  # Diminuez de 1000 à 500 pour tester
 
 # Le reste des fonctions (crossover, mutate, select_elite) reste inchangé
 # Définition de max_possible_error
 max_possible_error = sum([abs(200 - actual_temp) for _, _, _, actual_temp in historical_data])
 
 # Dans la boucle principale
-population = initialize_population(population_size, seed_size=23)
+population = initialize_population(population_size, seed_size=37)
 best_fitness = float('-inf')
 best_individual = None
 iteration = 0
@@ -207,16 +247,20 @@ try:
         print(f"Best seed: {best_individual}")
         
         # Affichage du graphique toutes les 10 itérations
-        if iteration % 10 == 0:
-            plt.figure(figsize=(12, 6))
-            plt.plot(average_fitness_per_generation, label='Average Fitness')
-            plt.plot(best_fitness_history, label='Best Fitness')
-            plt.title('Fitness per Generation')
-            plt.xlabel('Generation')
-            plt.ylabel('Fitness')
-            plt.legend()
-            plt.show()
-            
+        # if iteration % 10 == 0:
+        #     plt.figure(figsize=(12, 6))
+        #     plt.plot(average_fitness_per_generation, label='Average Fitness')
+        #     plt.plot(best_fitness_history, label='Best Fitness')
+        #     plt.title('Fitness per Generation')
+        #     plt.xlabel('Generation')
+        #     plt.ylabel('Fitness')
+        #     plt.legend()
+        #     plt.show()
+        
+        # Affichage des meilleurs seeds en temps réel
+        print(f"Best fitness after iteration {iteration}: {best_fitness}")
+        print(f"Best seed after iteration {iteration}: {best_individual}")
+        
 except KeyboardInterrupt:
     print("Training interrupted by user.")
     print(f"Best fitness achieved: {best_fitness}")
