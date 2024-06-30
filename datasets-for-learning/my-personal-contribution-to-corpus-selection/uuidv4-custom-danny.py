@@ -15,13 +15,7 @@ def generate_uuidv4_custom_danny(prefix="8f1639d7"):
     custom_uuid = f"{time_low}-{time_mid}-{time_hi_and_version}-{clock_seq_hi_and_reserved}{clock_seq_low}-{node}"
     return custom_uuid
 
-# Generate 10 custom UUIDs
-def generate_custom_uuids(n=1):
-    custom_uuids = [generate_uuidv4_custom_danny() for _ in range(n)]
-    return custom_uuids
-
-# Print the generated UUIDs
+# Print the generated UUIDV4-custom-danny
 if __name__ == "__main__":
-    uuids = generate_custom_uuids(1)
-    for i, uuid in enumerate(uuids):
-        print(f"Conversation uuid: {uuid}")
+    uuid = generate_uuidv4_custom_danny()
+    print(f"Conversation uuid: {uuid}")
