@@ -34,28 +34,21 @@ print("Début de la génération et de l'exécution des binaires...")
 # Test de la fonction génératrice binaire
 bin_gen = binary_generator()
 
-# Générer et tenter d'exécuter des séquences binaires infinies
-binary = next(bin_gen)
-filename = random_filename()
-with open(filename, "wb") as f:
-    f.write(binary)
-try:
-    os.chmod(filename, 0o755)  # Rendre le fichier exécutable
-    result = subprocess.run(f"./{filename}", shell=True, capture_output=True, text=True)
-    log_results(filename, binary, result.stdout, result.stderr)
-    print(f"Exécution de {filename} terminée avec succès.")
-except Exception as e:
-    log_results(filename, binary, "", str(e))
-    print(f"Erreur lors de l'exécution de {filename}: {e}")
-finally:
-    os.remove(filename)  # Nettoyer après l'exécution
+# Boucle infinie pour générer et exécuter des séquences binaires
+while True:
+    binary = next(bin_gen)
+    filename = random_filename()
+    with open(filename, "wb") as f:
+        f.write(binary)
+    try:
+        os.chmod(filename, 0o755)  # Rendre le fichier exécutable
+        result = subprocess.run(f"./{filename}", shell=True, capture_output=True, text=True)
+        log_results(filename, binary, result.stdout, result.stderr)
+        print(f"Exécution de {filename} terminée avec succès.")
+    except Exception as e:
+        log_results(filename, binary, "", str(e))
+        print(f"Erreur lors de l'exécution de {filename}: {e}")
+    finally:
+        os.remove(filename)  # Nettoyer après l'exécution
 
 print("Fin de la génération et de l'exécution des binaires.")
-"""
-
-# Write the script to the new file
-with open(updated_script_path, "w") as file:
-    file.write(script_content)
-
-# Run the updated script in the background
-subprocess.Popen(["python", updated_script_path])
