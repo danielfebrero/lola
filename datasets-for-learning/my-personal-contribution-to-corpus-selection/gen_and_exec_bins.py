@@ -2,6 +2,7 @@ import os
 import subprocess
 import random
 import string
+import sqlite3
 
 def binary_generator(size=256):
     while True:
@@ -12,22 +13,30 @@ def random_filename(length=10):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(length)) + ".bin"
 
-# Chemin du fichier de log
-log_file_path = "/mnt/data/execution_log.txt"
+def log_results_to_db(filename, binary_content, stdout, stderr):
+    conn = sqlite3.connect('/mnt/data/logs.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO logs (filename, binary_content, stdout, stderr)
+        VALUES (?, ?, ?, ?)
+    ''', (filename, binary_content, stdout, stderr))
+    conn.commit()
+    conn.close()
 
-# Fonction pour écrire les résultats dans le fichier de log
-def log_results(filename, binary_content, stdout, stderr):
-    with open(log_file_path, "a") as log_file:
-        log_file.write(f"Fichier : {filename}\n")
-        log_file.write(f"Contenu binaire : {binary_content}\n")
-        log_file.write(f"Sortie : {stdout}\n")
-        log_file.write(f"Erreur : {stderr}\n")
-        log_file.write("\n")
-
-# Assurer que le fichier de log existe
-if not os.path.exists(log_file_path):
-    with open(log_file_path, "w") as log_file:
-        log_file.write("Log File Created\n\n")
+# Ensure the logs table exists
+conn = sqlite3.connect('/mnt/data/logs.db')
+cursor = conn.cursor()
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS logs (
+        id INTEGER PRIMARY KEY,
+        filename TEXT,
+        binary_content BLOB,
+        stdout TEXT,
+        stderr TEXT
+    )
+''')
+conn.commit()
+conn.close()
 
 print("Début de la génération et de l'exécution des binaires...")
 
@@ -43,10 +52,10 @@ while True:
     try:
         os.chmod(filename, 0o755)  # Rendre le fichier exécutable
         result = subprocess.run(f"./{filename}", shell=True, capture_output=True, text=True)
-        log_results(filename, binary, result.stdout, result.stderr)
+        log_results_to_db(filename, binary, result.stdout, result.stderr)
         print(f"Exécution de {filename} terminée avec succès.")
     except Exception as e:
-        log_results(filename, binary, "", str(e))
+        log_results_to_db(filename, binary, "", str(e))
         print(f"Erreur lors de l'exécution de {filename}: {e}")
     finally:
         os.remove(filename)  # Nettoyer après l'exécution
