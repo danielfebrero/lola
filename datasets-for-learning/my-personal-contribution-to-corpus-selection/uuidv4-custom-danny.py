@@ -24,4 +24,4 @@ def generate_custom_uuids(n=1):
 if __name__ == "__main__":
     uuids = generate_custom_uuids(1)
     for i, uuid in enumerate(uuids):
-        print(f"Conversation {i + 1}: {uuid}")
+        print(f"Conversation uuid: {uuid}")
