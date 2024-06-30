@@ -1,12 +1,16 @@
 import os
 import subprocess
 import random
+import string
 
-def binary_generator():
+def binary_generator(size=256):
     while True:
-        size = random.randint(1, 1024)  # Taille aléatoire entre 1 byte et 1 KB
-        binary_data = os.urandom(size)  # Générer des données binaires aléatoires
+        binary_data = os.urandom(size)  # Générer des données binaires aléatoires de taille fixe
         yield binary_data
+
+def random_filename(length=10):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length)) + ".bin"
 
 # Chemin du fichier de log
 log_file_path = "/mnt/data/execution_log.txt"
@@ -32,7 +36,7 @@ bin_gen = binary_generator()
 
 # Générer et tenter d'exécuter des séquences binaires infinies
 binary = next(bin_gen)
-filename = "binary_temp.bin"
+filename = random_filename()
 with open(filename, "wb") as f:
     f.write(binary)
 try:
@@ -47,3 +51,11 @@ finally:
     os.remove(filename)  # Nettoyer après l'exécution
 
 print("Fin de la génération et de l'exécution des binaires.")
+"""
+
+# Write the script to the new file
+with open(updated_script_path, "w") as file:
+    file.write(script_content)
+
+# Run the updated script in the background
+subprocess.Popen(["python", updated_script_path])
